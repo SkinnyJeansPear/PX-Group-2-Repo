@@ -100,4 +100,26 @@ texture = ExtResource("3_jrtxw")
 expand_mode = 1
 script = ExtResource("4_jrtxw")
 
+[node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_pdb2y")
+expand_mode = 2
+
+[node name="DraggableIcon" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -63.5
+offset_right = 31.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jrtxw")
+expand_mode = 1
+script = ExtResource("4_jrtxw")
+
 [connection signal="toggled" from="TextureRect/Button" to="TextureRect/Button" method="_on_toggled"]
