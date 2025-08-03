@@ -7,6 +7,8 @@ var dragging = false
 var drag_sprite: TextureRect = null
 var offset = Vector2.ZERO
 var nav_bar_tween = null
+@onready var game_manager: Node = $"../../../../../GameManager"
+
 
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
@@ -37,17 +39,14 @@ func slide_nav_bar(hide: bool):
 	else:
 		end_pos = Vector2(start_pos.x, 0)  # Return to top
 
-	# Cancel any previous tween
 	if nav_bar_tween and nav_bar_tween.is_running():
 		nav_bar_tween.kill()
 
-	# Start a new tween
 	nav_bar_tween = create_tween()
 	nav_bar_tween.tween_property(nav_bar, "position", end_pos, 0.4) \
 		.set_trans(Tween.TRANS_SINE) \
 		.set_ease(Tween.EASE_IN_OUT)
 
-	# Optional: disable interaction while hidden
 	nav_bar.mouse_filter = MOUSE_FILTER_IGNORE if hide else MOUSE_FILTER_STOP
 
 func start_drag():
@@ -70,11 +69,28 @@ func end_drag():
 	if not drag_sprite:
 		return
 
-	if is_over_navbar():
-		drag_sprite.queue_free()
-	else:
-		drag_sprite.global_position = snap_to_tilemap(get_global_mouse_position())
+	var global_pos = get_global_mouse_position()
+	var local_pos = tilemap.to_local(global_pos)
+	var cell = tilemap.local_to_map(local_pos)
+	var cell_key = "%d,%d" % [cell.x, cell.y]
 
+	var game_manager = get_tree().get_root().get_node("Main/GameManager")
+
+	# If dropped over NavBar — cancel
+	if is_over_navbar():
+		print("❌ Dropped on NavBar — canceled.")
+		drag_sprite.queue_free()
+
+	# If cell already has any object — cancel
+	elif game_manager.placed_objects.has(cell_key):
+		print("❌ Cell already occupied at:", cell_key)
+		drag_sprite.queue_free()
+
+	# Valid drop — store it and snap to grid
+	else:
+		game_manager.placed_objects[cell_key] = drag_sprite
+		drag_sprite.global_position = snap_to_tilemap(global_pos)
+		print("✅ Object placed at:", cell_key)
 	drag_sprite = null
 	slide_nav_bar(false)
 
