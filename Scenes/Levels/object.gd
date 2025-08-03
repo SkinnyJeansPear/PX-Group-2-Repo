@@ -7,9 +7,8 @@ var dragging = false
 var drag_sprite: TextureRect = null
 var offset = Vector2.ZERO
 var nav_bar_tween = null
+
 @onready var game_manager: Node = $"../../../../../GameManager"
-
-
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
@@ -30,11 +29,11 @@ func _process(_delta):
 	if dragging and drag_sprite:
 		drag_sprite.global_position = get_global_mouse_position() - offset
 
-func slide_nav_bar(hide: bool):
+func slide_nav_bar(should_hide: bool):
 	var start_pos = nav_bar.position
 	var end_pos: Vector2
 
-	if hide:
+	if should_hide:
 		end_pos = start_pos + Vector2(0, nav_bar.size.y + 120)  # Slide downward
 	else:
 		end_pos = Vector2(start_pos.x, 0)  # Return to top
@@ -47,12 +46,14 @@ func slide_nav_bar(hide: bool):
 		.set_trans(Tween.TRANS_SINE) \
 		.set_ease(Tween.EASE_IN_OUT)
 
-	nav_bar.mouse_filter = MOUSE_FILTER_IGNORE if hide else MOUSE_FILTER_STOP
+	nav_bar.mouse_filter = MOUSE_FILTER_IGNORE if should_hide else MOUSE_FILTER_STOP
+
 
 func start_drag():
 	dragging = true
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
+	drag_sprite.name = name  # Preserve original name
 	drag_layer.add_child(drag_sprite)
 
 	var sprite_size = drag_sprite.get_size()
@@ -69,30 +70,39 @@ func end_drag():
 	if not drag_sprite:
 		return
 
-	var global_pos = get_global_mouse_position()
-	var local_pos = tilemap.to_local(global_pos)
-	var cell = tilemap.local_to_map(local_pos)
-	var cell_key = "%d,%d" % [cell.x, cell.y]
-
-	var game_manager = get_tree().get_root().get_node("Main/GameManager")
-
-	# If dropped over NavBar — cancel
 	if is_over_navbar():
-		print("❌ Dropped on NavBar — canceled.")
 		drag_sprite.queue_free()
-
-	# If cell already has any object — cancel
-	elif game_manager.placed_objects.has(cell_key):
-		print("❌ Cell already occupied at:", cell_key)
-		drag_sprite.queue_free()
-
-	# Valid drop — store it and snap to grid
 	else:
-		game_manager.placed_objects[cell_key] = drag_sprite
-		drag_sprite.global_position = snap_to_tilemap(global_pos)
-		print("✅ Object placed at:", cell_key)
+		var object_name = drag_sprite.name.to_lower()
+
+		if game_manager.object_positions.has(object_name):
+			var positions = game_manager.object_positions[object_name]
+			var placed = 0
+
+			for pos in positions:
+				if not game_manager.used_positions.has(pos):
+					var clone = duplicate()
+					clone.set_script(null)
+					clone.name = object_name
+					drag_layer.add_child(clone)
+
+					clone.global_position = pos
+					clone.z_index = 1000
+					game_manager.used_positions.append(pos)
+
+					placed += 1
+
+			if placed == 0:
+				print("No more positions available for: ", object_name)
+				drag_sprite.queue_free()
+		else:
+			print("Object not recognized, using fallback position.")
+			drag_sprite.global_position = Vector2(600, 400)
+
+	drag_sprite.queue_free()
 	drag_sprite = null
 	slide_nav_bar(false)
+
 
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())
