@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4lyvvukrpltb"
-valid=false
+uid="uid://luro8a7fj5cs"
+path="res://.godot/imported/bin.png-8a3c8ae39c0cf92a9c943f50288c8227.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://park-with-a.png"
+source_file="res://Assests/bin.png"
+dest_files=["res://.godot/imported/bin.png-8a3c8ae39c0cf92a9c943f50288c8227.ctex"]
 
 [params]
 

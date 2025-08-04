@@ -8,6 +8,12 @@ var drag_sprite: TextureRect = null
 var offset = Vector2.ZERO
 var nav_bar_tween = null
 
+# When dragging
+var drag_scales = {
+	"lamp": Vector2(1, 1)
+}
+
+
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
@@ -48,15 +54,19 @@ func slide_nav_bar(should_hide: bool):
 
 	nav_bar.mouse_filter = MOUSE_FILTER_IGNORE if should_hide else MOUSE_FILTER_STOP
 
-
 func start_drag():
 	dragging = true
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
-	drag_sprite.name = name  # Preserve original name
+	drag_sprite.name = name
 	drag_layer.add_child(drag_sprite)
 
-	var sprite_size = drag_sprite.get_size()
+	
+	var obj_name = drag_sprite.name.to_lower()
+	var scale = drag_scales.get(obj_name, Vector2(1, 1))  # fallback = 1x
+	drag_sprite.scale = scale
+
+	var sprite_size = drag_sprite.get_size() * scale
 	offset = sprite_size / 2
 
 	drag_sprite.global_position = get_global_mouse_position() - offset
@@ -64,6 +74,7 @@ func start_drag():
 
 	await get_tree().process_frame
 	slide_nav_bar(true)
+
 
 func end_drag():
 	dragging = false
@@ -85,6 +96,11 @@ func end_drag():
 					clone.set_script(null)
 					clone.name = object_name
 					drag_layer.add_child(clone)
+
+					if game_manager.drag_scales.has(object_name):
+						clone.scale = game_manager.drag_scales[object_name]
+					else:
+						clone.scale = Vector2(1, 1)  # default fallback scale
 
 					clone.global_position = pos
 					clone.z_index = 1000
