@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=4 uid="uid://cglcu0uv4k7rt"]
 
-[ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scenes/Levels/game_manager.gd" id="1_detqq"]
+[ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_detqq"]
 [ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="1_lje5a"]
 [ext_resource type="Texture2D" uid="uid://dhui614vlb4op" path="res://Assests/Trashbag.png" id="2_detqq"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="2_jrtxw"]
 [ext_resource type="Texture2D" uid="uid://bqeiso0gw3hd" path="res://Assests/lamp.png" id="3_jrtxw"]
 [ext_resource type="Texture2D" uid="uid://c6g7jxggoguoa" path="res://Assests/box.png" id="3_pdb2y"]
-[ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scenes/Levels/object.gd" id="4_jrtxw"]
+[ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="4_jrtxw"]
 [ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trash Can.png" id="8_yo840"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
@@ -31,7 +31,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 350.0
@@ -81,7 +81,7 @@ layout_mode = 2
 texture = ExtResource("3_pdb2y")
 expand_mode = 2
 
-[node name="lamp" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
+[node name="Lamp" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,13 +106,12 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="TrashBar"]
 layout_mode = 1
-offset_left = -130.0
 offset_top = 325.0
-offset_right = -2.0
+offset_right = 128.0
 offset_bottom = 453.0
 texture = ExtResource("3_pdb2y")
 
-[node name="bin" type="TextureRect" parent="TrashBar/TextureRect"]
+[node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
