@@ -5,14 +5,14 @@ var object_positions = {
 		Vector2(325, 265),
 		Vector2(525, 450)
 	],
-	"icon": [
-		Vector2(500, 250)
+	"trashcan": [
+		Vector2(500, 375)
 	]
 }
 
 var drag_scales = {
 	"lamp": Vector2(1.5, 1.5),
-	"icon": Vector2(1,1)
+	"trashcan": Vector2(0.8,0.8)
 }
 
 var used_positions: Array = []

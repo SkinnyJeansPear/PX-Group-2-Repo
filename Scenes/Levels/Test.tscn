@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=14 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_detqq"]
 [ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="1_lje5a"]
@@ -9,8 +9,7 @@
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_yo840"]
 [ext_resource type="Texture2D" uid="uid://nhwpqa50j0km" path="res://Assests/Alchoholic Glass Bottle.png" id="4_6h7jm"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="4_jrtxw"]
-[ext_resource type="Script" uid="uid://bsfkcag68mmrt" path="res://Scripts/bottle.gd" id="5_eh4jw"]
-[ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trash Can.png" id="8_yo840"]
+[ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="8_yo840"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="9_tao1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
@@ -53,7 +52,7 @@ offset_right = 1078.0
 offset_bottom = 578.0
 texture = ExtResource("4_6h7jm")
 expand_mode = 1
-script = ExtResource("5_eh4jw")
+script = ExtResource("3_yo840")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -110,6 +109,28 @@ offset_bottom = 64.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_jrtxw")
+expand_mode = 1
+script = ExtResource("4_jrtxw")
+
+[node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_pdb2y")
+expand_mode = 2
+
+[node name="TrashCan" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_yo840")
 expand_mode = 1
 script = ExtResource("4_jrtxw")
 

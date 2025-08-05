@@ -10,7 +10,8 @@ var nav_bar_tween = null
 
 # When dragging
 var drag_scales = {
-	"lamp": Vector2(1, 1)
+	"lamp": Vector2(1, 1),
+	"trashcan": Vector2(0.8, 0.8)
 }
 
 
