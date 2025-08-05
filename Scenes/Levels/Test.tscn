@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=15 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_detqq"]
 [ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="1_lje5a"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="2_jrtxw"]
 [ext_resource type="Texture2D" uid="uid://bqeiso0gw3hd" path="res://Assests/lamp.png" id="3_jrtxw"]
 [ext_resource type="Texture2D" uid="uid://c6g7jxggoguoa" path="res://Assests/box.png" id="3_pdb2y"]
+[ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_yo840"]
+[ext_resource type="Texture2D" uid="uid://nhwpqa50j0km" path="res://Assests/Alchoholic Glass Bottle.png" id="4_6h7jm"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="4_jrtxw"]
+[ext_resource type="Script" uid="uid://bsfkcag68mmrt" path="res://Scripts/bottle.gd" id="5_eh4jw"]
 [ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trash Can.png" id="8_yo840"]
+[ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="9_tao1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
 texture = ExtResource("2_jrtxw")
@@ -39,6 +43,17 @@ offset_right = 928.0
 offset_bottom = 478.0
 texture = ExtResource("2_detqq")
 expand_mode = 1
+script = ExtResource("3_yo840")
+
+[node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 450.0
+offset_right = 1078.0
+offset_bottom = 578.0
+texture = ExtResource("4_6h7jm")
+expand_mode = 1
+script = ExtResource("5_eh4jw")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -103,12 +118,14 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("9_tao1a")
 
 [node name="TextureRect" type="TextureRect" parent="TrashBar"]
-layout_mode = 1
-offset_top = 325.0
-offset_right = 128.0
-offset_bottom = 453.0
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 350.0
+offset_right = 1478.0
+offset_bottom = 478.0
 texture = ExtResource("3_pdb2y")
 
 [node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
