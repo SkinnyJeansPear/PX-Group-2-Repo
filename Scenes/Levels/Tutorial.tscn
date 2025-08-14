@@ -1,19 +1,19 @@
 [gd_scene load_steps=14 format=4 uid="uid://cglcu0uv4k7rt"]
 
-[ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_detqq"]
-[ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="1_lje5a"]
-[ext_resource type="Texture2D" uid="uid://dhui614vlb4op" path="res://Assests/Trashbag.png" id="2_detqq"]
-[ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="2_jrtxw"]
-[ext_resource type="Texture2D" uid="uid://bqeiso0gw3hd" path="res://Assests/lamp.png" id="3_jrtxw"]
-[ext_resource type="Texture2D" uid="uid://c6g7jxggoguoa" path="res://Assests/box.png" id="3_pdb2y"]
-[ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_yo840"]
-[ext_resource type="Texture2D" uid="uid://nhwpqa50j0km" path="res://Assests/Alchoholic Glass Bottle.png" id="4_6h7jm"]
-[ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="4_jrtxw"]
-[ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="8_yo840"]
-[ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="9_tao1a"]
+[ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
+[ext_resource type="Texture2D" uid="uid://dhui614vlb4op" path="res://Assests/Trashbag.png" id="2_u3mja"]
+[ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
+[ext_resource type="Texture2D" uid="uid://nhwpqa50j0km" path="res://Assests/Alchoholic Glass Bottle.png" id="4_1odfw"]
+[ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="5_4rdjy"]
+[ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
+[ext_resource type="Texture2D" uid="uid://c6g7jxggoguoa" path="res://Assests/box.png" id="7_fxugg"]
+[ext_resource type="Texture2D" uid="uid://bqeiso0gw3hd" path="res://Assests/lamp.png" id="8_qlkbh"]
+[ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="9_1wrtt"]
+[ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="10_1llwk"]
+[ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
-texture = ExtResource("2_jrtxw")
+texture = ExtResource("6_egla1")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -24,7 +24,7 @@ sources/0 = SubResource("TileSetAtlasSource_pdb2y")
 [node name="Main" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_detqq")
+script = ExtResource("1_356um")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -36,13 +36,13 @@ offset_bottom = 40.0
 
 [node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 350.0
-offset_right = 928.0
-offset_bottom = 478.0
-texture = ExtResource("2_detqq")
+offset_left = 1400.0
+offset_top = 750.0
+offset_right = 1528.0
+offset_bottom = 878.0
+texture = ExtResource("2_u3mja")
 expand_mode = 1
-script = ExtResource("3_yo840")
+script = ExtResource("3_v6tyg")
 
 [node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
@@ -50,21 +50,14 @@ offset_left = 950.0
 offset_top = 450.0
 offset_right = 1078.0
 offset_bottom = 578.0
-texture = ExtResource("4_6h7jm")
+texture = ExtResource("4_1odfw")
 expand_mode = 1
-script = ExtResource("3_yo840")
+script = ExtResource("3_v6tyg")
 
 [node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 2.0
-offset_right = 1308.0
-offset_bottom = 722.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_lje5a")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_4rdjy")
 expand_mode = 1
 
 [node name="Grid" type="TileMapLayer" parent="."]
@@ -81,9 +74,9 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NavBar"]
 layout_mode = 0
-offset_top = 566.0
+offset_top = 900.0
 offset_right = 1280.0
-offset_bottom = 703.0
+offset_bottom = 1037.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NavBar/ScrollContainer"]
 layout_mode = 2
@@ -92,7 +85,7 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_pdb2y")
+texture = ExtResource("7_fxugg")
 expand_mode = 2
 
 [node name="Lamp" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
@@ -108,13 +101,13 @@ offset_right = 31.5
 offset_bottom = 64.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_jrtxw")
+texture = ExtResource("8_qlkbh")
 expand_mode = 1
-script = ExtResource("4_jrtxw")
+script = ExtResource("9_1wrtt")
 
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_pdb2y")
+texture = ExtResource("7_fxugg")
 expand_mode = 2
 
 [node name="TrashCan" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
@@ -130,24 +123,24 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_yo840")
+texture = ExtResource("10_1llwk")
 expand_mode = 1
-script = ExtResource("4_jrtxw")
+script = ExtResource("9_1wrtt")
 
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("9_tao1a")
+script = ExtResource("11_u4w04")
 
 [node name="TextureRect" type="TextureRect" parent="TrashBar"]
 layout_mode = 0
-offset_left = 1350.0
-offset_top = 350.0
-offset_right = 1478.0
-offset_bottom = 478.0
-texture = ExtResource("3_pdb2y")
+offset_left = 1950.0
+offset_top = 500.0
+offset_right = 2078.0
+offset_bottom = 628.0
+texture = ExtResource("7_fxugg")
 
 [node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
 layout_mode = 1
@@ -162,5 +155,5 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_yo840")
+texture = ExtResource("10_1llwk")
 expand_mode = 1
