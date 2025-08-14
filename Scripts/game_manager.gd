@@ -15,4 +15,4 @@ var drag_scales = {
 	"trashcan": Vector2(0.8,0.8)
 }
 
-var used_positions: Array = []
+var placed_objects: Dictionary = {}

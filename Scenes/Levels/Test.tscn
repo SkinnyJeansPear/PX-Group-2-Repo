@@ -36,10 +36,10 @@ offset_bottom = 40.0
 
 [node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 350.0
-offset_right = 928.0
-offset_bottom = 478.0
+offset_left = 1400.0
+offset_top = 750.0
+offset_right = 1528.0
+offset_bottom = 878.0
 texture = ExtResource("2_detqq")
 expand_mode = 1
 script = ExtResource("3_yo840")
@@ -55,15 +55,8 @@ expand_mode = 1
 script = ExtResource("3_yo840")
 
 [node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 2.0
-offset_right = 1308.0
-offset_bottom = 722.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_lje5a")
 expand_mode = 1
 
@@ -81,9 +74,9 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NavBar"]
 layout_mode = 0
-offset_top = 566.0
+offset_top = 945.0
 offset_right = 1280.0
-offset_bottom = 703.0
+offset_bottom = 1082.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NavBar/ScrollContainer"]
 layout_mode = 2
@@ -143,10 +136,10 @@ script = ExtResource("9_tao1a")
 
 [node name="TextureRect" type="TextureRect" parent="TrashBar"]
 layout_mode = 0
-offset_left = 1350.0
-offset_top = 350.0
-offset_right = 1478.0
-offset_bottom = 478.0
+offset_left = 1950.0
+offset_top = 500.0
+offset_right = 2078.0
+offset_bottom = 628.0
 texture = ExtResource("3_pdb2y")
 
 [node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
