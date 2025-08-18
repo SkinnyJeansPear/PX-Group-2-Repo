@@ -104,6 +104,8 @@ grow_vertical = 2
 texture = ExtResource("8_qlkbh")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
+max_count = 2
+object_scale = Vector2(1.5, 1.5)
 
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -126,6 +128,8 @@ grow_vertical = 2
 texture = ExtResource("10_1llwk")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
+max_count = 2
+object_scale = Vector2(0.8, 0.8)
 
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
