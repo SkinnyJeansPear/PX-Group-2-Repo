@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=15 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://dhui614vlb4op" path="res://Assests/Trashbag.png" id="2_u3mja"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="9_1wrtt"]
 [ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="10_1llwk"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
+[ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed_object.ogg" id="12_u3mja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
 texture = ExtResource("6_egla1")
@@ -34,7 +35,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer" groups=["draggable"]]
 layout_mode = 0
 offset_left = 1400.0
 offset_top = 750.0
@@ -44,7 +45,7 @@ texture = ExtResource("2_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
 
-[node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer" groups=["draggable"]]
 layout_mode = 0
 offset_left = 950.0
 offset_top = 450.0
@@ -157,3 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_1llwk")
 expand_mode = 1
+
+[node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
+stream = ExtResource("12_u3mja")
+volume_db = 14.508
