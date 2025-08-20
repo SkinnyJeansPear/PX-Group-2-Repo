@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://lx2y7nuhp4yn"
+path="res://.godot/imported/trashed object sound.ogg-b413226759ebb2015de59ffc12d7235f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/trashed object sound.ogg"
+dest_files=["res://.godot/imported/trashed object sound.ogg-b413226759ebb2015de59ffc12d7235f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

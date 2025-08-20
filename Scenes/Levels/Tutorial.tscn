@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="9_1wrtt"]
 [ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="10_1llwk"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
-[ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed_object.ogg" id="12_u3mja"]
+[ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="12_u3mja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
 texture = ExtResource("6_egla1")
@@ -37,10 +37,10 @@ offset_bottom = 40.0
 
 [node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer" groups=["draggable"]]
 layout_mode = 0
-offset_left = 1400.0
-offset_top = 750.0
-offset_right = 1528.0
-offset_bottom = 878.0
+offset_left = 1350.0
+offset_top = 650.0
+offset_right = 1478.0
+offset_bottom = 778.0
 texture = ExtResource("2_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
@@ -106,6 +106,19 @@ texture = ExtResource("8_qlkbh")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
 
+[node name="counter" type="Label" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("7_fxugg")
@@ -128,6 +141,20 @@ texture = ExtResource("10_1llwk")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
 
+[node name="counter" type="Label" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -23.0
+offset_right = -141.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -138,9 +165,9 @@ script = ExtResource("11_u4w04")
 [node name="TextureRect" type="TextureRect" parent="TrashBar"]
 layout_mode = 0
 offset_left = 1950.0
-offset_top = 500.0
+offset_top = 550.0
 offset_right = 2078.0
-offset_bottom = 628.0
+offset_bottom = 678.0
 texture = ExtResource("7_fxugg")
 
 [node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
@@ -161,4 +188,4 @@ expand_mode = 1
 
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
 stream = ExtResource("12_u3mja")
-volume_db = 14.508
+volume_db = 8.254

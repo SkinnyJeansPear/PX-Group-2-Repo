@@ -23,6 +23,6 @@ func hide_bar():
 	tween = create_tween()
 	tween.tween_property(self, "position", hidden_pos, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	trashed_object.play()
-
+	
 func is_mouse_over_bin() -> bool:
 	return bin.get_global_rect().has_point(get_global_mouse_position())
