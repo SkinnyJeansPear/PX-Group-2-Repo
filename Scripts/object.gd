@@ -39,6 +39,7 @@ func _process(_delta):
 	if dragging and drag_sprite:
 		drag_sprite.global_position = get_global_mouse_position() - offset
 
+
 func slide_nav_bar(hide: bool):
 	var start_pos = nav_bar.position
 	var end_pos: Vector2
@@ -70,26 +71,21 @@ func end_drag():
 	dragging = false
 	if not drag_sprite:
 		return
+
 	var global_pos = get_global_mouse_position()
-	var local_pos = tilemap.to_local(global_pos)
-	var cell = tilemap.local_to_map(local_pos)
-	var cell_key = "%d,%d" % [cell.x, cell.y]
-	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 
 	if is_over_navbar():
-		print("Dropped on NavBar — canceled.")
-		drag_sprite.queue_free()
-	elif game_manager.placed_objects.has(cell_key):
-		print("Cell already occupied at:", cell_key)
 		drag_sprite.queue_free()
 	else:
-		game_manager.placed_objects[cell_key] = drag_sprite
-		drag_sprite.global_position = snap_to_tilemap(global_pos)
+		# Save exact position instead of snapped cell
+		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
+		drag_sprite.global_position = global_pos - offset
 		drag_sprite.scale = object_scale
 		current_count += 1
 		check_availability()
-		print("Object placed at:", cell_key, " — Count:", current_count, "/", max_count)
-
+		# Debug print to track placement
+		print("Placed:", name, "at position:", drag_sprite.global_position)
+		
 	drag_sprite = null
 	slide_nav_bar(false)
 

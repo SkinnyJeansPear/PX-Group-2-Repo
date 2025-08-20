@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://dhui614vlb4op" path="res://Assests/Trashbag.png" id="2_u3mja"]
-[ext_resource type="Script" path="res://Scripts/garbage.gd" id="3_v6tyg"]
+[ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://nhwpqa50j0km" path="res://Assests/Alchoholic Glass Bottle.png" id="4_1odfw"]
 [ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="5_4rdjy"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bqeiso0gw3hd" path="res://Assests/lamp.png" id="8_qlkbh"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="9_1wrtt"]
 [ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="10_1llwk"]
-[ext_resource type="Script" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
+[ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
 texture = ExtResource("6_egla1")
