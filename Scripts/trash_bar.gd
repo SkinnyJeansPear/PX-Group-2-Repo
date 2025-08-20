@@ -22,7 +22,11 @@ func hide_bar():
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(self, "position", hidden_pos, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	trashed_object.play()
+
+#the trash object sound will play only when the
+#the object has moved on top of the bin
+	if is_mouse_over_bin():
+		trashed_object.play()
 	
 func is_mouse_over_bin() -> bool:
 	return bin.get_global_rect().has_point(get_global_mouse_position())

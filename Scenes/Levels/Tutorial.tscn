@@ -35,7 +35,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer" groups=["draggable"]]
+[node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
 offset_left = 1350.0
 offset_top = 650.0
@@ -45,7 +45,7 @@ texture = ExtResource("2_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
 
-[node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer" groups=["draggable"]]
+[node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
 offset_left = 950.0
 offset_top = 450.0
