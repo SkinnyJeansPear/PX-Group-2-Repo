@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhoeeqd2gy4l3"]
 
 [ext_resource type="Script" uid="uid://dupausiwjpajw" path="res://Scripts/main_menu.gd" id="1_armea"]
-[ext_resource type="Texture2D" uid="uid://bgohci3xn8880" path="res://Assests/wp7495795.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://c1nk0bt0l0osg" path="res://Backgrounds/wp7495795.png" id="2_48xlc"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6g7jxggoguoa"
-path="res://.godot/imported/box.png-dc9a67e27330065e20cef4be42de6e14.ctex"
+uid="uid://c1nk0bt0l0osg"
+path="res://.godot/imported/wp7495795.png-1a5468e0d6a63e41ef841ea749fdece6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/box.png"
-dest_files=["res://.godot/imported/box.png-dc9a67e27330065e20cef4be42de6e14.ctex"]
+source_file="res://Backgrounds/wp7495795.png"
+dest_files=["res://.godot/imported/wp7495795.png-1a5468e0d6a63e41ef841ea749fdece6.ctex"]
 
 [params]
 

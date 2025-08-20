@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
-[ext_resource type="Texture2D" uid="uid://dhui614vlb4op" path="res://Assests/Trashbag.png" id="2_u3mja"]
+[ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
+[ext_resource type="Texture2D" uid="uid://c7kr53yt2vjvf" path="res://Backgrounds/Suburban Park.png" id="3_mviin"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
-[ext_resource type="Texture2D" uid="uid://nhwpqa50j0km" path="res://Assests/Alchoholic Glass Bottle.png" id="4_1odfw"]
-[ext_resource type="Texture2D" uid="uid://4v8u3mu4rcxg" path="res://Assests/Backdrop1.png" id="5_4rdjy"]
+[ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_u3mja"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
-[ext_resource type="Texture2D" uid="uid://c6g7jxggoguoa" path="res://Assests/box.png" id="7_fxugg"]
-[ext_resource type="Texture2D" uid="uid://bqeiso0gw3hd" path="res://Assests/lamp.png" id="8_qlkbh"]
+[ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="7_u3mja"]
+[ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="7_v6tyg"]
+[ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="9_1odfw"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="9_1wrtt"]
-[ext_resource type="Texture2D" uid="uid://cn8ok36mjpaaa" path="res://Assests/Trashcan.png" id="10_1llwk"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
 [ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="12_u3mja"]
 
@@ -41,7 +41,7 @@ offset_left = 1350.0
 offset_top = 650.0
 offset_right = 1478.0
 offset_bottom = 778.0
-texture = ExtResource("2_u3mja")
+texture = ExtResource("2_356um")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
 
@@ -51,14 +51,14 @@ offset_left = 950.0
 offset_top = 450.0
 offset_right = 1078.0
 offset_bottom = 578.0
-texture = ExtResource("4_1odfw")
+texture = ExtResource("4_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("5_4rdjy")
+texture = ExtResource("3_mviin")
 expand_mode = 1
 
 [node name="Grid" type="TileMapLayer" parent="."]
@@ -86,7 +86,7 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("7_fxugg")
+texture = ExtResource("7_u3mja")
 expand_mode = 2
 
 [node name="Lamp" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
@@ -96,47 +96,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -63.5
-offset_right = 31.5
-offset_bottom = 64.5
+offset_left = -50.0
+offset_top = -64.0
+offset_right = 50.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_qlkbh")
+texture = ExtResource("7_v6tyg")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 2
 object_scale = Vector2(1.5, 1.5)
 
-[node name="counter" type="Label" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-
-[node name="counter" type="Label" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("7_fxugg")
+texture = ExtResource("7_u3mja")
 expand_mode = 2
 
 [node name="TrashCan" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
@@ -152,39 +126,11 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_1llwk")
+texture = ExtResource("9_1odfw")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 2
 object_scale = Vector2(0.8, 0.8)
-
-[node name="counter" type="Label" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -23.0
-offset_right = -141.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-
-[node name="counter" type="Label" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -23.0
-offset_right = -141.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
@@ -199,7 +145,7 @@ offset_left = 1950.0
 offset_top = 550.0
 offset_right = 2078.0
 offset_bottom = 678.0
-texture = ExtResource("7_fxugg")
+texture = ExtResource("7_u3mja")
 
 [node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
 layout_mode = 1
@@ -214,7 +160,7 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_1llwk")
+texture = ExtResource("9_1odfw")
 expand_mode = 1
 
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
