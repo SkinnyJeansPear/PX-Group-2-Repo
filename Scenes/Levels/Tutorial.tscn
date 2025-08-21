@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=18 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
 [ext_resource type="Texture2D" uid="uid://c7kr53yt2vjvf" path="res://Backgrounds/Suburban Park.png" id="3_mviin"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_u3mja"]
+[ext_resource type="Script" uid="uid://lnhkypl3jwwn" path="res://Scenes/Levels/submit_button.gd" id="5_4rdjy"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
 [ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="7_u3mja"]
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="7_v6tyg"]
@@ -56,6 +57,12 @@ offset_bottom = 578.0
 texture = ExtResource("4_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
+
+[node name="SubmitButton" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Submit"
+script = ExtResource("5_4rdjy")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
