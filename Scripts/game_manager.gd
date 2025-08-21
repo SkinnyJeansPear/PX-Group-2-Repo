@@ -6,3 +6,7 @@ var drag_scales = {
 }
 
 var placed_objects: Dictionary = {}
+
+var fence_line_start: Vector2 = Vector2(0, 360)
+var fence_line_end: Vector2 = Vector2(1800, 360)
+var fence_segment_spacing: int = 128
