@@ -107,7 +107,7 @@ grow_vertical = 2
 texture = ExtResource("7_v6tyg")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
-max_count = 2
+max_count = 1
 object_scale = Vector2(1.5, 1.5)
 
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
@@ -131,7 +131,7 @@ grow_vertical = 2
 texture = ExtResource("9_1odfw")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
-max_count = 2
+max_count = 1
 object_scale = Vector2(0.8, 0.8)
 
 [node name="TextureRect3" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
