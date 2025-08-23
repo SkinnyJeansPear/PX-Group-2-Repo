@@ -11,6 +11,9 @@ var nav_bar_tween = null
 @export var max_count: int = 3
 var current_count: int = 0
 
+# the object placed sound
+@onready var object_placed: AudioStreamPlayer = $object_placed
+@onready var object_placed_sound: AudioStreamPlayer = get_tree().get_root().get_node("Main/NavBar/object_placed")
 
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 
@@ -67,6 +70,8 @@ func start_drag():
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
+#####################
+
 func end_drag():
 	dragging = false
 	if not drag_sprite:
@@ -77,17 +82,23 @@ func end_drag():
 	if is_over_navbar():
 		drag_sprite.queue_free()
 	else:
-		# Save exact position instead of snapped cell
+		# save exact position instead of snapped cell
 		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
 		drag_sprite.global_position = global_pos - offset
 		drag_sprite.scale = object_scale
 		current_count += 1
 		check_availability()
-		# Debug print to track placement
+		
+		# play shared object_placed sound
+		object_placed_sound.play()
+		
+		# debug print to track placement
 		print("Placed:", name, "at position:", drag_sprite.global_position)
 		
 	drag_sprite = null
 	slide_nav_bar(false)
+	
+###############
 
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())

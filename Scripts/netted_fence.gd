@@ -10,18 +10,24 @@ var nav_bar_tween = null
 
 @export var max_count: int = 3
 var current_count: int = 0
-
-
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 
+# references
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
 
+# fixed nav bar positions
+var NAVBAR_SHOWN_POS = Vector2(0, 0)
+var NAVBAR_HIDDEN_POS: Vector2  # will initialize in _ready()
+
+
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
+	NAVBAR_HIDDEN_POS = Vector2(0, nav_bar.size.y + 120)  # set hidden position based on size
 	check_availability()
+
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -30,10 +36,12 @@ func _gui_input(event):
 		else:
 			print("No more of this item available!")
 
+
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		if dragging:
 			end_drag()
+
 
 func _process(_delta):
 	if dragging and drag_sprite:
@@ -41,25 +49,24 @@ func _process(_delta):
 
 
 func slide_nav_bar(hide: bool):
-	var start_pos = nav_bar.position
-	var end_pos: Vector2
-	if hide:
-		end_pos = start_pos + Vector2(0, nav_bar.size.y + 120)
-	else:
-		end_pos = Vector2(start_pos.x, 0)
 	if nav_bar_tween and nav_bar_tween.is_running():
 		nav_bar_tween.kill()
 	nav_bar_tween = create_tween()
-	nav_bar_tween.tween_property(nav_bar, "position", end_pos, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	nav_bar.mouse_filter = MOUSE_FILTER_IGNORE if hide else MOUSE_FILTER_STOP
+	
+	if hide:
+		nav_bar_tween.tween_property(nav_bar, "position", NAVBAR_HIDDEN_POS, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		nav_bar.mouse_filter = MOUSE_FILTER_IGNORE
+	else:
+		nav_bar_tween.tween_property(nav_bar, "position", NAVBAR_SHOWN_POS, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		nav_bar.mouse_filter = MOUSE_FILTER_STOP
+
 
 func start_drag():
 	dragging = true
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
 	drag_layer.add_child(drag_sprite)
-	var sprite_size = drag_sprite.get_size()
-	offset = sprite_size / 2
+	offset = drag_sprite.get_size() / 2
 	drag_sprite.global_position = get_global_mouse_position() - offset
 	drag_sprite.z_index = 1000
 	drag_sprite.scale = object_scale
@@ -67,22 +74,28 @@ func start_drag():
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
+
 func end_drag():
 	dragging = false
 	if not drag_sprite:
+		slide_nav_bar(false)  # ensure nav bar slides back even if drag_sprite is null
 		return
-	print("End drag at: ", get_global_mouse_position())
+
 	var global_pos = get_global_mouse_position()
+	var object_placed_sound = get_tree().get_root().get_node("Main/NavBar/object_placed")
+
 	if is_near_fence_line(global_pos):
 		place_fence_line()
 		current_count += 1
 		check_availability()
-		drag_sprite.queue_free()
-	else:
-		drag_sprite.queue_free()
+		object_placed_sound.play()  # play sound when fence placed
 
+	drag_sprite.queue_free()
 	drag_sprite = null
+
+	# slide nav bar back down
 	slide_nav_bar(false)
+
 
 func place_fence_line():
 	var start = game_manager.fence_line_start
@@ -112,6 +125,7 @@ func is_near_fence_line(pos: Vector2) -> bool:
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())
 
+
 func snap_to_tilemap(global_pos: Vector2) -> Vector2:
 	var local_pos = tilemap.to_local(global_pos)
 	var cell = tilemap.local_to_map(local_pos)
@@ -120,6 +134,7 @@ func snap_to_tilemap(global_pos: Vector2) -> Vector2:
 	snapped_pos += Vector2(TILE_SIZE, TILE_SIZE) / 2
 	snapped_pos -= Vector2(SPRITE_SIZE, SPRITE_SIZE) / 2
 	return snapped_pos
+
 
 func check_availability():
 	if current_count >= max_count:

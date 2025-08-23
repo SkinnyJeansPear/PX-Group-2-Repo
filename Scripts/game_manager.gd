@@ -1,5 +1,14 @@
 extends Node
 
+@onready var ambient_music: AudioStreamPlayer = $ambient_music
+
+func _ready():
+	ambient_music.play()
+
+func _process(_delta):
+	if not ambient_music.playing:
+		ambient_music.play()
+
 var drag_scales = {
 	"lamp": Vector2(1.5, 1.5),
 	"trashcan": Vector2(0.8,0.8)
