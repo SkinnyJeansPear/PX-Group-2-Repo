@@ -56,13 +56,8 @@ func evaluate_score() -> int:
 	return total_score
 
 func show_score():
-	var popup = Popup.new()
-	add_child(popup)
-	popup.popup_centered()
-	popup.set_size(Vector2(300, 150))
-
-	var label = Label.new()
-	label.text = "Your Score: %d" % score
-	label.set_position(Vector2(50, 50))
-	label.set_scale(Vector2(2, 2))
-	popup.add_child(label)
+	var popup = get_tree().get_root().get_node("Main/CanvasLayer/ScorePopup")
+	if popup:
+		popup.show_score(score)
+	else:
+		print("ScorePopup not found!")
