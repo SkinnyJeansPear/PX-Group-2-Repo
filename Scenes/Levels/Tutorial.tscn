@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=18 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="11_v6tyg"]
 [ext_resource type="Script" uid="uid://dmypf7h7b006x" path="res://Scripts/netted_fence.gd" id="12_1odfw"]
 [ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="12_u3mja"]
+[ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://pause_menu.tscn" id="15_4rdjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdb2y"]
 texture = ExtResource("6_egla1")
@@ -191,3 +192,7 @@ expand_mode = 1
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
 stream = ExtResource("12_u3mja")
 volume_db = 8.254
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("15_4rdjy")]
