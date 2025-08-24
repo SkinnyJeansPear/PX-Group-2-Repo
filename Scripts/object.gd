@@ -22,6 +22,15 @@ var current_count: int = 0
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
 
+# -------------------------------
+# Hover info variables
+@export var object_info: String = "Default info about this object"
+
+@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
+@onready var info_label: Label = info_box.get_node("Panel/Label")
+
+# -------------------------------
+
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	check_availability()
@@ -118,3 +127,15 @@ func check_availability():
 	else:
 		modulate = Color(1, 1, 1, 1)
 		mouse_filter = MOUSE_FILTER_PASS
+
+#####################
+# Hover functions for info box
+func _on_mouse_entered():
+	info_label.text = object_info
+	info_box.visible = true
+	
+	#this one hovers over the nav bar neatly
+	info_box.global_position = Vector2(5, 790)
+
+func _on_mouse_exited():
+	info_box.visible = false

@@ -116,7 +116,7 @@ anchor_bottom = 0.5
 offset_left = -50.0
 offset_top = -64.0
 offset_right = 50.0
-offset_bottom = 64.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_v6tyg")
@@ -124,6 +124,7 @@ expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
+object_info = "This is a lamp. It gives light."
 
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -148,6 +149,7 @@ expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
+object_info = "This is a trash can. You can throw things away in here. Text Text TExt"
 
 [node name="TextureRect3" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -175,17 +177,6 @@ max_count = 1
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBar"]
 stream = ExtResource("10_fxugg")
 volume_db = 24.0
-
-[node name="InfoBox" type="Control" parent="NavBar"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Info" type="Label" parent="NavBar/InfoBox"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
@@ -229,3 +220,23 @@ volume_db = 24.0
 [node name="menu_click" type="AudioStreamPlayer" parent="CanvasLayer2/PauseMenu"]
 stream = ExtResource("16_egla1")
 volume_db = 24.0
+
+[node name="InfoBox" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 1
+
+[node name="Panel" type="Panel" parent="InfoBox"]
+custom_minimum_size = Vector2(550, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="InfoBox/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 25

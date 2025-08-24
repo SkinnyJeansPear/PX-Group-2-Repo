@@ -12,6 +12,11 @@ var nav_bar_tween = null
 var current_count: int = 0
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 
+# Hover info
+@export var object_info: String = "This is a netted fence."
+@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
+@onready var info_label: Label = info_box.get_node("Panel/Label")
+
 # references
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
@@ -22,12 +27,14 @@ var current_count: int = 0
 var NAVBAR_SHOWN_POS = Vector2(0, 0)
 var NAVBAR_HIDDEN_POS: Vector2  # will initialize in _ready()
 
-
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	NAVBAR_HIDDEN_POS = Vector2(0, nav_bar.size.y + 120)  # set hidden position based on size
 	check_availability()
 
+	# Hover signals for info box
+	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
+	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -36,17 +43,14 @@ func _gui_input(event):
 		else:
 			print("No more of this item available!")
 
-
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		if dragging:
 			end_drag()
 
-
 func _process(_delta):
 	if dragging and drag_sprite:
 		drag_sprite.global_position = get_global_mouse_position() - offset
-
 
 func slide_nav_bar(hide: bool):
 	if nav_bar_tween and nav_bar_tween.is_running():
@@ -60,7 +64,6 @@ func slide_nav_bar(hide: bool):
 		nav_bar_tween.tween_property(nav_bar, "position", NAVBAR_SHOWN_POS, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		nav_bar.mouse_filter = MOUSE_FILTER_STOP
 
-
 func start_drag():
 	dragging = true
 	drag_sprite = duplicate()
@@ -73,7 +76,6 @@ func start_drag():
 
 	await get_tree().process_frame
 	slide_nav_bar(true)
-
 
 func end_drag():
 	dragging = false
@@ -96,7 +98,6 @@ func end_drag():
 	# slide nav bar back down
 	slide_nav_bar(false)
 
-
 func place_fence_line():
 	var start = game_manager.fence_line_start
 	var end = game_manager.fence_line_end
@@ -111,7 +112,6 @@ func place_fence_line():
 		fence_piece.global_position = start + direction * spacing * i
 		get_tree().current_scene.add_child(fence_piece)
 
-
 func is_near_fence_line(pos: Vector2) -> bool:
 	var start = game_manager.fence_line_start
 	var end = game_manager.fence_line_end
@@ -121,10 +121,8 @@ func is_near_fence_line(pos: Vector2) -> bool:
 	var projection = start + t * line_vec
 	return pos.distance_to(projection) < 150
 
-
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())
-
 
 func snap_to_tilemap(global_pos: Vector2) -> Vector2:
 	var local_pos = tilemap.to_local(global_pos)
@@ -135,7 +133,6 @@ func snap_to_tilemap(global_pos: Vector2) -> Vector2:
 	snapped_pos -= Vector2(SPRITE_SIZE, SPRITE_SIZE) / 2
 	return snapped_pos
 
-
 func check_availability():
 	if current_count >= max_count:
 		modulate = Color(1, 1, 1, 0.4)
@@ -143,3 +140,14 @@ func check_availability():
 	else:
 		modulate = Color(1, 1, 1, 1)
 		mouse_filter = MOUSE_FILTER_PASS
+
+# ----------------------
+# Hover functions for info box
+func _on_mouse_entered():
+	info_label.text = object_info
+	info_box.visible = true
+	# position box a bit above nav bar
+	info_box.global_position = Vector2(5, 790)
+
+func _on_mouse_exited():
+	info_box.visible = false
