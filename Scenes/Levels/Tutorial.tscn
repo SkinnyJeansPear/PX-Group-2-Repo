@@ -176,6 +176,17 @@ max_count = 1
 stream = ExtResource("10_fxugg")
 volume_db = 24.0
 
+[node name="InfoBox" type="Control" parent="NavBar"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Info" type="Label" parent="NavBar/InfoBox"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0

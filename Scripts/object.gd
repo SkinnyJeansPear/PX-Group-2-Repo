@@ -26,6 +26,10 @@ func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	check_availability()
 
+	# Connect hover signals for info box
+	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
+	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
+
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if current_count < max_count:
@@ -41,7 +45,6 @@ func _input(event):
 func _process(_delta):
 	if dragging and drag_sprite:
 		drag_sprite.global_position = get_global_mouse_position() - offset
-
 
 func slide_nav_bar(hide: bool):
 	var start_pos = nav_bar.position
@@ -82,22 +85,18 @@ func end_drag():
 	if is_over_navbar():
 		drag_sprite.queue_free()
 	else:
-		# save exact position instead of snapped cell
 		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
 		drag_sprite.global_position = global_pos - offset
 		drag_sprite.scale = object_scale
 		current_count += 1
 		check_availability()
 		
-		# play shared object_placed sound
 		object_placed_sound.play()
-		
-		# debug print to track placement
 		print("Placed:", name, "at position:", drag_sprite.global_position)
 		
 	drag_sprite = null
 	slide_nav_bar(false)
-	
+
 ###############
 
 func is_over_navbar() -> bool:
