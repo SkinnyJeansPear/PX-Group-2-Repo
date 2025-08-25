@@ -13,15 +13,22 @@ var current_count: int = 0
 
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 @export var is_safe: bool = true  # <--- Added: define object safety for scoring
-
+@onready var object_placed_sound: AudioStreamPlayer = get_tree().get_root().get_node("Main/NavBar/object_placed")
+@export var object_scale: Vector2 = Vector2(1.0, 1.0)
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
+@export var object_info: String = "Default info about this object"
+@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
+@onready var info_label: Label = info_box.get_node("Panel/Label")
 
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	check_availability()
+
+	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
+	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -57,11 +64,11 @@ func start_drag():
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
 	drag_layer.add_child(drag_sprite)
-	var sprite_size = drag_sprite.get_size()
+	drag_sprite.scale = object_scale
+	var sprite_size = drag_sprite.get_size() * drag_sprite.scale
 	offset = sprite_size / 2
 	drag_sprite.global_position = get_global_mouse_position() - offset
 	drag_sprite.z_index = 1000
-	drag_sprite.scale = object_scale
 
 	# Store safety type in metadata for scoring
 	drag_sprite.set_meta("is_safe", is_safe)
@@ -84,12 +91,13 @@ func end_drag():
 	if is_over_navbar():
 		drag_sprite.queue_free()
 	else:
-		# Save exact position instead of snapped cell
 		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
 		drag_sprite.global_position = global_pos - offset
 		drag_sprite.scale = object_scale
 		current_count += 1
 		check_availability()
+		object_placed_sound.play()
+
 		print("Placed:", name, "at position:", drag_sprite.global_position)
 		
 	drag_sprite = null
@@ -114,3 +122,11 @@ func check_availability():
 	else:
 		modulate = Color(1, 1, 1, 1)
 		mouse_filter = MOUSE_FILTER_PASS
+
+func _on_mouse_entered():
+	info_label.text = object_info
+	info_box.visible = true
+	info_box.global_position = Vector2(5, 790)
+
+func _on_mouse_exited():
+	info_box.visible = false
