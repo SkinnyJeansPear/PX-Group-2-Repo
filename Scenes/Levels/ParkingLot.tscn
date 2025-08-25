@@ -1,12 +1,16 @@
-[gd_scene load_steps=22 format=4 uid="uid://ch8dbdquxn1cn"]
+[gd_scene load_steps=26 format=4 uid="uid://ch8dbdquxn1cn"]
 
 [ext_resource type="Texture2D" uid="uid://co8e7ws2agics" path="res://Backgrounds/Parking Lot.png" id="1_bca8f"]
 [ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="2_dy6tc"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_gfr0c"]
+[ext_resource type="Texture2D" uid="uid://cpq588ls8gpwa" path="res://Object Design/Derelict Car.png" id="2_sx2q3"]
 [ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="3_o1vp4"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_q5p5k"]
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_had30"]
+[ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="5_43lji"]
+[ext_resource type="Texture2D" uid="uid://csf6j0slmnya3" path="res://Object Design/Graffiti 2.png" id="6_svhu8"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="7_t8hca"]
+[ext_resource type="Texture2D" uid="uid://cl1eesneubyge" path="res://Object Design/Broken Glass Bottle.png" id="7_uaog8"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="8_r5rfl"]
 [ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="9_utw1y"]
 [ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="10_sx2q3"]
@@ -57,23 +61,63 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Garbage" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="DeroCar" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 1350.0
-offset_top = 650.0
-offset_right = 1478.0
-offset_bottom = 778.0
-texture = ExtResource("2_gfr0c")
+offset_left = 1550.0
+offset_top = 750.0
+offset_right = 1884.0
+offset_bottom = 1009.0
+texture = ExtResource("2_sx2q3")
 expand_mode = 1
 script = ExtResource("3_q5p5k")
 
 [node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 950.0
+offset_left = 1250.0
 offset_top = 450.0
-offset_right = 1078.0
+offset_right = 1378.0
 offset_bottom = 578.0
 texture = ExtResource("4_had30")
+expand_mode = 1
+script = ExtResource("3_q5p5k")
+
+[node name="Graffiti" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 351.0
+offset_right = 279.0
+offset_bottom = 494.0
+texture = ExtResource("5_43lji")
+expand_mode = 1
+script = ExtResource("3_q5p5k")
+
+[node name="Graffiti2" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 1450.0
+offset_top = 350.0
+offset_right = 1615.0
+offset_bottom = 458.0
+texture = ExtResource("6_svhu8")
+expand_mode = 1
+script = ExtResource("3_q5p5k")
+
+[node name="BrokenBottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 650.0
+offset_right = 915.0
+offset_bottom = 758.0
+texture = ExtResource("7_uaog8")
+expand_mode = 1
+script = ExtResource("3_q5p5k")
+
+[node name="TrashBag" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 665.0
+offset_right = 346.0
+offset_bottom = 770.0
+texture = ExtResource("2_gfr0c")
 expand_mode = 1
 script = ExtResource("3_q5p5k")
 
