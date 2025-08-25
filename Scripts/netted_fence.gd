@@ -12,24 +12,21 @@ var nav_bar_tween = null
 var current_count: int = 0
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 
-# Hover info
 @export var object_info: String = "This is a netted fence."
 @onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
 @onready var info_label: Label = info_box.get_node("Panel/Label")
-
-# references
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
 
-# fixed nav bar positions
+
 var NAVBAR_SHOWN_POS = Vector2(0, 0)
-var NAVBAR_HIDDEN_POS: Vector2  # will initialize in _ready()
+var NAVBAR_HIDDEN_POS: Vector2
 
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
-	NAVBAR_HIDDEN_POS = Vector2(0, nav_bar.size.y + 120)  # set hidden position based on size
+	NAVBAR_HIDDEN_POS = Vector2(0, nav_bar.size.y + 120)  
 	check_availability()
 
 	# Hover signals for info box
@@ -80,7 +77,7 @@ func start_drag():
 func end_drag():
 	dragging = false
 	if not drag_sprite:
-		slide_nav_bar(false)  # ensure nav bar slides back even if drag_sprite is null
+		slide_nav_bar(false)
 		return
 
 	var global_pos = get_global_mouse_position()
@@ -90,12 +87,10 @@ func end_drag():
 		place_fence_line()
 		current_count += 1
 		check_availability()
-		object_placed_sound.play()  # play sound when fence placed
+		object_placed_sound.play()
 
 	drag_sprite.queue_free()
 	drag_sprite = null
-
-	# slide nav bar back down
 	slide_nav_bar(false)
 
 func place_fence_line():
@@ -141,12 +136,9 @@ func check_availability():
 		modulate = Color(1, 1, 1, 1)
 		mouse_filter = MOUSE_FILTER_PASS
 
-# ----------------------
-# Hover functions for info box
 func _on_mouse_entered():
 	info_label.text = object_info
 	info_box.visible = true
-	# position box a bit above nav bar
 	info_box.global_position = Vector2(5, 790)
 
 func _on_mouse_exited():
