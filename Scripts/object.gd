@@ -11,6 +11,7 @@ var nav_bar_tween = null
 @export var max_count: int = 3
 var current_count: int = 0
 
+# the object placed sound
 @onready var object_placed: AudioStreamPlayer = $object_placed
 @onready var object_placed_sound: AudioStreamPlayer = get_tree().get_root().get_node("Main/NavBar/object_placed")
 
@@ -21,17 +22,20 @@ var current_count: int = 0
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
 
-
+# -------------------------------
 # Hover info variables
 @export var object_info: String = "Default info about this object"
 
 @onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
 @onready var info_label: Label = info_box.get_node("Panel/Label")
 
+# -------------------------------
+
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	check_availability()
 
+	# Connect hover signals for info box
 	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
 	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
 
@@ -69,15 +73,16 @@ func start_drag():
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
 	drag_layer.add_child(drag_sprite)
-	drag_sprite.scale = object_scale
-	var sprite_size = drag_sprite.get_size() * drag_sprite.scale
+	var sprite_size = drag_sprite.get_size()
 	offset = sprite_size / 2
 	drag_sprite.global_position = get_global_mouse_position() - offset
 	drag_sprite.z_index = 1000
+	drag_sprite.scale = object_scale
 
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
+#####################
 
 func end_drag():
 	dragging = false
@@ -101,6 +106,8 @@ func end_drag():
 	drag_sprite = null
 	slide_nav_bar(false)
 
+###############
+
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())
 
@@ -121,9 +128,13 @@ func check_availability():
 		modulate = Color(1, 1, 1, 1)
 		mouse_filter = MOUSE_FILTER_PASS
 
+#####################
+# Hover functions for info box
 func _on_mouse_entered():
 	info_label.text = object_info
 	info_box.visible = true
+	
+	#this one hovers over the nav bar neatly
 	info_box.global_position = Vector2(5, 790)
 
 func _on_mouse_exited():

@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -475.0
-offset_top = -290.0
-offset_right = 475.0
-offset_bottom = 290.0
+offset_left = -375.0
+offset_top = -250.0
+offset_right = 375.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.654902, 0.654902, 0.654902, 0.745098)
@@ -58,8 +58,8 @@ text = "Tutorial"
 
 [node name="Level Select" type="Button" parent="ColorRect/ColorRect/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Level Select
 "
 
 [connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/Tutorial" to="." method="_on_start_tutorial_pressed"]
-[connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
