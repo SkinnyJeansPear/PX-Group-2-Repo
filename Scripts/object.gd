@@ -11,20 +11,13 @@ var nav_bar_tween = null
 @export var max_count: int = 3
 var current_count: int = 0
 
-@onready var object_placed: AudioStreamPlayer = $object_placed
 @onready var object_placed_sound: AudioStreamPlayer = get_tree().get_root().get_node("Main/NavBar/object_placed")
-
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
-
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
-
-
-# Hover info variables
 @export var object_info: String = "Default info about this object"
-
 @onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
 @onready var info_label: Label = info_box.get_node("Panel/Label")
 
