@@ -11,8 +11,6 @@ var nav_bar_tween = null
 @export var max_count: int = 3
 var current_count: int = 0
 
-@export var object_scale: Vector2 = Vector2(1.0, 1.0)
-@export var is_safe: bool = true  # <--- Added: define object safety for scoring
 @onready var object_placed_sound: AudioStreamPlayer = get_tree().get_root().get_node("Main/NavBar/object_placed")
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 @onready var game_manager: Node = $"../../../../../GameManager"
@@ -70,18 +68,10 @@ func start_drag():
 	drag_sprite.global_position = get_global_mouse_position() - offset
 	drag_sprite.z_index = 1000
 
-	# Store safety type in metadata for scoring
-	drag_sprite.set_meta("is_safe", is_safe)
-	drag_sprite.set_meta("origin_object", self)  # Track source object if needed
-
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
 func end_drag():
-	var submit_btn = get_tree().get_root().get_node("Main/CanvasLayer/SubmitButton")
-	if submit_btn and not submit_btn.visible:
-		submit_btn.visible = true
-
 	dragging = false
 	if not drag_sprite:
 		return
@@ -96,8 +86,8 @@ func end_drag():
 		drag_sprite.scale = object_scale
 		current_count += 1
 		check_availability()
+		
 		object_placed_sound.play()
-
 		print("Placed:", name, "at position:", drag_sprite.global_position)
 		
 	drag_sprite = null
