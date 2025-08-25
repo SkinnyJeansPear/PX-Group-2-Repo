@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=24 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="11_v6tyg"]
 [ext_resource type="Script" uid="uid://dmypf7h7b006x" path="res://Scripts/netted_fence.gd" id="12_1odfw"]
 [ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="12_u3mja"]
+[ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="13_qlkbh"]
 [ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://pause_menu.tscn" id="15_4rdjy"]
 [ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="16_egla1"]
 
@@ -132,7 +133,7 @@ expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
-object_info = " This is a lamp. It gives light. Text Text Text Text Text Text  Text Text Text Text Text Text "
+object_info = " This is a lamp. It gives light."
 
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -156,8 +157,32 @@ texture = ExtResource("9_1odfw")
 expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 1
-object_scale = Vector2(0.8, 0.8)
-object_info = " This is a trash can. You can throw things away in here. Text Text Text Text Text Text "
+object_info = " This is a trash can. This is a trash can. This is a trash can.  This is a trash can."
+
+[node name="TextureRect4" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="Fountain" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_qlkbh")
+expand_mode = 1
+script = ExtResource("9_1wrtt")
+max_count = 1
+object_scale = Vector2(3.5, 3.5)
+object_info = " A fountain"
 
 [node name="TextureRect3" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
