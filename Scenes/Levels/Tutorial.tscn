@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=23 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
@@ -34,6 +34,14 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_iwbsa"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_fxugg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxugg"]
+bg_color = Color(0.109517, 0.0286165, 0.392351, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.662745, 0.00784314, 0.168627, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -234,6 +242,7 @@ custom_minimum_size = Vector2(550, 100)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fxugg")
 
 [node name="Label" type="Label" parent="InfoBox/Panel"]
 layout_mode = 0
