@@ -108,7 +108,7 @@ func place_fence_line():
 	var segment_count = int(total_length / spacing)
 
 	for i in range(segment_count + 1):
-		var fence_piece = preload("res://netted_fence.tscn").instantiate()
+		var fence_piece = preload("res://Scenes/netted_fence.tscn").instantiate()
 		fence_piece.global_position = start + direction * spacing * i
 		get_tree().current_scene.add_child(fence_piece)
 
