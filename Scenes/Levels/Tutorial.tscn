@@ -1,11 +1,15 @@
+
 [gd_scene load_steps=22 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
+[ext_resource type="Script" uid="uid://d4nnbih65d7gn" path="res://Scripts/Main.gd" id="1_fxugg"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
 [ext_resource type="Texture2D" uid="uid://c7kr53yt2vjvf" path="res://Backgrounds/Suburban Park.png" id="3_mviin"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_u3mja"]
+[ext_resource type="Script" uid="uid://lnhkypl3jwwn" path="res://Scenes/Levels/submit_button.gd" id="5_4rdjy"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
+[ext_resource type="PackedScene" uid="uid://det5mauq1aki7" path="res://Scenes/ScorePopup.tscn" id="6_fxugg"]
 [ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="7_u3mja"]
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="7_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="9_1odfw"]
@@ -36,6 +40,7 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_fxugg")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_fxugg")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_356um")
@@ -71,6 +76,14 @@ offset_bottom = 578.0
 texture = ExtResource("4_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
+
+[node name="SubmitButton" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Submit"
+script = ExtResource("5_4rdjy")
+
+[node name="ScorePopup" parent="CanvasLayer" instance=ExtResource("6_fxugg")]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
@@ -211,6 +224,11 @@ expand_mode = 1
 
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
 stream = ExtResource("12_u3mja")
+
+volume_db = 8.254
+
+[connection signal="pressed" from="CanvasLayer/SubmitButton" to="." method="_on_submit_button_pressed"]
+
 volume_db = 24.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -240,3 +258,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 25
+
