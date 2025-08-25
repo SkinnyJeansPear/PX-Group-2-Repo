@@ -69,14 +69,15 @@ func start_drag():
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
 	drag_layer.add_child(drag_sprite)
-	var sprite_size = drag_sprite.get_size()
+	drag_sprite.scale = object_scale
+	var sprite_size = drag_sprite.get_size() * drag_sprite.scale
 	offset = sprite_size / 2
 	drag_sprite.global_position = get_global_mouse_position() - offset
 	drag_sprite.z_index = 1000
-	drag_sprite.scale = object_scale
 
 	await get_tree().process_frame
 	slide_nav_bar(true)
+
 
 func end_drag():
 	dragging = false
