@@ -8,20 +8,7 @@ func _ready():
 func _process(_delta):
 	if not ambient_music.playing:
 		ambient_music.play()
-
-<<<<<<< HEAD
-var drag_scales = {
-	"lamp": Vector2(1.5, 1.5),
-<<<<<<< HEAD
-	"trashcan": Vector2(0.8,0.8),
-	"fountain": Vector2(1.5,1.5)
-=======
-	"trashcan": Vector2(0.8,0.8)
->>>>>>> parent of 9a0d088 (Fixed mouse with scaling issue)
-}
-
-=======
->>>>>>> parent of d9dbf04 (Revert "Merge branch 'main' into Jana-Branch")
+	
 var placed_objects: Dictionary = {}
 
 var fence_line_start: Vector2 = Vector2(0, 360)

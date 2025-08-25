@@ -78,14 +78,6 @@ func start_drag():
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#####################
-=======
->>>>>>> parent of d9dbf04 (Revert "Merge branch 'main' into Jana-Branch")
-
-=======
->>>>>>> parent of 9a0d088 (Fixed mouse with scaling issue)
 func end_drag():
 	dragging = false
 	if not drag_sprite:
