@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="14_43lji"]
 [ext_resource type="Script" uid="uid://dmypf7h7b006x" path="res://Scripts/netted_fence.gd" id="15_svhu8"]
 [ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="16_uaog8"]
-[ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="17_sx2q3"]
+[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scenes/Levels/pl_game_manager.gd" id="21_3p8oo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svhu8"]
 texture = ExtResource("7_t8hca")
@@ -101,10 +101,10 @@ script = ExtResource("3_q5p5k")
 
 [node name="Graffiti2" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 1450.0
-offset_top = 350.0
-offset_right = 1615.0
-offset_bottom = 458.0
+offset_left = 1250.0
+offset_top = 750.0
+offset_right = 1518.0
+offset_bottom = 915.0
 texture = ExtResource("6_svhu8")
 expand_mode = 1
 script = ExtResource("3_q5p5k")
@@ -295,7 +295,7 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 25
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("17_sx2q3")
+script = ExtResource("21_3p8oo")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = SubResource("AudioStreamOggVorbis_43lji")
