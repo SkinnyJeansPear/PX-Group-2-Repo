@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0chc8svja7jo"]
+[gd_scene load_steps=8 format=3 uid="uid://c0chc8svja7jo"]
 
 [ext_resource type="Shader" uid="uid://m0y5yaf5nnra" path="res://pause_menu.gdshader" id="1_hdmo1"]
 [ext_resource type="Script" uid="uid://c3a6jbuj2gku6" path="res://Scripts/pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="3_1och7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wyi4u"]
 shader = ExtResource("1_hdmo1")
@@ -110,14 +111,20 @@ theme_override_constants/separation = 20
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1och7")
+theme_override_font_sizes/font_size = 40
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1och7")
+theme_override_font_sizes/font_size = 40
 text = "Restart"
 
 [node name="MainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1och7")
+theme_override_font_sizes/font_size = 40
 text = "Main Menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
