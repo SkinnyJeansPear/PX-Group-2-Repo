@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=23 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
@@ -34,6 +34,14 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_iwbsa"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_fxugg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxugg"]
+bg_color = Color(0.136041, 0.0410719, 0.464429, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(1.20327e-07, 0.00586176, 0.143035, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -124,7 +132,7 @@ expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
-object_info = "This is a lamp. It gives light."
+object_info = " This is a lamp. It gives light."
 
 [node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -149,7 +157,7 @@ expand_mode = 1
 script = ExtResource("9_1wrtt")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
-object_info = "This is a trash can. You can throw things away in here. Text Text TExt"
+object_info = " This is a trash can. You can throw things away in here. Text Text TExt"
 
 [node name="TextureRect3" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -173,6 +181,7 @@ texture = ExtResource("11_v6tyg")
 expand_mode = 1
 script = ExtResource("12_1odfw")
 max_count = 1
+object_info = " This is a netted fence."
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBar"]
 stream = ExtResource("10_fxugg")
@@ -232,8 +241,9 @@ mouse_default_cursor_shape = 1
 [node name="Panel" type="Panel" parent="InfoBox"]
 custom_minimum_size = Vector2(550, 100)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 650.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fxugg")
 
 [node name="Label" type="Label" parent="InfoBox/Panel"]
 layout_mode = 0
