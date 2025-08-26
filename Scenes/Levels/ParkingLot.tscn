@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ch8dbdquxn1cn"]
+[gd_scene load_steps=28 format=4 uid="uid://ch8dbdquxn1cn"]
 
 [ext_resource type="Texture2D" uid="uid://co8e7ws2agics" path="res://Backgrounds/Parking Lot.png" id="1_bca8f"]
 [ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="2_dy6tc"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dmypf7h7b006x" path="res://Scripts/netted_fence.gd" id="15_svhu8"]
 [ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="16_uaog8"]
 [ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scenes/Levels/pl_game_manager.gd" id="21_3p8oo"]
+[ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="21_exjfk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svhu8"]
 texture = ExtResource("7_t8hca")
@@ -292,7 +293,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3p8oo")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("21_exjfk")
+theme_override_font_sizes/font_size = 35
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("21_3p8oo")
