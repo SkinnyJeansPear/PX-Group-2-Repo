@@ -20,6 +20,8 @@ var current_count: int = 0
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
 
+@export var object_key: String = "netted_fence"
+@export var category: String = "safe"
 
 var NAVBAR_SHOWN_POS = Vector2(0, 0)
 var NAVBAR_HIDDEN_POS: Vector2
@@ -82,6 +84,9 @@ func end_drag():
 
 	var global_pos = get_global_mouse_position()
 	var object_placed_sound = get_tree().get_root().get_node("Main/NavBar/object_placed")
+	
+	# ...inside end_drag() after placing the line:
+	ScoreManager.on_object_placed(self, object_key, category, global_position)
 
 	if is_near_fence_line(global_pos):
 		place_fence_line()
