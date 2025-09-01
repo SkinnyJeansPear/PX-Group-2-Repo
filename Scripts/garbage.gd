@@ -4,6 +4,9 @@ var dragging := false
 var offset := Vector2.ZERO
 @onready var trash_bar := get_node("/root/Main/TrashBar")
 
+@export var object_key: String = "garbage"
+@export var category: String = "unsafe"  # removed items that should give +10
+
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
@@ -13,7 +16,10 @@ func _gui_input(event):
 		else:
 			dragging = false
 			if trash_bar.is_mouse_over_bin():
+				# +10 for removing unsafe items
+				ScoreManager.on_object_removed(object_key, category, global_position)
 				queue_free()
+
 			trash_bar.hide_bar()
 
 func _process(delta):
