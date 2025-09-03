@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://cxelaio27436c"]
 
-[ext_resource type="Script" path="res://Scripts/submit_button.gd" id=1]
+[ext_resource type="Script" uid="uid://bkv3p4orv51e1" path="res://Scripts/submit_button.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="1_xge38"]
 
 [node name="Submit" type="Button"]
-layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 140.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("1_xge38")
 text = "Submit"
-script = ExtResource(1)
+script = ExtResource("1")

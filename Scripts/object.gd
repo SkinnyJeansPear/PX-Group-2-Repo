@@ -123,7 +123,7 @@ func check_availability():
 func _on_mouse_entered():
 	info_label.text = object_info
 	info_box.visible = true
-	info_box.global_position = Vector2(5, 790)
+	info_box.global_position = Vector2(0, 790)
 
 func _on_mouse_exited():
 	info_box.visible = false
