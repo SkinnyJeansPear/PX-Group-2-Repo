@@ -53,7 +53,7 @@ border_color = Color(1.20327e-07, 0.00586176, 0.143035, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev6ts"]
 content_margin_left = 10.0
-content_margin_top = 1.0
+content_margin_top = 3.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Node2D"]
@@ -290,7 +290,7 @@ texture = ExtResource("11_v6tyg")
 expand_mode = 1
 script = ExtResource("12_1odfw")
 max_count = 1
-object_info = "A netted fence helps define and secure an area, guiding movement while still allowing visibility, supporting natural surveillance and a sense of order."
+object_info = "A netted fence defines and secures an area, guides movement, and allows visibility, supporting surveillance and order."
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBar"]
 stream = ExtResource("10_fxugg")
