@@ -159,29 +159,6 @@ expand_mode = 1
 stream = ExtResource("12_u3mja")
 volume_db = 24.0
 
-[node name="InfoBox" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-mouse_default_cursor_shape = 1
-
-[node name="Panel" type="Panel" parent="InfoBox"]
-custom_minimum_size = Vector2(900, 100)
-layout_mode = 0
-offset_right = 900.0
-offset_bottom = 100.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_fxugg")
-
-[node name="Label" type="Label" parent="InfoBox/Panel"]
-custom_minimum_size = Vector2(900, 100)
-layout_mode = 0
-offset_right = 900.0
-offset_bottom = 100.0
-theme_override_fonts/font = ExtResource("25_ev6ts")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_ev6ts")
-autowrap_mode = 2
-
 [node name="NavBarLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -356,3 +333,28 @@ object_info = "A netted fence defines and secures an area, guides movement, and 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
 stream = ExtResource("10_fxugg")
 volume_db = 24.0
+
+[node name="InfoBoxLayer" type="CanvasLayer" parent="."]
+
+[node name="InfoBox" type="Control" parent="InfoBoxLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+mouse_default_cursor_shape = 1
+
+[node name="Panel" type="Panel" parent="InfoBoxLayer/InfoBox"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fxugg")
+
+[node name="Label" type="Label" parent="InfoBoxLayer/InfoBox/Panel"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("25_ev6ts")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ev6ts")
+autowrap_mode = 2

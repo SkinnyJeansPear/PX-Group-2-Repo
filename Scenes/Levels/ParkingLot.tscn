@@ -181,32 +181,6 @@ script = ExtResource("21_3p8oo")
 stream = SubResource("AudioStreamOggVorbis_43lji")
 volume_db = 1.0
 
-[node name="InfoBox" type="Control" parent="."]
-visible = false
-z_index = 100
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1000.0
-offset_bottom = 40.0
-mouse_default_cursor_shape = 1
-
-[node name="Panel" type="Panel" parent="InfoBox"]
-custom_minimum_size = Vector2(900, 100)
-layout_mode = 0
-offset_right = 900.0
-offset_bottom = 100.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3p8oo")
-
-[node name="Label" type="Label" parent="InfoBox/Panel"]
-custom_minimum_size = Vector2(900, 100)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("33_u0h72")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_u0h72")
-autowrap_mode = 2
-
 [node name="TrashBar" type="Control" parent="."]
 z_index = 100
 layout_mode = 3
@@ -691,3 +665,31 @@ object_info = "A netted fence defines and secures an area, guides movement, and 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
 stream = ExtResource("16_uaog8")
 volume_db = 24.0
+
+[node name="InfoBoxLayer" type="CanvasLayer" parent="."]
+
+[node name="InfoBox" type="Control" parent="InfoBoxLayer"]
+visible = false
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 1
+
+[node name="Panel" type="Panel" parent="InfoBoxLayer/InfoBox"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3p8oo")
+
+[node name="Label" type="Label" parent="InfoBoxLayer/InfoBox/Panel"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("33_u0h72")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_u0h72")
+autowrap_mode = 2
