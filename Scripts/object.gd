@@ -18,7 +18,7 @@ var current_count: int = 0
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBarLayer/NavBar")
 @export var object_info: String = "Default info about this object"
-@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
+@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBoxLayer/InfoBox")
 @onready var info_label: Label = info_box.get_node("Panel/Label")
 
 @export var object_key: String = "object"

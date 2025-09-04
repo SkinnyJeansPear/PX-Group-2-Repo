@@ -13,7 +13,7 @@ var current_count: int = 0
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
 
 @export var object_info: String = "This is a netted fence."
-@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBox")
+@onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBoxLayer/InfoBox")
 @onready var info_label: Label = info_box.get_node("Panel/Label")
 @onready var game_manager: Node = $"../../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
