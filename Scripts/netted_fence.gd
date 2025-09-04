@@ -18,7 +18,7 @@ var current_count: int = 0
 @onready var game_manager: Node = $"../../../../../GameManager"
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
-@onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBar")
+@onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBarLayer/NavBar")
 
 @export var object_key: String = "netted_fence"
 @export var category: String = "safe"
@@ -83,7 +83,7 @@ func end_drag():
 		return
 
 	var global_pos = get_global_mouse_position()
-	var object_placed_sound = get_tree().get_root().get_node("Main/NavBar/object_placed")
+	var object_placed_sound = get_tree().get_root().get_node("Main/NavBarLayer/NavBar/object_placed")
 	
 	# ...inside end_drag() after placing the line:
 	ScoreManager.on_object_placed(self, object_key, category, global_position)
