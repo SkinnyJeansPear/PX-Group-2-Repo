@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dupausiwjpajw" path="res://Scripts/main_menu.gd" id="1_armea"]
 [ext_resource type="Texture2D" uid="uid://c1nk0bt0l0osg" path="res://Backgrounds/wp7495795.png" id="2_48xlc"]
-[ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://cqfqvfo0k0pco" path="res://Design Assets/paperscroll.png" id="3_n45e2"]
 [ext_resource type="Script" uid="uid://45nmkxcgcq1" path="res://Scenes/title_label.gd" id="4_ce3w2"]
+[ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="5_opfnp"]
 [ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="6_opfnp"]
 
 [node name="Main Menu" type="Control"]
@@ -77,13 +77,13 @@ theme_override_constants/separation = 6
 
 [node name="Tutorial" type="Button" parent="ColorRect/ColorRect/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1ehe0")
+theme_override_fonts/font = ExtResource("5_opfnp")
 theme_override_font_sizes/font_size = 40
 text = "Tutorial"
 
 [node name="Level Select" type="Button" parent="ColorRect/ColorRect/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1ehe0")
+theme_override_fonts/font = ExtResource("5_opfnp")
 theme_override_font_sizes/font_size = 40
 text = "Level Select
 "
@@ -95,15 +95,15 @@ anchor_left = 0.672
 anchor_top = 0.044
 anchor_right = 0.672
 anchor_bottom = 0.044
-offset_left = -597.24
-offset_top = 127.48
-offset_right = -28.2401
-offset_bottom = 253.48
+offset_left = -622.24
+offset_top = 144.48
+offset_right = 2.76001
+offset_bottom = 270.48
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1ehe0")
+theme_override_fonts/font = ExtResource("5_opfnp")
 theme_override_font_sizes/font_size = 100
 text = "Learning CPTED"
 script = ExtResource("4_ce3w2")
