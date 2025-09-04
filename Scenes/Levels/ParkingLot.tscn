@@ -181,452 +181,6 @@ script = ExtResource("21_3p8oo")
 stream = SubResource("AudioStreamOggVorbis_43lji")
 volume_db = 1.0
 
-[node name="NavBar" type="Control" parent="."]
-z_index = 100
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="NavBar"]
-layout_mode = 0
-offset_top = 900.0
-offset_right = 1280.0
-offset_bottom = 1037.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NavBar/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Lamp" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -64.0
-offset_right = 50.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_utw1y")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(1.5, 1.5)
-object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
-
-[node name="TextureRect4" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="CarBarrier" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -64.0
-offset_right = 50.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("20_pt1wu")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(1.5, 1.5)
-object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
-
-[node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="TrashCan" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_sx2q3")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(0.8, 0.8)
-object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
-
-[node name="TextureRect15" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Broken Bottle" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect15"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_uaog8")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(0.8, 0.8)
-object_info = "A broken bottle signals neglect, creates hazards, and may encourage an unsafe environment."
-
-[node name="TextureRect16" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Brick Wall" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect16"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("22_yfc8v")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2.5, 2.5)
-object_info = "A brick wall controls access, defines boundaries, and can block visibility—both increasing security and sometimes reducing natural surveillance."
-
-[node name="TextureRect17" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Barrier" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect17"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("23_u0h72")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2.5, 2.5)
-object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
-
-[node name="TextureRect5" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="CCTV Left Facing" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect5"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("22_rupbd")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(3.5, 3)
-object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
-
-[node name="TextureRect6" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="CCTV Right Facing" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect6"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("23_hfll3")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(3.5, 3)
-object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
-
-[node name="TextureRect7" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Fountain" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect7"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("24_vstuf")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(3.5, 3.5)
-object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
-
-[node name="TextureRect14" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Derelict Car" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect14"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_sx2q3")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(3.5, 3.5)
-object_info = "A derelict car signals neglect, attracts unwanted activity, and can reduce the perception of safety."
-
-[node name="TextureRect8" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Graffiti Green" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect8"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_svhu8")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2, 2)
-object_info = "FountainGraffiti signals neglect, can encourage vandalism, and may reduce the sense of safety."
-
-[node name="TextureRect9" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Graffiti Colourful" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect9"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_43lji")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2, 2)
-object_info = "Graffiti signals neglect, can encourage vandalism, and may reduce the sense of safety."
-
-[node name="TextureRect10" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Guard Dog" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect10"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("25_mflng")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2, 2)
-object_info = "A guard dog deters intruders, protects property, and increases the sense of security."
-
-[node name="TextureRect11" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Maintenance Worker" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect11"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("26_otfbc")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2.5, 2.5)
-object_info = "A maintenance worker signals a cared-for space, discourages vandalism, and promotes safety."
-
-[node name="TextureRect12" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Security Patrol" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect12"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("27_yfc8v")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2, 2)
-object_info = "A security patrol deters crime, monitors activity, and increases safety through visible presence."
-
-[node name="TextureRect13" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="Trash Bag" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect13"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_gfr0c")
-expand_mode = 1
-script = ExtResource("13_sx2q3")
-max_count = 1
-object_scale = Vector2(2, 2)
-object_info = "A trash bag left out signals neglect, may attract pests, and can reduce the sense of safety."
-
-[node name="TextureRect3" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_utw1y")
-expand_mode = 2
-
-[node name="NettedFence" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("14_43lji")
-expand_mode = 1
-script = ExtResource("15_svhu8")
-max_count = 1
-object_info = "A netted fence defines and secures an area, guides movement, and allows visibility, supporting surveillance and order."
-
-[node name="object_placed" type="AudioStreamPlayer" parent="NavBar"]
-stream = ExtResource("16_uaog8")
-volume_db = 24.0
-
 [node name="InfoBox" type="Control" parent="."]
 visible = false
 z_index = 100
@@ -687,4 +241,453 @@ expand_mode = 1
 
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
 stream = ExtResource("11_43lji")
+volume_db = 24.0
+
+[node name="NavBarLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="NavBar" type="Control" parent="NavBarLayer"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NavBarLayer/NavBar"]
+layout_mode = 0
+offset_top = 900.0
+offset_right = 1280.0
+offset_bottom = 1037.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NavBarLayer/NavBar/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Lamp" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -64.0
+offset_right = 50.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_utw1y")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(1.5, 1.5)
+object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
+
+[node name="TextureRect4" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="CarBarrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -64.0
+offset_right = 50.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_pt1wu")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(1.5, 1.5)
+object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
+
+[node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="TrashCan" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_sx2q3")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(0.8, 0.8)
+object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
+
+[node name="TextureRect15" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Broken Bottle" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect15"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_uaog8")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(0.8, 0.8)
+object_info = "A broken bottle signals neglect, creates hazards, and may encourage an unsafe environment."
+
+[node name="TextureRect16" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Brick Wall" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect16"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_yfc8v")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2.5, 2.5)
+object_info = "A brick wall controls access, defines boundaries, and can block visibility—both increasing security and sometimes reducing natural surveillance."
+
+[node name="TextureRect17" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Barrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect17"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_u0h72")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2.5, 2.5)
+object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
+
+[node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="CCTV Left Facing" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_rupbd")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(3.5, 3)
+object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
+
+[node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="CCTV Right Facing" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_hfll3")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(3.5, 3)
+object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
+
+[node name="TextureRect7" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Fountain" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_vstuf")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(3.5, 3.5)
+object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
+
+[node name="TextureRect14" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Derelict Car" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect14"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sx2q3")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(3.5, 3.5)
+object_info = "A derelict car signals neglect, attracts unwanted activity, and can reduce the perception of safety."
+
+[node name="TextureRect8" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Graffiti Green" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_svhu8")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2, 2)
+object_info = "FountainGraffiti signals neglect, can encourage vandalism, and may reduce the sense of safety."
+
+[node name="TextureRect9" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Graffiti Colourful" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_43lji")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2, 2)
+object_info = "Graffiti signals neglect, can encourage vandalism, and may reduce the sense of safety."
+
+[node name="TextureRect10" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Guard Dog" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_mflng")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2, 2)
+object_info = "A guard dog deters intruders, protects property, and increases the sense of security."
+
+[node name="TextureRect11" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Maintenance Worker" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_otfbc")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2.5, 2.5)
+object_info = "A maintenance worker signals a cared-for space, discourages vandalism, and promotes safety."
+
+[node name="TextureRect12" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Security Patrol" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_yfc8v")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2, 2)
+object_info = "A security patrol deters crime, monitors activity, and increases safety through visible presence."
+
+[node name="TextureRect13" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Trash Bag" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect13"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gfr0c")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2, 2)
+object_info = "A trash bag left out signals neglect, may attract pests, and can reduce the sense of safety."
+
+[node name="TextureRect3" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="NettedFence" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_43lji")
+expand_mode = 1
+script = ExtResource("15_svhu8")
+max_count = 1
+object_info = "A netted fence defines and secures an area, guides movement, and allows visibility, supporting surveillance and order."
+
+[node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
+stream = ExtResource("16_uaog8")
 volume_db = 24.0

@@ -124,178 +124,6 @@ tile_set = SubResource("TileSet_iwbsa")
 stream = ExtResource("16_egla1")
 volume_db = 24.0
 
-[node name="NavBar" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="NavBar"]
-layout_mode = 0
-offset_top = 900.0
-offset_right = 1280.0
-offset_bottom = 1037.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NavBar/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_u3mja")
-expand_mode = 2
-
-[node name="Lamp" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -64.0
-offset_right = 50.0
-offset_bottom = 56.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_v6tyg")
-expand_mode = 1
-script = ExtResource("9_1wrtt")
-max_count = 1
-object_scale = Vector2(1.5, 1.5)
-object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
-category = "safe"
-
-[node name="TextureRect2" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_u3mja")
-expand_mode = 2
-
-[node name="TrashCan" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_1odfw")
-expand_mode = 1
-script = ExtResource("9_1wrtt")
-max_count = 1
-object_scale = Vector2(0.8, 0.8)
-object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
-category = "safe"
-
-[node name="TextureRect4" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_u3mja")
-expand_mode = 2
-
-[node name="Fountain" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_qlkbh")
-expand_mode = 1
-script = ExtResource("9_1wrtt")
-max_count = 1
-object_scale = Vector2(3.5, 3.5)
-object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
-
-[node name="TextureRect5" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_u3mja")
-expand_mode = 2
-
-[node name="BrickWall" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect5"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_1wrtt")
-expand_mode = 1
-script = ExtResource("9_1wrtt")
-max_count = 10
-object_scale = Vector2(2, 2)
-object_info = "A brick wall controls access, defines boundaries, and can block visibility—both increasing security and sometimes reducing natural surveillance."
-
-[node name="TextureRect6" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_u3mja")
-expand_mode = 2
-
-[node name="Barrier" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect6"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("13_1llwk")
-expand_mode = 1
-script = ExtResource("9_1wrtt")
-max_count = 10
-object_scale = Vector2(2.5, 2.5)
-object_info = " A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
-
-[node name="TextureRect3" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_u3mja")
-expand_mode = 2
-
-[node name="NettedFence" type="TextureRect" parent="NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_v6tyg")
-expand_mode = 1
-script = ExtResource("12_1odfw")
-max_count = 1
-object_info = "A netted fence defines and secures an area, guides movement, and allows visibility, supporting surveillance and order."
-
-[node name="object_placed" type="AudioStreamPlayer" parent="NavBar"]
-stream = ExtResource("10_fxugg")
-volume_db = 24.0
-
 [node name="TrashBar" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -353,3 +181,178 @@ theme_override_fonts/font = ExtResource("25_ev6ts")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ev6ts")
 autowrap_mode = 2
+
+[node name="NavBarLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="NavBar" type="Control" parent="NavBarLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NavBarLayer/NavBar"]
+layout_mode = 0
+offset_top = 900.0
+offset_right = 1280.0
+offset_bottom = 1037.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NavBarLayer/NavBar/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="Lamp" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -64.0
+offset_right = 50.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_v6tyg")
+expand_mode = 1
+script = ExtResource("9_1wrtt")
+max_count = 1
+object_scale = Vector2(1.5, 1.5)
+object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
+category = "safe"
+
+[node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="TrashCan" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_1odfw")
+expand_mode = 1
+script = ExtResource("9_1wrtt")
+max_count = 1
+object_scale = Vector2(0.8, 0.8)
+object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
+category = "safe"
+
+[node name="TextureRect4" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="Fountain" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_qlkbh")
+expand_mode = 1
+script = ExtResource("9_1wrtt")
+max_count = 1
+object_scale = Vector2(3.5, 3.5)
+object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
+
+[node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="BrickWall" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_1wrtt")
+expand_mode = 1
+script = ExtResource("9_1wrtt")
+max_count = 10
+object_scale = Vector2(2, 2)
+object_info = "A brick wall controls access, defines boundaries, and can block visibility—both increasing security and sometimes reducing natural surveillance."
+
+[node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="Barrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_1llwk")
+expand_mode = 1
+script = ExtResource("9_1wrtt")
+max_count = 10
+object_scale = Vector2(2.5, 2.5)
+object_info = " A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
+
+[node name="TextureRect3" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_u3mja")
+expand_mode = 2
+
+[node name="NettedFence" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_v6tyg")
+expand_mode = 1
+script = ExtResource("12_1odfw")
+max_count = 1
+object_info = "A netted fence defines and secures an area, guides movement, and allows visibility, supporting surveillance and order."
+
+[node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
+stream = ExtResource("10_fxugg")
+volume_db = 24.0
