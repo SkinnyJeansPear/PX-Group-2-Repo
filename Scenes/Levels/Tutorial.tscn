@@ -1,11 +1,10 @@
-[gd_scene load_steps=32 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=34 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_ada67"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_356um"]
 [ext_resource type="PackedScene" uid="uid://cxelaio27436c" path="res://Scenes/Submit.tscn" id="2_nwkth"]
 [ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="3_ada67"]
-[ext_resource type="Texture2D" uid="uid://c7kr53yt2vjvf" path="res://Backgrounds/Suburban Park.png" id="3_mviin"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_u3mja"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
@@ -13,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="7_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="9_1odfw"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="9_1wrtt"]
+[ext_resource type="Texture2D" uid="uid://cvidxpxt7vmet" path="res://Object Design/tree.png" id="9_2s7u0"]
+[ext_resource type="Texture2D" uid="uid://cfvd3hn0rcr1p" path="res://Object Design/tree2.png" id="10_7pjfj"]
+[ext_resource type="Texture2D" uid="uid://dyev4ln3bckxk" path="res://Backgrounds/Suburban_Park_without_trees.png" id="10_55wm2"]
 [ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="10_fxugg"]
 [ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="11_qlkbh"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="11_u4w04"]
@@ -68,6 +70,7 @@ volume_db = 1.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
+visible = false
 
 [node name="Submit" parent="UILayer" instance=ExtResource("2_nwkth")]
 offset_bottom = 79.0
@@ -77,6 +80,7 @@ theme_override_font_sizes/font_size = 40
 [node name="EndPanel" parent="UILayer" instance=ExtResource("3_ada67")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="DragLayer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -104,10 +108,27 @@ texture = ExtResource("4_u3mja")
 expand_mode = 1
 script = ExtResource("3_v6tyg")
 
+[node name="Tree" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 439.0
+offset_bottom = 536.0
+texture = ExtResource("9_2s7u0")
+expand_mode = 1
+
+[node name="Tree2" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 1663.0
+offset_top = 130.0
+offset_right = 1919.0
+offset_bottom = 524.0
+texture = ExtResource("10_7pjfj")
+expand_mode = 1
+
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("3_mviin")
+texture = ExtResource("10_55wm2")
 expand_mode = 1
 
 [node name="Grid" type="TileMapLayer" parent="."]
@@ -117,6 +138,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_iwbsa")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("15_4rdjy")]
 
@@ -335,6 +357,7 @@ stream = ExtResource("10_fxugg")
 volume_db = 24.0
 
 [node name="InfoBoxLayer" type="CanvasLayer" parent="."]
+layer = 4
 
 [node name="InfoBox" type="Control" parent="InfoBoxLayer"]
 visible = false
