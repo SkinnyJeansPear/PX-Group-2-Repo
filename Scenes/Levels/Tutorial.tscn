@@ -351,7 +351,7 @@ texture = ExtResource("11_v6tyg")
 expand_mode = 1
 script = ExtResource("21_ev6ts")
 max_count = 1
-object_info = "A netted fence secures and defines boundaries while maintaining visibility, supporting natural surveillance and fostering a sense of safety."
+object_info = "A netted fence secures boundaries while maintaining visibility, supporting surveillance and a sense of safety."
 fence_scene_path = "uid://m3pvwaq55fs3"
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
