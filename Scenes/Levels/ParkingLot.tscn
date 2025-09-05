@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://ch8dbdquxn1cn"]
+[gd_scene load_steps=43 format=4 uid="uid://ch8dbdquxn1cn"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_asfke"]
 [ext_resource type="Texture2D" uid="uid://co8e7ws2agics" path="res://Backgrounds/Parking Lot.png" id="1_bca8f"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://ck8gli842jyqt" path="res://Scenes/Levels/fence.gd" id="25_dsbq0"]
 [ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="25_mflng"]
 [ext_resource type="Texture2D" uid="uid://b513bwbhaefah" path="res://Object Design/Maintenance Worker.png" id="26_otfbc"]
+[ext_resource type="Texture2D" uid="uid://cxfcjxu0r868l" path="res://Object Design/basketball.png" id="27_dsbq0"]
 [ext_resource type="Texture2D" uid="uid://b4p3q3xharqfy" path="res://Object Design/Security Patrol.png" id="27_yfc8v"]
 [ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="33_u0h72"]
 
@@ -364,6 +365,31 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(2.5, 2.5)
 object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
+
+[node name="TextureRect18" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_utw1y")
+expand_mode = 2
+
+[node name="Basketball" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect18"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_dsbq0")
+expand_mode = 1
+script = ExtResource("13_sx2q3")
+max_count = 1
+object_scale = Vector2(2.5, 2.5)
+object_info = "A basketball encourages activity, social interaction, and a friendly environment, helping create a safer and more welcoming space."
 
 [node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
