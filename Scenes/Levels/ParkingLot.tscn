@@ -92,7 +92,7 @@ theme_override_font_sizes/font_size = 40
 [node name="EndPanel" parent="UILayer" instance=ExtResource("4_h15my")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
+layer = 3
 
 [node name="DragLayer" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -161,6 +161,7 @@ expand_mode = 1
 script = ExtResource("3_q5p5k")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("2_dy6tc")]
 
