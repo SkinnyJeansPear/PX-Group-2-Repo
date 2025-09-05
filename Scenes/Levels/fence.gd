@@ -19,14 +19,12 @@ var current_count: int = 0
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBarLayer/NavBar")
-
-@export var object_key: String = "default_fence"   # <-- each fence overrides this
+@export var object_key: String = "default_fence"
 @export var category: String = "safe"
-@export_file("*.tscn") var fence_scene_path: String   # <-- each fence points to its own .tscn
+@export_file("*.tscn") var fence_scene_path: String 
 
 var NAVBAR_SHOWN_POS = Vector2(0, 0)
 var NAVBAR_HIDDEN_POS: Vector2
-
 
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
@@ -36,7 +34,6 @@ func _ready():
 	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
 	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
 
-
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if current_count < max_count:
@@ -44,17 +41,14 @@ func _gui_input(event):
 		else:
 			print("No more of this item available!")
 
-
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		if dragging:
 			end_drag()
 
-
 func _process(_delta):
 	if dragging and drag_sprite:
 		drag_sprite.global_position = get_global_mouse_position() - offset
-
 
 func slide_nav_bar(hide: bool):
 	if nav_bar_tween and nav_bar_tween.is_running():
@@ -68,7 +62,6 @@ func slide_nav_bar(hide: bool):
 		nav_bar_tween.tween_property(nav_bar, "position", NAVBAR_SHOWN_POS, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		nav_bar.mouse_filter = MOUSE_FILTER_STOP
 
-
 func start_drag():
 	dragging = true
 	drag_sprite = duplicate()
@@ -81,7 +74,6 @@ func start_drag():
 
 	await get_tree().process_frame
 	slide_nav_bar(true)
-
 
 func end_drag():
 	dragging = false
@@ -104,22 +96,18 @@ func end_drag():
 	drag_sprite = null
 	slide_nav_bar(false)
 
-
 func replace_fence_line():
-	# Clear existing fences
 	for n in game_manager.current_fence_nodes:
 		if is_instance_valid(n):
 			n.queue_free()
 	game_manager.current_fence_nodes.clear()
 
-	# Refund the old fence's count
 	if game_manager.current_fence_script:
 		game_manager.current_fence_script.current_count = max(
 			game_manager.current_fence_script.current_count - 1, 0
 		)
 		game_manager.current_fence_script.check_availability()
 
-	# Place the new fence
 	var start = game_manager.fence_line_start
 	var end = game_manager.fence_line_end
 	var spacing = game_manager.fence_segment_spacing
@@ -137,11 +125,9 @@ func replace_fence_line():
 		get_tree().current_scene.add_child(fence_piece)
 		placed_fences.append(fence_piece)
 
-	# Update GameManager tracking
 	game_manager.current_fence_nodes = placed_fences
 	game_manager.current_fence_type = object_key
 	game_manager.current_fence_script = self
-
 
 func is_near_fence_line(pos: Vector2) -> bool:
 	var start = game_manager.fence_line_start
@@ -152,10 +138,8 @@ func is_near_fence_line(pos: Vector2) -> bool:
 	var projection = start + t * line_vec
 	return pos.distance_to(projection) < 150
 
-
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())
-
 
 func snap_to_tilemap(global_pos: Vector2) -> Vector2:
 	var local_pos = tilemap.to_local(global_pos)
@@ -166,7 +150,6 @@ func snap_to_tilemap(global_pos: Vector2) -> Vector2:
 	snapped_pos -= Vector2(SPRITE_SIZE, SPRITE_SIZE) / 2
 	return snapped_pos
 
-
 func check_availability():
 	if current_count >= max_count:
 		modulate = Color(1, 1, 1, 0.4)
@@ -175,12 +158,10 @@ func check_availability():
 		modulate = Color(1, 1, 1, 1)
 		mouse_filter = MOUSE_FILTER_PASS
 
-
 func _on_mouse_entered():
 	info_label.text = object_info
 	info_box.visible = true
 	info_box.global_position = Vector2(5, 790)
-
 
 func _on_mouse_exited():
 	info_box.visible = false
