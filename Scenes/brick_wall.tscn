@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba3aqtqemnn7u"]
+
+[ext_resource type="Texture2D" uid="uid://c8rcefyfsrsvn" path="res://Object Design/Brick Wall.png" id="1_22frh"]
+
+[node name="BrickWall" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_22frh")
+expand_mode = 1

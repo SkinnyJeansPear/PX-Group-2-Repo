@@ -21,16 +21,16 @@
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="12_utw1y"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="13_sx2q3"]
 [ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="14_43lji"]
-[ext_resource type="Script" uid="uid://dmypf7h7b006x" path="res://Scripts/netted_fence.gd" id="15_svhu8"]
 [ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="16_uaog8"]
 [ext_resource type="Texture2D" uid="uid://btubnnc058u5u" path="res://Object Design/Car Barrier.png" id="20_pt1wu"]
-[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scenes/Levels/pl_game_manager.gd" id="21_3p8oo"]
+[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scripts/pl_game_manager.gd" id="21_3p8oo"]
 [ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="21_exjfk"]
 [ext_resource type="Texture2D" uid="uid://2sfbo6de0ucx" path="res://Object Design/CCTV Left Facing.png" id="22_rupbd"]
 [ext_resource type="Texture2D" uid="uid://c8rcefyfsrsvn" path="res://Object Design/Brick Wall.png" id="22_yfc8v"]
 [ext_resource type="Texture2D" uid="uid://cbgtw81rt66as" path="res://Object Design/CCTV Right Facing.png" id="23_hfll3"]
 [ext_resource type="Texture2D" uid="uid://cglkcpoildkyf" path="res://Object Design/Barrier.png" id="23_u0h72"]
 [ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="24_vstuf"]
+[ext_resource type="Script" uid="uid://ck8gli842jyqt" path="res://Scenes/Levels/fence.gd" id="25_dsbq0"]
 [ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="25_mflng"]
 [ext_resource type="Texture2D" uid="uid://b513bwbhaefah" path="res://Object Design/Maintenance Worker.png" id="26_otfbc"]
 [ext_resource type="Texture2D" uid="uid://b4p3q3xharqfy" path="res://Object Design/Security Patrol.png" id="27_yfc8v"]
@@ -358,10 +358,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("22_yfc8v")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("25_dsbq0")
 max_count = 1
-object_scale = Vector2(2.5, 2.5)
-object_info = "A brick wall controls access, defines boundaries, and can block visibility—both increasing security and sometimes reducing natural surveillance."
+category = "neutral"
+fence_scene_path = "uid://ba3aqtqemnn7u"
 
 [node name="TextureRect17" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -643,7 +643,7 @@ layout_mode = 2
 texture = ExtResource("9_utw1y")
 expand_mode = 2
 
-[node name="NettedFence" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
+[node name="Netted Fence" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -658,9 +658,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("14_43lji")
 expand_mode = 1
-script = ExtResource("15_svhu8")
+script = ExtResource("25_dsbq0")
 max_count = 1
-object_info = "A netted fence defines and secures an area, guides movement, and allows visibility, supporting surveillance and order."
+fence_scene_path = "uid://m3pvwaq55fs3"
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
 stream = ExtResource("16_uaog8")
