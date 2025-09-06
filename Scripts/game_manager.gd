@@ -18,3 +18,12 @@ var fence_segment_spacing: int = 128
 var current_fence_type: String = ""
 var current_fence_nodes: Array = []
 var current_fence_script: Node = null
+
+var good_zones = [
+	Rect2(Vector2(200, 200), Vector2(400, 400)),
+	Rect2(Vector2(800, 100), Vector2(300, 300))
+]
+
+var bad_zones = [
+	Rect2(Vector2(0, 0), Vector2(200, 200))
+]
