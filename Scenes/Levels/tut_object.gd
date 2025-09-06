@@ -130,11 +130,8 @@ func end_drag():
 		get_tree().current_scene.add_child(drag_sprite)
 		drag_sprite.global_position = final_global_pos
 		drag_sprite.scale = object_scale
+		drag_sprite.z_index = 500  
 
-		# Set proper z-index for objects so fences stay behind
-		drag_sprite.z_index = 500  # objects above fences (fences z_index = 0)
-
-		# Hide heatmap
 		if drag_container.has_node("Heatmap"):
 			drag_container.get_node("Heatmap").visible = false
 

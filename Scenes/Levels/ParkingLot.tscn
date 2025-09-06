@@ -264,6 +264,8 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
+good_zones = Array[Rect2]([Rect2(0, 0, 200, 1000)])
+bad_zones = Array[Rect2]([Rect2(600, 0, 200, 1000)])
 
 [node name="TextureRect4" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -388,7 +390,7 @@ texture = ExtResource("27_dsbq0")
 expand_mode = 1
 script = ExtResource("13_sx2q3")
 max_count = 1
-object_scale = Vector2(2.5, 2.5)
+object_scale = Vector2(0.8, 0.8)
 object_info = "A basketball encourages activity, social interaction, and a friendly environment, helping create a safer and more welcoming space."
 
 [node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
