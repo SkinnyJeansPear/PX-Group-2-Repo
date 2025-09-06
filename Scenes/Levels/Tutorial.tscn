@@ -232,6 +232,7 @@ object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
 category = "safe"
 good_zones = Array[Rect2]([Rect2(0, 0, 200, 1000)])
+bad_zones = Array[Rect2]([Rect2(600, 0, 200, 1000)])
 
 [node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
