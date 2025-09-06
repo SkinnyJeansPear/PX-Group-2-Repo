@@ -220,7 +220,7 @@ stream = ExtResource("11_43lji")
 volume_db = 24.0
 
 [node name="NavBarLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 5
 
 [node name="NavBar" type="Control" parent="NavBarLayer"]
 z_index = 100
@@ -571,6 +571,7 @@ stream = ExtResource("16_uaog8")
 volume_db = 24.0
 
 [node name="InfoBoxLayer" type="CanvasLayer" parent="."]
+layer = 6
 
 [node name="InfoBox" type="Control" parent="InfoBoxLayer"]
 visible = false

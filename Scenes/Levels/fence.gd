@@ -122,6 +122,7 @@ func replace_fence_line():
 	for i in range(segment_count + 1):
 		var fence_piece = fence_scene.instantiate()
 		fence_piece.global_position = start + direction * spacing * i
+		fence_piece.z_index = 0  # place behind draggable objects
 		get_tree().current_scene.add_child(fence_piece)
 		placed_fences.append(fence_piece)
 
