@@ -24,11 +24,13 @@ var current_count: int = 0
 @export var object_key: String = "object"
 @export var category: String = "neutral"  # "safe" | "unsafe" | "neutral"
 
+# Per-object zones
+@export var good_zones: Array[Rect2] = []
+@export var bad_zones: Array[Rect2] = []
 
 func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	check_availability()
-
 	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
 	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
 
@@ -94,8 +96,20 @@ func end_drag():
 		object_placed_sound.play()
 		print("Placed:", name, "at position:", drag_sprite.global_position)
 		
-	# ...after you position the placed node and before drag_sprite = null
-	ScoreManager.on_object_placed(drag_sprite, object_key, category, drag_sprite.global_position)
+		var zone_status = "neutral"
+		for rect in good_zones:
+			if rect.has_point(global_pos):
+				zone_status = "good"
+				break
+		if zone_status == "neutral":
+			for rect in bad_zones:
+				if rect.has_point(global_pos):
+					zone_status = "bad"
+					break
+
+		print("Zone placement for this object:", zone_status)
+		
+		ScoreManager.on_object_placed(drag_sprite, object_key, category, drag_sprite.global_position)
 
 	drag_sprite = null
 	slide_nav_bar(false)
