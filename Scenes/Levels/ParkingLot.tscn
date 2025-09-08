@@ -264,6 +264,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
+category = "safe"
 good_zones = Array[Rect2]([Rect2(0, 0, 200, 1000)])
 bad_zones = Array[Rect2]([Rect2(600, 0, 200, 1000)])
 
@@ -291,6 +292,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
+category = "safe"
 
 [node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -316,6 +318,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
+category = "safe"
 
 [node name="TextureRect16" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -417,6 +420,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(3.5, 3)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
+category = "safe"
 
 [node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -442,6 +446,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(3.5, 3)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
+category = "safe"
 
 [node name="TextureRect7" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
