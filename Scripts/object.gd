@@ -5,6 +5,7 @@ const SPRITE_SIZE = 128
 
 var dragging = false
 var drag_sprite: TextureRect = null
+var drag_container: Control = null
 var offset = Vector2.ZERO
 var nav_bar_tween = null
 
@@ -23,8 +24,6 @@ var current_count: int = 0
 
 @export var object_key: String = "object"
 @export var category: String = "neutral"  # "safe" | "unsafe" | "neutral"
-
-# Per-object zones
 @export var good_zones: Array[Rect2] = []
 @export var bad_zones: Array[Rect2] = []
 
@@ -47,8 +46,31 @@ func _input(event):
 			end_drag()
 
 func _process(_delta):
-	if dragging and drag_sprite:
-		drag_sprite.global_position = get_global_mouse_position() - offset
+	if dragging and drag_container:
+		drag_container.global_position = get_global_mouse_position()
+
+		# Heatmap outline update
+		var global_pos = get_global_mouse_position()
+		var outline = drag_container.get_node("Outline")
+
+		var status = "neutral"
+		for rect in good_zones:
+			if rect.has_point(global_pos):
+				status = "good"
+				break
+		if status == "neutral":
+			for rect in bad_zones:
+				if rect.has_point(global_pos):
+					status = "bad"
+					break
+
+		match status:
+			"good":
+				outline.color = Color(0, 1, 0, 0.5)
+			"bad":
+				outline.color = Color(1, 0, 0, 0.5)
+			"neutral":
+				outline.color = Color(1, 1, 0, 0.5)
 
 func slide_nav_bar(hide: bool):
 	var start_pos = nav_bar.position
@@ -65,53 +87,67 @@ func slide_nav_bar(hide: bool):
 
 func start_drag():
 	dragging = true
+
+	# Make container in drag layer
+	drag_container = Control.new()
+	drag_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	drag_layer.add_child(drag_container)
+	drag_container.z_index = 1000
+
+	# Duplicate sprite inside container
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
-	drag_layer.add_child(drag_sprite)
+	drag_container.add_child(drag_sprite)
 	drag_sprite.scale = object_scale
+
 	var sprite_size = drag_sprite.get_size() * drag_sprite.scale
-	offset = sprite_size / 2
-	drag_sprite.global_position = get_global_mouse_position() - offset
-	drag_sprite.z_index = 1000
+	drag_sprite.position = -sprite_size / 2
+
+	offset = Vector2.ZERO
+	drag_container.global_position = get_global_mouse_position()
+
+	# Outline
+	var outline = ColorRect.new()
+	outline.name = "Outline"
+	outline.color = Color(1, 1, 0, 0.5)
+	outline.size = sprite_size + Vector2(8, 8)
+	outline.position = -outline.size / 2
+	drag_container.add_child(outline)
+	outline.z_index = -1
 
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
 func end_drag():
 	dragging = false
-	if not drag_sprite:
+	if not drag_sprite or not drag_container:
 		return
 
 	var global_pos = get_global_mouse_position()
 
 	if is_over_navbar():
-		drag_sprite.queue_free()
+		drag_container.queue_free()
 	else:
-		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
-		drag_sprite.global_position = global_pos - offset
+		# Move sprite into main scene so z_index works with fence
+		var final_global_pos = drag_sprite.global_position
+		drag_container.remove_child(drag_sprite)
+		get_tree().current_scene.add_child(drag_sprite)
+		drag_sprite.global_position = final_global_pos
 		drag_sprite.scale = object_scale
+		drag_sprite.z_index = 500  # ensures above fence
+
+		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
 		current_count += 1
 		check_availability()
-		
+
 		object_placed_sound.play()
 		print("Placed:", name, "at position:", drag_sprite.global_position)
-		
-		var zone_status = "neutral"
-		for rect in good_zones:
-			if rect.has_point(global_pos):
-				zone_status = "good"
-				break
-		if zone_status == "neutral":
-			for rect in bad_zones:
-				if rect.has_point(global_pos):
-					zone_status = "bad"
-					break
 
-		print("Zone placement for this object:", zone_status)
-		
 		ScoreManager.on_object_placed(drag_sprite, object_key, category, drag_sprite.global_position)
 
+	drag_container.queue_free()
 	drag_sprite = null
+	drag_container = null
 	slide_nav_bar(false)
 
 func is_over_navbar() -> bool:

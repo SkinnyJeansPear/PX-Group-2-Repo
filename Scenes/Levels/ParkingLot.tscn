@@ -265,8 +265,8 @@ max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 0, 200, 1000)])
-bad_zones = Array[Rect2]([Rect2(600, 0, 200, 1000)])
+good_zones = Array[Rect2]([Rect2(0, 465, 200, 65), Rect2(1750, 465, 200, 65), Rect2(0, 650, 200, 65), Rect2(1750, 650, 200, 65)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 465), Rect2(0, 530, 1920, 120), Rect2(250, 650, 1300, 400)])
 
 [node name="TextureRect4" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -293,6 +293,8 @@ max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
 category = "safe"
+good_zones = Array[Rect2]([Rect2(0, 450, 350, 75), Rect2(0, 625, 350, 100), Rect2(250, 525, 100, 100), Rect2(1700, 450, 250, 75), Rect2(1700, 525, 100, 100)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 250, 100), Rect2(350, 450, 1350, 1000), Rect2(0, 700, 1920, 400)])
 
 [node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -319,6 +321,8 @@ max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
 category = "safe"
+good_zones = Array[Rect2]([Rect2(0, 500, 200, 75), Rect2(1750, 500, 200, 75), Rect2(0, 680, 200, 75), Rect2(1750, 680, 200, 75)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(0, 565, 1920, 120), Rect2(250, 650, 1300, 400)])
 
 [node name="TextureRect16" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -395,6 +399,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A basketball encourages activity, social interaction, and a friendly environment, helping create a safer and more welcoming space."
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -472,6 +477,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(3.5, 3.5)
 object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect10" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -497,6 +503,7 @@ script = ExtResource("13_sx2q3")
 max_count = 1
 object_scale = Vector2(2, 2)
 object_info = "A guard dog deters intruders, protects property, and increases the sense of security."
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect11" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -520,8 +527,9 @@ texture = ExtResource("26_otfbc")
 expand_mode = 1
 script = ExtResource("13_sx2q3")
 max_count = 1
-object_scale = Vector2(2.5, 2.5)
+object_scale = Vector2(2, 2)
 object_info = "A maintenance worker signals a cared-for space, discourages vandalism, and promotes safety."
+category = "safe"
 
 [node name="TextureRect12" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -545,8 +553,9 @@ texture = ExtResource("27_yfc8v")
 expand_mode = 1
 script = ExtResource("13_sx2q3")
 max_count = 1
-object_scale = Vector2(2, 2)
+object_scale = Vector2(1.5, 1.5)
 object_info = "A security patrol deters crime, monitors activity, and increases safety through visible presence."
+category = "safe"
 
 [node name="TextureRect3" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
