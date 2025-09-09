@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyu0uil0ky5md"]
+
+[ext_resource type="Script" uid="uid://bxkyijsqsrmq7" path="res://Scripts/level_select.gd" id="1_40uq4"]
+[ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="2_u0xxw"]
+[ext_resource type="Texture2D" uid="uid://c1nk0bt0l0osg" path="res://Backgrounds/wp7495795.png" id="3_kj70b"]
+[ext_resource type="Texture2D" uid="uid://cqfqvfo0k0pco" path="res://Design Assets/paperscroll.png" id="4_6ji7x"]
+[ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="6_kc8wv"]
+[ext_resource type="Script" uid="uid://dqrrmdeka12rf" path="res://Scenes/level_select.gd" id="7_iixj4"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40uq4")
+
+[node name="menu_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u0xxw")
+volume_db = 24.0
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kj70b")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -290.0
+offset_right = 475.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.654902, 0.654902, 0.654902, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -284.5
+offset_right = 387.0
+offset_bottom = 119.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6ji7x")
+
+[node name="Back" type="Button" parent="ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_top = -215.0
+offset_right = 169.0
+offset_bottom = -162.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_kc8wv")
+theme_override_font_sizes/font_size = 35
+text = "Back
+"
+
+[node name="About CPTED" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 80.0
+offset_right = 657.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.306923, 0.306923, 0.306923, 1)
+theme_override_fonts/font = ExtResource("6_kc8wv")
+theme_override_font_sizes/font_size = 40
+text = "This is info about CPTED"
+
+[node name="What is CPTED" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.672
+anchor_top = 0.044
+anchor_right = 0.672
+anchor_bottom = 0.044
+offset_left = -612.24
+offset_top = 85.48
+offset_right = -37.24
+offset_bottom = 211.48
+theme_override_colors/font_color = Color(0.898039, 0.980392, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_kc8wv")
+theme_override_font_sizes/font_size = 100
+text = "What is CPTED?"
+script = ExtResource("7_iixj4")
+
+[connection signal="pressed" from="ColorRect/ColorRect/Back" to="." method="_on_back_pressed"]

@@ -88,6 +88,12 @@ theme_override_font_sizes/font_size = 40
 text = "Level Select
 "
 
+[node name="About CPTED" type="Button" parent="ColorRect/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_opfnp")
+theme_override_font_sizes/font_size = 40
+text = "What is CPTED?"
+
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -95,18 +101,39 @@ anchor_left = 0.672
 anchor_top = 0.044
 anchor_right = 0.672
 anchor_bottom = 0.044
-offset_left = -622.24
-offset_top = 144.48
-offset_right = 2.76001
-offset_bottom = 270.48
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = -1068.24
+offset_top = 70.48
+offset_right = 492.76
+offset_bottom = 425.48
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_opfnp")
 theme_override_font_sizes/font_size = 100
-text = "Learning CPTED"
+text = "Learning Crime Prevention Through Environmental Design"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("4_ce3w2")
+
+[node name="TitleLabel2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.672
+anchor_top = 0.044
+anchor_right = 0.672
+anchor_bottom = 0.044
+offset_left = 143.76
+offset_top = 212.48
+offset_right = 314.76
+offset_bottom = 272.48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_opfnp")
+theme_override_font_sizes/font_size = 50
+text = "(CPTED)"
+horizontal_alignment = 1
+autowrap_mode = 2
 script = ExtResource("4_ce3w2")
 
 [connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/Tutorial" to="." method="_on_start_tutorial_pressed"]
 [connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/About CPTED" to="." method="_on_about_cpted_pressed"]
