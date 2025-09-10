@@ -293,8 +293,8 @@ max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 450, 350, 75), Rect2(0, 625, 350, 100), Rect2(250, 525, 100, 100), Rect2(1700, 450, 250, 75), Rect2(1700, 525, 100, 100)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 250, 100), Rect2(350, 450, 1350, 1000), Rect2(0, 700, 1920, 400)])
+good_zones = Array[Rect2]([Rect2(0, 450, 350, 75), Rect2(0, 625, 350, 100), Rect2(250, 525, 100, 100), Rect2(1700, 450, 250, 75), Rect2(1700, 525, 100, 100), Rect2(1700, 625, 100, 100)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 250, 100), Rect2(350, 450, 1350, 1000), Rect2(0, 700, 1920, 400), Rect2(1800, 525, 300, 100)])
 
 [node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -423,7 +423,7 @@ texture = ExtResource("22_rupbd")
 expand_mode = 1
 script = ExtResource("13_sx2q3")
 max_count = 1
-object_scale = Vector2(3.5, 3)
+object_scale = Vector2(2.5, 2)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
 
@@ -449,7 +449,7 @@ texture = ExtResource("23_hfll3")
 expand_mode = 1
 script = ExtResource("13_sx2q3")
 max_count = 1
-object_scale = Vector2(3.5, 3)
+object_scale = Vector2(2, 1.5)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
 
