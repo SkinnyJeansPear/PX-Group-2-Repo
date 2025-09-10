@@ -49,7 +49,6 @@ func _process(_delta):
 	if dragging and drag_container:
 		drag_container.global_position = get_global_mouse_position()
 
-		# Heatmap outline update
 		var global_pos = get_global_mouse_position()
 		var outline = drag_container.get_node("Outline")
 
@@ -87,26 +86,19 @@ func slide_nav_bar(hide: bool):
 
 func start_drag():
 	dragging = true
-
-	# Make container in drag layer
 	drag_container = Control.new()
 	drag_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_layer.add_child(drag_container)
 	drag_container.z_index = 1000
-
-	# Duplicate sprite inside container
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
 	drag_container.add_child(drag_sprite)
 	drag_sprite.scale = object_scale
-
 	var sprite_size = drag_sprite.get_size() * drag_sprite.scale
 	drag_sprite.position = -sprite_size / 2
-
 	offset = Vector2.ZERO
 	drag_container.global_position = get_global_mouse_position()
 
-	# Outline
 	var outline = ColorRect.new()
 	outline.name = "Outline"
 	outline.color = Color(1, 1, 0, 0.5)
@@ -128,13 +120,12 @@ func end_drag():
 	if is_over_navbar():
 		drag_container.queue_free()
 	else:
-		# Move sprite into main scene so z_index works with fence
 		var final_global_pos = drag_sprite.global_position
 		drag_container.remove_child(drag_sprite)
 		get_tree().current_scene.add_child(drag_sprite)
 		drag_sprite.global_position = final_global_pos
 		drag_sprite.scale = object_scale
-		drag_sprite.z_index = 500  # ensures above fence
+		drag_sprite.z_index = 500
 
 		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
 		current_count += 1
