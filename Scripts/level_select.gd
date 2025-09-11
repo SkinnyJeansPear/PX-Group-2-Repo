@@ -12,6 +12,5 @@ func _on_back_pressed() -> void:
 func _on_parking_lot_pressed() -> void:
 	_play_click_and_change_scene("res://Scenes/Levels/ParkingLot.tscn")
 
-# when adding the rest of the scenes, do it like this format
-#func _on_parking_lot_pressed() -> void:
-	#_play_click_and_change_scene("res://Scenes/Levels/ParkingLot.tscn")
+func _on_store_front_pressed() -> void:
+	_play_click_and_change_scene("res://Scenes/Levels/StoreFronts.tscn")

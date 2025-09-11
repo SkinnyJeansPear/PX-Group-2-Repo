@@ -1,44 +1,44 @@
-[gd_scene load_steps=43 format=4 uid="uid://ch8dbdquxn1cn"]
+[gd_scene load_steps=43 format=4 uid="uid://bka5cx8arsyqd"]
 
-[ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_asfke"]
-[ext_resource type="Texture2D" uid="uid://co8e7ws2agics" path="res://Backgrounds/Parking Lot.png" id="1_bca8f"]
-[ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="2_dy6tc"]
-[ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="2_gfr0c"]
-[ext_resource type="Texture2D" uid="uid://cpq588ls8gpwa" path="res://Object Design/Derelict Car.png" id="2_sx2q3"]
-[ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="3_o1vp4"]
-[ext_resource type="PackedScene" uid="uid://cxelaio27436c" path="res://Scenes/Submit.tscn" id="3_pt1wu"]
-[ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_q5p5k"]
-[ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="4_h15my"]
-[ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_had30"]
-[ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="5_43lji"]
-[ext_resource type="Texture2D" uid="uid://csf6j0slmnya3" path="res://Object Design/Graffiti 2.png" id="6_svhu8"]
-[ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="7_t8hca"]
-[ext_resource type="Texture2D" uid="uid://cl1eesneubyge" path="res://Object Design/Broken Glass Bottle.png" id="7_uaog8"]
-[ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="8_r5rfl"]
-[ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="9_utw1y"]
-[ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="10_sx2q3"]
-[ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="11_43lji"]
-[ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="12_utw1y"]
-[ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="13_sx2q3"]
-[ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="14_43lji"]
-[ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="16_uaog8"]
-[ext_resource type="Texture2D" uid="uid://btubnnc058u5u" path="res://Object Design/Car Barrier.png" id="20_pt1wu"]
-[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scripts/pl_game_manager.gd" id="21_3p8oo"]
-[ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="21_exjfk"]
-[ext_resource type="Texture2D" uid="uid://2sfbo6de0ucx" path="res://Object Design/CCTV Left Facing.png" id="22_rupbd"]
-[ext_resource type="Texture2D" uid="uid://c8rcefyfsrsvn" path="res://Object Design/Brick Wall.png" id="22_yfc8v"]
-[ext_resource type="Texture2D" uid="uid://cbgtw81rt66as" path="res://Object Design/CCTV Right Facing.png" id="23_hfll3"]
-[ext_resource type="Texture2D" uid="uid://cglkcpoildkyf" path="res://Object Design/Barrier.png" id="23_u0h72"]
-[ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="24_vstuf"]
-[ext_resource type="Script" uid="uid://ck8gli842jyqt" path="res://Scenes/Levels/fence.gd" id="25_dsbq0"]
-[ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="25_mflng"]
-[ext_resource type="Texture2D" uid="uid://b513bwbhaefah" path="res://Object Design/Maintenance Worker.png" id="26_otfbc"]
-[ext_resource type="Texture2D" uid="uid://cxfcjxu0r868l" path="res://Object Design/basketball.png" id="27_dsbq0"]
-[ext_resource type="Texture2D" uid="uid://b4p3q3xharqfy" path="res://Object Design/Security Patrol.png" id="27_yfc8v"]
-[ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="33_u0h72"]
+[ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_g64yy"]
+[ext_resource type="Texture2D" uid="uid://mpig51vaub60" path="res://Backgrounds/storefronts.png" id="2_c3ha5"]
+[ext_resource type="PackedScene" uid="uid://cxelaio27436c" path="res://Scenes/Submit.tscn" id="3_kf4qr"]
+[ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="4_pdi17"]
+[ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="5_1e8rt"]
+[ext_resource type="Texture2D" uid="uid://cpq588ls8gpwa" path="res://Object Design/Derelict Car.png" id="6_8qfkp"]
+[ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="7_tkmbx"]
+[ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="8_l6cdd"]
+[ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="9_y3ax3"]
+[ext_resource type="Texture2D" uid="uid://csf6j0slmnya3" path="res://Object Design/Graffiti 2.png" id="10_jrb7o"]
+[ext_resource type="Texture2D" uid="uid://cl1eesneubyge" path="res://Object Design/Broken Glass Bottle.png" id="11_0l5tr"]
+[ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="12_m4cmk"]
+[ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="13_pdk04"]
+[ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="14_v8dnv"]
+[ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="15_q4vgj"]
+[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scripts/pl_game_manager.gd" id="16_k6wdk"]
+[ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="17_knnir"]
+[ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="18_vm75s"]
+[ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="19_wjuff"]
+[ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="20_60p6n"]
+[ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="21_1bda4"]
+[ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="22_d21kr"]
+[ext_resource type="Texture2D" uid="uid://btubnnc058u5u" path="res://Object Design/Car Barrier.png" id="23_58r4s"]
+[ext_resource type="Texture2D" uid="uid://c8rcefyfsrsvn" path="res://Object Design/Brick Wall.png" id="24_iyaw4"]
+[ext_resource type="Script" uid="uid://ck8gli842jyqt" path="res://Scenes/Levels/fence.gd" id="25_2vmdj"]
+[ext_resource type="Texture2D" uid="uid://cglkcpoildkyf" path="res://Object Design/Barrier.png" id="26_0s5w2"]
+[ext_resource type="Texture2D" uid="uid://cxfcjxu0r868l" path="res://Object Design/basketball.png" id="27_1fj5k"]
+[ext_resource type="Texture2D" uid="uid://2sfbo6de0ucx" path="res://Object Design/CCTV Left Facing.png" id="28_fyhqy"]
+[ext_resource type="Texture2D" uid="uid://cbgtw81rt66as" path="res://Object Design/CCTV Right Facing.png" id="29_8e262"]
+[ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="30_tgtr7"]
+[ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="31_6d56r"]
+[ext_resource type="Texture2D" uid="uid://b513bwbhaefah" path="res://Object Design/Maintenance Worker.png" id="32_dpb3n"]
+[ext_resource type="Texture2D" uid="uid://b4p3q3xharqfy" path="res://Object Design/Security Patrol.png" id="33_pq8pc"]
+[ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="34_smuq8"]
+[ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="35_0ao4a"]
+[ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="36_terc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svhu8"]
-texture = ExtResource("7_t8hca")
+texture = ExtResource("15_q4vgj")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -68,12 +68,12 @@ content_margin_top = 3.0
 bg_color = Color(0.87451, 0.756863, 0.235294, 0)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_asfke")
+script = ExtResource("1_g64yy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_bca8f")
+texture = ExtResource("2_c3ha5")
 expand_mode = 1
 
 [node name="Control" type="Control" parent="."]
@@ -85,12 +85,12 @@ offset_bottom = 40.0
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="Submit" parent="UILayer" instance=ExtResource("3_pt1wu")]
+[node name="Submit" parent="UILayer" instance=ExtResource("3_kf4qr")]
 offset_bottom = 79.0
-theme_override_fonts/font = ExtResource("21_exjfk")
+theme_override_fonts/font = ExtResource("4_pdi17")
 theme_override_font_sizes/font_size = 40
 
-[node name="EndPanel" parent="UILayer" instance=ExtResource("4_h15my")]
+[node name="EndPanel" parent="UILayer" instance=ExtResource("5_1e8rt")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -107,9 +107,9 @@ offset_left = 1550.0
 offset_top = 750.0
 offset_right = 1884.0
 offset_bottom = 1009.0
-texture = ExtResource("2_sx2q3")
+texture = ExtResource("6_8qfkp")
 expand_mode = 1
-script = ExtResource("3_q5p5k")
+script = ExtResource("7_tkmbx")
 
 [node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
@@ -117,9 +117,9 @@ offset_left = 1250.0
 offset_top = 450.0
 offset_right = 1378.0
 offset_bottom = 578.0
-texture = ExtResource("4_had30")
+texture = ExtResource("8_l6cdd")
 expand_mode = 1
-script = ExtResource("3_q5p5k")
+script = ExtResource("7_tkmbx")
 
 [node name="Graffiti" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
@@ -127,9 +127,9 @@ offset_left = 100.0
 offset_top = 351.0
 offset_right = 279.0
 offset_bottom = 494.0
-texture = ExtResource("5_43lji")
+texture = ExtResource("9_y3ax3")
 expand_mode = 1
-script = ExtResource("3_q5p5k")
+script = ExtResource("7_tkmbx")
 
 [node name="Graffiti2" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
@@ -137,9 +137,9 @@ offset_left = 1250.0
 offset_top = 750.0
 offset_right = 1518.0
 offset_bottom = 915.0
-texture = ExtResource("6_svhu8")
+texture = ExtResource("10_jrb7o")
 expand_mode = 1
-script = ExtResource("3_q5p5k")
+script = ExtResource("7_tkmbx")
 
 [node name="BrokenBottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
@@ -147,9 +147,9 @@ offset_left = 750.0
 offset_top = 650.0
 offset_right = 915.0
 offset_bottom = 758.0
-texture = ExtResource("7_uaog8")
+texture = ExtResource("11_0l5tr")
 expand_mode = 1
-script = ExtResource("3_q5p5k")
+script = ExtResource("7_tkmbx")
 
 [node name="TrashBag" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
@@ -157,17 +157,17 @@ offset_left = 215.0
 offset_top = 665.0
 offset_right = 346.0
 offset_bottom = 770.0
-texture = ExtResource("2_gfr0c")
+texture = ExtResource("12_m4cmk")
 expand_mode = 1
-script = ExtResource("3_q5p5k")
+script = ExtResource("7_tkmbx")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 5
 
-[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("2_dy6tc")]
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("13_pdk04")]
 
 [node name="menu_click" type="AudioStreamPlayer" parent="CanvasLayer2/PauseMenu"]
-stream = ExtResource("3_o1vp4")
+stream = ExtResource("14_v8dnv")
 volume_db = 24.0
 
 [node name="Grid" type="TileMapLayer" parent="."]
@@ -177,7 +177,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_uaog8")
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("21_3p8oo")
+script = ExtResource("16_k6wdk")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = SubResource("AudioStreamOggVorbis_43lji")
@@ -189,7 +189,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("8_r5rfl")
+script = ExtResource("17_knnir")
 
 [node name="TextureRect" type="TextureRect" parent="TrashBar"]
 layout_mode = 0
@@ -197,7 +197,7 @@ offset_left = 1950.0
 offset_top = 550.0
 offset_right = 2078.0
 offset_bottom = 678.0
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 
 [node name="Bin" type="TextureRect" parent="TrashBar/TextureRect"]
 layout_mode = 1
@@ -212,11 +212,11 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_sx2q3")
+texture = ExtResource("19_wjuff")
 expand_mode = 1
 
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
-stream = ExtResource("11_43lji")
+stream = ExtResource("20_60p6n")
 volume_db = 24.0
 
 [node name="NavBarLayer" type="CanvasLayer" parent="."]
@@ -242,7 +242,7 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Lamp" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect"]
@@ -258,9 +258,9 @@ offset_right = 50.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("12_utw1y")
+texture = ExtResource("21_1bda4")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
@@ -270,7 +270,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 465), Rect2(0, 530, 1920, 120), Rect
 
 [node name="TextureRect4" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="CarBarrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
@@ -286,9 +286,9 @@ offset_right = 50.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("20_pt1wu")
+texture = ExtResource("23_58r4s")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
@@ -298,7 +298,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 250, 100), Rect2
 
 [node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="TrashCan" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect2"]
@@ -314,9 +314,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_sx2q3")
+texture = ExtResource("19_wjuff")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
@@ -326,7 +326,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(0, 565, 1920, 120), Rect
 
 [node name="TextureRect16" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Brick Wall" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect16"]
@@ -342,9 +342,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("22_yfc8v")
+texture = ExtResource("24_iyaw4")
 expand_mode = 1
-script = ExtResource("25_dsbq0")
+script = ExtResource("25_2vmdj")
 max_count = 1
 object_info = "A brick wall strengthens security, clearly defines boundaries, and provides a strong sense of protection, though it may limit visibility."
 category = "neutral"
@@ -352,7 +352,7 @@ fence_scene_path = "uid://ba3aqtqemnn7u"
 
 [node name="TextureRect17" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Barrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect17"]
@@ -368,9 +368,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("23_u0h72")
+texture = ExtResource("26_0s5w2")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2.5, 2.5)
 object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
@@ -378,7 +378,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect18" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Basketball" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect18"]
@@ -394,9 +394,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("27_dsbq0")
+texture = ExtResource("27_1fj5k")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A basketball encourages activity, social interaction, and a friendly environment, helping create a safer and more welcoming space."
@@ -404,7 +404,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="CCTV Left Facing" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect5"]
@@ -420,19 +420,17 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("22_rupbd")
+texture = ExtResource("28_fyhqy")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2.5, 2)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(1600, 400, 350, 75)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 350), Rect2(0, 500, 1850, 600)])
 
 [node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="CCTV Right Facing" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect6"]
@@ -448,19 +446,17 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("23_hfll3")
+texture = ExtResource("29_8e262")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2, 1.5)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 400, 350, 75)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 350), Rect2(75, 500, 1920, 600)])
 
 [node name="TextureRect7" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Fountain" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect7"]
@@ -476,9 +472,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("24_vstuf")
+texture = ExtResource("30_tgtr7")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(3.5, 3.5)
 object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
@@ -486,7 +482,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect10" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Guard Dog" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect10"]
@@ -502,9 +498,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("25_mflng")
+texture = ExtResource("31_6d56r")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2, 2)
 object_info = "A guard dog deters intruders, protects property, and increases the sense of security."
@@ -512,7 +508,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect11" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Maintenance Worker" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect11"]
@@ -528,9 +524,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_otfbc")
+texture = ExtResource("32_dpb3n")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2, 2)
 object_info = "A maintenance worker signals a cared-for space, discourages vandalism, and promotes safety."
@@ -540,7 +536,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 425), Rect2(0, 500, 350, 125), Rect2
 
 [node name="TextureRect12" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Security Patrol" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect12"]
@@ -556,9 +552,9 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("27_yfc8v")
+texture = ExtResource("33_pq8pc")
 expand_mode = 1
-script = ExtResource("13_sx2q3")
+script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A security patrol deters crime, monitors activity, and increases safety through visible presence."
@@ -568,7 +564,7 @@ bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 350, 125), Rect2
 
 [node name="TextureRect3" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("9_utw1y")
+texture = ExtResource("18_vm75s")
 expand_mode = 2
 
 [node name="Netted Fence" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect3"]
@@ -584,15 +580,15 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("14_43lji")
+texture = ExtResource("34_smuq8")
 expand_mode = 1
-script = ExtResource("25_dsbq0")
+script = ExtResource("25_2vmdj")
 max_count = 1
 object_info = "A netted fence secures boundaries while maintaining visibility, supporting surveillance and a sense of safety."
 fence_scene_path = "uid://m3pvwaq55fs3"
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
-stream = ExtResource("16_uaog8")
+stream = ExtResource("35_0ao4a")
 volume_db = 24.0
 
 [node name="InfoBoxLayer" type="CanvasLayer" parent="."]
@@ -619,7 +615,7 @@ custom_minimum_size = Vector2(900, 100)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("33_u0h72")
+theme_override_fonts/font = ExtResource("36_terc5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_u0h72")
 autowrap_mode = 2

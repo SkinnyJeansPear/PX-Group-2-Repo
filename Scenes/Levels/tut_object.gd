@@ -23,7 +23,7 @@ var current_count: int = 0
 @onready var info_label: Label = info_box.get_node("Panel/Label")
 
 @export var object_key: String = "object"
-@export var category: String = "neutral"
+@export var category: String = "neutral"  # "safe" | "unsafe" | "neutral"
 @export var good_zones: Array[Rect2] = []
 @export var bad_zones: Array[Rect2] = []
 
@@ -46,7 +46,7 @@ func _input(event):
 			end_drag()
 
 func _process(_delta):
-	if dragging and drag_sprite and drag_container:
+	if dragging and drag_container:
 		drag_container.global_position = get_global_mouse_position()
 
 		var global_pos = get_global_mouse_position()
@@ -71,7 +71,6 @@ func _process(_delta):
 			"neutral":
 				outline.color = Color(1, 1, 0, 0.5)
 
-
 func slide_nav_bar(hide: bool):
 	var start_pos = nav_bar.position
 	var end_pos: Vector2
@@ -87,20 +86,16 @@ func slide_nav_bar(hide: bool):
 
 func start_drag():
 	dragging = true
-
 	drag_container = Control.new()
 	drag_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_layer.add_child(drag_container)
 	drag_container.z_index = 1000
-	
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
 	drag_container.add_child(drag_sprite)
 	drag_sprite.scale = object_scale
-
 	var sprite_size = drag_sprite.get_size() * drag_sprite.scale
 	drag_sprite.position = -sprite_size / 2
-
 	offset = Vector2.ZERO
 	drag_container.global_position = get_global_mouse_position()
 
@@ -132,17 +127,28 @@ func end_drag():
 		drag_sprite.scale = object_scale
 		drag_sprite.z_index = 500  
 
-		if drag_container.has_node("Heatmap"):
-			drag_container.get_node("Heatmap").visible = false
-
 		game_manager.placed_objects[drag_sprite] = drag_sprite.global_position
 		current_count += 1
 		check_availability()
 
 		object_placed_sound.play()
-		print("Placed:", name, "at position:", drag_sprite.global_position)
 
-		ScoreManager.on_object_placed(drag_sprite, object_key, category, drag_sprite.global_position)
+		var center = drag_sprite.global_position + (drag_sprite.size * drag_sprite.scale) / 2
+
+		var status = "neutral"
+		for rect in good_zones:
+			if rect.has_point(center):
+				status = "good"
+				break
+		if status == "neutral":
+			for rect in bad_zones:
+				if rect.has_point(center):
+					status = "bad"
+					break
+
+		print("Placed:", name, "at", center, "Zone:", status)
+
+		ScoreManager.on_object_placed(drag_sprite, object_key, category, center)
 
 	drag_container.queue_free()
 	drag_sprite = null
