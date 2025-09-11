@@ -427,6 +427,8 @@ max_count = 1
 object_scale = Vector2(2.5, 2)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
+good_zones = Array[Rect2]([Rect2(1600, 400, 350, 75)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 350), Rect2(0, 500, 1850, 600)])
 
 [node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -453,6 +455,8 @@ max_count = 1
 object_scale = Vector2(2, 1.5)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
+good_zones = Array[Rect2]([Rect2(0, 400, 350, 75)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 350), Rect2(75, 500, 1920, 600)])
 
 [node name="TextureRect7" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
