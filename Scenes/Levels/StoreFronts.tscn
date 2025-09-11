@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://cxelaio27436c" path="res://Scenes/Submit.tscn" id="3_kf4qr"]
 [ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="4_pdi17"]
 [ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="5_1e8rt"]
-[ext_resource type="Texture2D" uid="uid://cpq588ls8gpwa" path="res://Object Design/Derelict Car.png" id="6_8qfkp"]
+[ext_resource type="Texture2D" uid="uid://ctbfixcwfykvi" path="res://Object Design/pot_hole.png" id="6_g64yy"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="7_tkmbx"]
-[ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="8_l6cdd"]
+[ext_resource type="Texture2D" uid="uid://c1aiv3vpvjynx" path="res://Object Design/rundown_bench.png" id="8_c3ha5"]
 [ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="9_y3ax3"]
-[ext_resource type="Texture2D" uid="uid://csf6j0slmnya3" path="res://Object Design/Graffiti 2.png" id="10_jrb7o"]
-[ext_resource type="Texture2D" uid="uid://cl1eesneubyge" path="res://Object Design/Broken Glass Bottle.png" id="11_0l5tr"]
-[ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="12_m4cmk"]
+[ext_resource type="Texture2D" uid="uid://c18ilshs0swwc" path="res://Object Design/rollerdoord.png" id="10_kf4qr"]
+[ext_resource type="Texture2D" uid="uid://bbbeiyc2t661l" path="res://Object Design/iron_bars_WINDOW.png" id="11_pdi17"]
+[ext_resource type="Texture2D" uid="uid://cujujl1ahvbgn" path="res://Object Design/iron_bars_DOORS.png" id="12_1e8rt"]
 [ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="13_pdk04"]
 [ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="14_v8dnv"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="15_q4vgj"]
@@ -101,63 +101,73 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="DeroCar" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="PotHole" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 1550.0
-offset_top = 750.0
-offset_right = 1884.0
-offset_bottom = 1009.0
-texture = ExtResource("6_8qfkp")
+offset_left = 1313.0
+offset_top = 714.0
+offset_right = 1741.0
+offset_bottom = 864.0
+texture = ExtResource("6_g64yy")
 expand_mode = 1
 script = ExtResource("7_tkmbx")
 
-[node name="Bottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="Bench" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
 offset_left = 1250.0
 offset_top = 450.0
-offset_right = 1378.0
-offset_bottom = 578.0
-texture = ExtResource("8_l6cdd")
+offset_right = 1571.0
+offset_bottom = 684.0
+texture = ExtResource("8_c3ha5")
 expand_mode = 1
 script = ExtResource("7_tkmbx")
 
 [node name="Graffiti" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 351.0
-offset_right = 279.0
-offset_bottom = 494.0
+offset_left = 1636.0
+offset_top = 291.0
+offset_right = 1950.0
+offset_bottom = 487.0
 texture = ExtResource("9_y3ax3")
 expand_mode = 1
 script = ExtResource("7_tkmbx")
 
-[node name="Graffiti2" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="Roller Door" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 1250.0
-offset_top = 750.0
-offset_right = 1518.0
-offset_bottom = 915.0
-texture = ExtResource("10_jrb7o")
+offset_left = -59.0
+offset_top = 128.0
+offset_right = 459.0
+offset_bottom = 607.0
+texture = ExtResource("10_kf4qr")
 expand_mode = 1
 script = ExtResource("7_tkmbx")
 
-[node name="BrokenBottle" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="IronBarWindow" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 750.0
-offset_top = 650.0
-offset_right = 915.0
-offset_bottom = 758.0
-texture = ExtResource("11_0l5tr")
+offset_left = 354.0
+offset_top = 344.0
+offset_right = 729.0
+offset_bottom = 511.0
+texture = ExtResource("11_pdi17")
 expand_mode = 1
 script = ExtResource("7_tkmbx")
 
-[node name="TrashBag" type="TextureRect" parent="CanvasLayer/DragLayer"]
+[node name="IronBarDoor" type="TextureRect" parent="CanvasLayer/DragLayer"]
 layout_mode = 0
-offset_left = 215.0
-offset_top = 665.0
-offset_right = 346.0
-offset_bottom = 770.0
-texture = ExtResource("12_m4cmk")
+offset_left = 623.0
+offset_top = 339.0
+offset_right = 827.0
+offset_bottom = 596.0
+texture = ExtResource("12_1e8rt")
+expand_mode = 1
+script = ExtResource("7_tkmbx")
+
+[node name="IronBarDoor2" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 339.0
+offset_right = 1132.0
+offset_bottom = 594.0
+texture = ExtResource("12_1e8rt")
 expand_mode = 1
 script = ExtResource("7_tkmbx")
 
