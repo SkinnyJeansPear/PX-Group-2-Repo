@@ -14,3 +14,6 @@ func _on_parking_lot_pressed() -> void:
 
 func _on_store_front_pressed() -> void:
 	_play_click_and_change_scene("res://Scenes/Levels/StoreFronts.tscn")
+
+func _on_basketball_court_pressed() -> void:
+	_play_click_and_change_scene("res://Scenes/Levels/BasketballCourt.tscn")
