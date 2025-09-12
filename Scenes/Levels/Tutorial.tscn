@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cglcu0uv4k7rt"]
+[gd_scene load_steps=35 format=4 uid="uid://cglcu0uv4k7rt"]
 
 [ext_resource type="Script" uid="uid://jmx2gia1u6cy" path="res://Scripts/game_manager.gd" id="1_356um"]
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_ada67"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="3_ada67"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="3_v6tyg"]
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="4_u3mja"]
+[ext_resource type="Script" uid="uid://dmkiyqd5wx745" path="res://Scenes/Levels/instruction_panel.gd" id="6_7pjfj"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="6_egla1"]
 [ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="7_u3mja"]
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="7_v6tyg"]
@@ -82,6 +83,99 @@ theme_override_fonts/font = ExtResource("21_u4w04")
 theme_override_font_sizes/font_size = 40
 
 [node name="EndPanel" parent="UILayer" instance=ExtResource("3_ada67")]
+
+[node name="InstructionPanel" type="Control" parent="UILayer"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_7pjfj")
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/InstructionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="StartGame" type="Button" parent="UILayer/InstructionPanel/ColorRect"]
+layout_mode = 2
+offset_left = 909.0
+offset_top = 815.0
+offset_right = 1002.0
+offset_bottom = 846.0
+size_flags_horizontal = 4
+text = "Start game"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/InstructionPanel/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.0
+offset_top = -385.0
+offset_right = 338.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/InstructionPanel/ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UILayer/InstructionPanel/ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+text = "HOW TO PLAY
+
+Welcome to Learning CPTED!
+
+The objective of this game is to make the environment as safe as possible using Crime Prevention Through Environmental Design (CPTED) principles.
+
+Controls
+--------------------------
+
+Click and Drag objects from the bottom nav bar or ones that are already in the scene.
+
+Pressing escape will bring up the pause menu.
+
+Gameplay
+--------------------------
+
+Dragging an object to the scene will award points - depending on the object type and the position it was placed in.
+
+Not all objects will award points, think about how that object will impact the safety of that scene.
+
+Hovering over an object in the nav bar will have a short description on how it relates to CPTED principles.
+
+Most objects will drop on the location of your cursor, larger objects (such as fences) will snap to pre-defined positions. 
+
+Dragging an object will have a heatmap outline applied to it with various colours:
+
+Green - Good position + 10 points
+
+Yellow - Neutral position + 5 points
+
+Red - Bad position + 0 points
+
+Note: Heatmaps are only available in this tutorial level! You as the player will need to figure out the most optimal positions for the objects.
+
+There are also unsafe objects that are littered across the scene - clicking and dragging these objects will bring out a trashcan. Placing an unsafe object in the trash also gives points.
+
+As the environment becomes safer, the background sounds will change, use this to track your progress.
+
+When you are finished, press the submit button in the top left to see your final score and feedback on how to improve your score.
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -394,3 +488,5 @@ theme_override_fonts/font = ExtResource("25_ev6ts")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ev6ts")
 autowrap_mode = 2
+
+[connection signal="pressed" from="UILayer/InstructionPanel/ColorRect/StartGame" to="UILayer/InstructionPanel" method="_on_start_game_pressed"]
