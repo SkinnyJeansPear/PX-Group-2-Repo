@@ -97,7 +97,6 @@ func end_drag():
 			var object_placed_sound = get_tree().get_root().get_node("Main/NavBarLayer/NavBar/object_placed")
 			object_placed_sound.play()
 			
-	# Determine good/bad/neutral status for scoring
 	var center = drag_sprite.global_position + (drag_sprite.size * drag_sprite.scale) / 2
 	var status = "neutral"
 	for rect in good_zones:
