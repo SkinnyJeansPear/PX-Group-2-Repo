@@ -4,7 +4,6 @@ extends Control
 
 func _ready():
 	get_tree().paused = true
-	start_game.pressed.connect(_on_start_game_pressed)
 
 func _on_start_game_pressed() -> void:
 	hide()

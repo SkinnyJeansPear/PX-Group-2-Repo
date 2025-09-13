@@ -102,7 +102,6 @@ func end_drag():
 		object_placed_sound.play()
 
 		var center = drag_sprite.global_position + (drag_sprite.size * drag_sprite.scale) / 2
-
 		var status = "neutral"
 		for rect in good_zones:
 			if rect.has_point(center):
@@ -116,7 +115,7 @@ func end_drag():
 
 		print("Placed:", name, "at", center, "Zone:", status)
 
-		ScoreManager.on_object_placed(drag_sprite, object_key, category, center)
+		ScoreManager.on_object_placed(drag_sprite, object_key, category, center, status)
 
 	drag_container.queue_free()
 	drag_sprite = null

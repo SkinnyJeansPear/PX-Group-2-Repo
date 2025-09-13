@@ -5,23 +5,27 @@ const SPRITE_SIZE = 128
 
 var dragging = false
 var drag_sprite: TextureRect = null
+var drag_container: Control = null
 var offset = Vector2.ZERO
 var nav_bar_tween = null
 
 @export var max_count: int = 3
 var current_count: int = 0
 @export var object_scale: Vector2 = Vector2(1.0, 1.0)
-
 @export var object_info: String = "This is a fence."
+@export var object_key: String = "default_fence"
+@export var category: String = "safe"
+@export_file("*.tscn") var fence_scene_path: String 
+
+@export var good_zones: Array[Rect2] = []
+@export var bad_zones: Array[Rect2] = []
+
 @onready var info_box: Control = get_tree().get_root().get_node("Main/InfoBoxLayer/InfoBox")
 @onready var info_label: Label = info_box.get_node("Panel/Label")
 @onready var game_manager: Node = get_tree().get_root().get_node("Main/GameManager")
 @onready var drag_layer: Control = get_tree().get_root().get_node("Main/CanvasLayer/DragLayer")
 @onready var tilemap: TileMapLayer = get_tree().get_root().get_node("Main/Grid")
 @onready var nav_bar: Control = get_tree().get_root().get_node("Main/NavBarLayer/NavBar")
-@export var object_key: String = "default_fence"
-@export var category: String = "safe"
-@export_file("*.tscn") var fence_scene_path: String 
 
 var NAVBAR_SHOWN_POS = Vector2(0, 0)
 var NAVBAR_HIDDEN_POS: Vector2
@@ -30,7 +34,6 @@ func _ready():
 	mouse_filter = MOUSE_FILTER_PASS
 	NAVBAR_HIDDEN_POS = Vector2(0, nav_bar.size.y + 120)
 	check_availability()
-
 	self.mouse_entered.connect(Callable(self, "_on_mouse_entered"))
 	self.mouse_exited.connect(Callable(self, "_on_mouse_exited"))
 
@@ -47,53 +50,70 @@ func _input(event):
 			end_drag()
 
 func _process(_delta):
-	if dragging and drag_sprite:
-		drag_sprite.global_position = get_global_mouse_position() - offset
+	if dragging and drag_container:
+		drag_container.global_position = get_global_mouse_position()
 
 func slide_nav_bar(hide: bool):
 	if nav_bar_tween and nav_bar_tween.is_running():
 		nav_bar_tween.kill()
 	nav_bar_tween = create_tween()
-
-	if hide:
-		nav_bar_tween.tween_property(nav_bar, "position", NAVBAR_HIDDEN_POS, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		nav_bar.mouse_filter = MOUSE_FILTER_IGNORE
-	else:
-		nav_bar_tween.tween_property(nav_bar, "position", NAVBAR_SHOWN_POS, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		nav_bar.mouse_filter = MOUSE_FILTER_STOP
+	var end_pos = NAVBAR_HIDDEN_POS if hide else NAVBAR_SHOWN_POS
+	nav_bar_tween.tween_property(nav_bar, "position", end_pos, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	nav_bar.mouse_filter = MOUSE_FILTER_IGNORE if hide else MOUSE_FILTER_STOP
 
 func start_drag():
 	dragging = true
+	drag_container = Control.new()
+	drag_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	drag_layer.add_child(drag_container)
+	drag_container.z_index = 1000
+
 	drag_sprite = duplicate()
 	drag_sprite.set_script(null)
-	drag_layer.add_child(drag_sprite)
-	offset = drag_sprite.get_size() / 2
-	drag_sprite.global_position = get_global_mouse_position() - offset
-	drag_sprite.z_index = 1000
+	drag_container.add_child(drag_sprite)
 	drag_sprite.scale = object_scale
+	drag_sprite.position = -drag_sprite.get_size() * drag_sprite.scale / 2
 
+	drag_container.global_position = get_global_mouse_position()
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
 func end_drag():
 	dragging = false
-	if not drag_sprite:
+	if not drag_sprite or not drag_container:
 		slide_nav_bar(false)
 		return
 
 	var global_pos = get_global_mouse_position()
-	var object_placed_sound = get_tree().get_root().get_node("Main/NavBarLayer/NavBar/object_placed")
 
-	ScoreManager.on_object_placed(self, object_key, category, global_position)
+	if is_over_navbar():
+		drag_container.queue_free()
+	else:
+		# Fence-specific placement logic
+		if is_near_fence_line(global_pos):
+			replace_fence_line()
+			current_count += 1
+			check_availability()
+			var object_placed_sound = get_tree().get_root().get_node("Main/NavBarLayer/NavBar/object_placed")
+			object_placed_sound.play()
+			
+	var center = drag_sprite.global_position + (drag_sprite.size * drag_sprite.scale) / 2
+	var status = "neutral"
+	for rect in good_zones:
+		if rect.has_point(center):
+			status = "good"
+			break
+	if status == "neutral":
+		for rect in bad_zones:
+			if rect.has_point(center):
+				status = "bad"
+				break
 
-	if is_near_fence_line(global_pos):
-		replace_fence_line()
-		current_count += 1
-		check_availability()
-		object_placed_sound.play()
+	ScoreManager.on_object_placed(drag_sprite, object_key, category, center, status)
 
-	drag_sprite.queue_free()
+	drag_container.queue_free()
 	drag_sprite = null
+	drag_container = null
 	slide_nav_bar(false)
 
 func replace_fence_line():
@@ -122,7 +142,7 @@ func replace_fence_line():
 	for i in range(segment_count + 1):
 		var fence_piece = fence_scene.instantiate()
 		fence_piece.global_position = start + direction * spacing * i
-		fence_piece.z_index = 0  # place behind draggable objects
+		fence_piece.z_index = 0
 		get_tree().current_scene.add_child(fence_piece)
 		placed_fences.append(fence_piece)
 
