@@ -1,6 +1,4 @@
-# res://Scripts/score_manager.gd
 extends Node
-# class_name removed to avoid Autoload name collision
 
 @export var use_proximity_scoring: bool = true
 @export var default_max_distance: float = 128.0
@@ -10,6 +8,7 @@ var safe_targets: Dictionary = {}
 
 var score: int = 0
 var placements_seen: Dictionary = {}
+var current_fence_points: int = 0
 
 signal score_changed(new_score:int)
 signal points_awarded(delta:int, reason:String, at:Vector2, metadata:Dictionary)
@@ -35,7 +34,7 @@ func max_distance_for_key(key:String) -> float:
 		return float(per_key_max_distance[key])
 	return default_max_distance
 
-func on_object_placed(node:Node, object_key:String, category:String, world_pos:Vector2) -> int:
+func on_object_placed(node:Node, object_key:String, category:String, world_pos:Vector2, zone_status:String = "neutral") -> int:
 	if node:
 		var iid: String = str(node.get_instance_id())
 		if iid in placements_seen:
@@ -43,20 +42,22 @@ func on_object_placed(node:Node, object_key:String, category:String, world_pos:V
 		placements_seen[iid] = true
 	
 	var delta: int = 0
-	match category:
-		"safe":
-			if use_proximity_scoring:
-				delta = _score_for_safe_placement(object_key, world_pos)
-			else:
-				delta = 10
-		"unsafe", "neutral":
-			delta = 0
-		_:
+	match zone_status:
+		"good":
+			delta = 10
+		"neutral":
+			delta = 5
+		"bad":
 			delta = 0
 	
-	if delta != 0:
-		_add_points(delta, "placed_%s" % category, world_pos, {"object_key": object_key})
+	_add_points(delta, "placed_in_%s_zone" % zone_status, world_pos, {
+		"object_key": object_key,
+		"category": category,
+		"zone_status": zone_status
+	})
+	
 	return delta
+
 
 func on_object_removed(object_key:String, category:String, world_pos:Vector2 = Vector2.ZERO) -> int:
 	var delta: int = 0

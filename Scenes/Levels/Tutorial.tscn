@@ -380,7 +380,9 @@ script = ExtResource("20_55wm2")
 max_count = 1
 object_scale = Vector2(3, 3)
 object_info = "A fountain defines space and encourages legitimate use, but doesn’t strongly impact security."
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1100)])
+category = "safe"
+good_zones = Array[Rect2]([Rect2(1050, 400, 300, 650), Rect2(150, 550, 200, 650)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 400), Rect2(1600, 400, 350, 650), Rect2(550, 400, 300, 650)])
 
 [node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -407,6 +409,7 @@ max_count = 1
 object_info = "A brick wall strengthens security, clearly defines boundaries, and provides a strong sense of protection, though it may limit visibility."
 category = "neutral"
 fence_scene_path = "uid://ba3aqtqemnn7u"
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -458,6 +461,7 @@ script = ExtResource("21_ev6ts")
 max_count = 1
 object_info = "A netted fence secures boundaries while maintaining visibility, supporting surveillance and a sense of safety."
 fence_scene_path = "uid://m3pvwaq55fs3"
+good_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
 stream = ExtResource("10_fxugg")

@@ -349,6 +349,7 @@ max_count = 1
 object_info = "A brick wall strengthens security, clearly defines boundaries, and provides a strong sense of protection, though it may limit visibility."
 category = "neutral"
 fence_scene_path = "uid://ba3aqtqemnn7u"
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect17" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -590,6 +591,7 @@ script = ExtResource("25_dsbq0")
 max_count = 1
 object_info = "A netted fence secures boundaries while maintaining visibility, supporting surveillance and a sense of safety."
 fence_scene_path = "uid://m3pvwaq55fs3"
+good_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
 stream = ExtResource("16_uaog8")
