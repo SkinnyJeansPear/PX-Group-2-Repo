@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyu0uil0ky5md"]
+[gd_scene load_steps=9 format=3 uid="uid://dyu0uil0ky5md"]
 
 [ext_resource type="Script" uid="uid://bxkyijsqsrmq7" path="res://Scripts/level_select.gd" id="1_40uq4"]
 [ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="2_u0xxw"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cqfqvfo0k0pco" path="res://Design Assets/paperscroll.png" id="4_6ji7x"]
 [ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="6_kc8wv"]
 [ext_resource type="Script" uid="uid://dqrrmdeka12rf" path="res://Scenes/level_select.gd" id="7_iixj4"]
+[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scripts/pl_game_manager.gd" id="7_u0xxw"]
+[ext_resource type="AudioStream" uid="uid://ilfbw7t1g185" path="res://Sounds/entry.ogg" id="8_kj70b"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -103,5 +105,12 @@ theme_override_fonts/font = ExtResource("6_kc8wv")
 theme_override_font_sizes/font_size = 100
 text = "What is CPTED?"
 script = ExtResource("7_iixj4")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("7_u0xxw")
+
+[node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
+stream = ExtResource("8_kj70b")
+volume_db = -4.068
 
 [connection signal="pressed" from="ColorRect/ColorRect/Back" to="." method="_on_back_pressed"]
