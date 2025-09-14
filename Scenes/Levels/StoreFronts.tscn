@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bka5cx8arsyqd"]
+[gd_scene load_steps=44 format=4 uid="uid://bka5cx8arsyqd"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_g64yy"]
 [ext_resource type="Texture2D" uid="uid://mpig51vaub60" path="res://Backgrounds/storefronts.png" id="2_c3ha5"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cbgtw81rt66as" path="res://Object Design/CCTV Right Facing.png" id="29_8e262"]
 [ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="30_tgtr7"]
 [ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="31_6d56r"]
+[ext_resource type="Texture2D" uid="uid://de4jkalr1k8l" path="res://Object Design/drinking fountain.png" id="31_pdi17"]
 [ext_resource type="Texture2D" uid="uid://b513bwbhaefah" path="res://Object Design/Maintenance Worker.png" id="32_dpb3n"]
 [ext_resource type="Texture2D" uid="uid://b4p3q3xharqfy" path="res://Object Design/Security Patrol.png" id="33_pq8pc"]
 [ext_resource type="Texture2D" uid="uid://cjl1h3qavjiio" path="res://Object Design/customer parking sign.png" id="34_c3ha5"]
@@ -455,6 +456,32 @@ expand_mode = 1
 script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2, 1.5)
+object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
+category = "safe"
+
+[node name="TextureRect8" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_vm75s")
+expand_mode = 2
+
+[node name="DrinkFountain" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("31_pdi17")
+expand_mode = 1
+script = ExtResource("22_d21kr")
+max_count = 1
+object_scale = Vector2(1.5, 1.5)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
 

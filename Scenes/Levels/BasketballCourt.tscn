@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://d2fkn7g1f06qx"]
+[gd_scene load_steps=43 format=4 uid="uid://d2fkn7g1f06qx"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_2c7ai"]
 [ext_resource type="Texture2D" uid="uid://brkmiw7ichm8c" path="res://Backgrounds/basketball court.png" id="2_jillu"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cglkcpoildkyf" path="res://Object Design/Barrier.png" id="26_rlno0"]
 [ext_resource type="Texture2D" uid="uid://cxfcjxu0r868l" path="res://Object Design/basketball.png" id="27_2bs18"]
 [ext_resource type="Texture2D" uid="uid://2sfbo6de0ucx" path="res://Object Design/CCTV Left Facing.png" id="28_2nb5f"]
+[ext_resource type="Texture2D" uid="uid://de4jkalr1k8l" path="res://Object Design/drinking fountain.png" id="28_8ovxk"]
 [ext_resource type="Texture2D" uid="uid://cbgtw81rt66as" path="res://Object Design/CCTV Right Facing.png" id="29_ekgmw"]
 [ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="30_lxvgo"]
 [ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="31_sedw4"]
@@ -370,6 +371,32 @@ expand_mode = 1
 script = ExtResource("22_oa67o")
 max_count = 1
 object_scale = Vector2(2.5, 2.5)
+object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
+
+[node name="TextureRect19" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_dppq6")
+expand_mode = 2
+
+[node name="DrinkFountain" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect19"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_8ovxk")
+expand_mode = 1
+script = ExtResource("22_oa67o")
+max_count = 1
+object_scale = Vector2(1.5, 1.5)
 object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
