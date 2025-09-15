@@ -168,7 +168,7 @@ layer = 5
 
 [node name="menu_click" type="AudioStreamPlayer" parent="CanvasLayer2/PauseMenu"]
 stream = ExtResource("3_o1vp4")
-volume_db = 24.0
+volume_db = 10.0
 
 [node name="Grid" type="TileMapLayer" parent="."]
 visible = false
@@ -217,7 +217,7 @@ expand_mode = 1
 
 [node name="trashed_object" type="AudioStreamPlayer" parent="TrashBar/TextureRect/Bin"]
 stream = ExtResource("11_43lji")
-volume_db = 24.0
+volume_db = 10.0
 
 [node name="NavBarLayer" type="CanvasLayer" parent="."]
 layer = 5
@@ -595,7 +595,7 @@ good_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="object_placed" type="AudioStreamPlayer" parent="NavBarLayer/NavBar"]
 stream = ExtResource("16_uaog8")
-volume_db = 24.0
+volume_db = 10.0
 
 [node name="InfoBoxLayer" type="CanvasLayer" parent="."]
 layer = 6
