@@ -54,10 +54,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -441.0
-offset_top = -284.5
-offset_right = 387.0
-offset_bottom = 119.5
+offset_left = -479.0
+offset_top = -322.5
+offset_right = 456.0
+offset_bottom = 177.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_6ji7x")
@@ -67,10 +67,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 95.0
-offset_top = -215.0
-offset_right = 169.0
-offset_bottom = -162.0
+offset_left = 65.0
+offset_top = -175.0
+offset_right = 143.0
+offset_bottom = -122.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("6_kc8wv")
 theme_override_font_sizes/font_size = 35
@@ -78,15 +78,19 @@ text = "Back
 "
 
 [node name="About CPTED" type="Label" parent="ColorRect/ColorRect"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
-offset_left = 284.0
-offset_top = 80.0
-offset_right = 657.0
-offset_bottom = 120.0
+offset_left = 157.0
+offset_top = 49.0
+offset_right = 821.0
+offset_bottom = 402.0
 theme_override_colors/font_color = Color(0.306923, 0.306923, 0.306923, 1)
 theme_override_fonts/font = ExtResource("6_kc8wv")
-theme_override_font_sizes/font_size = 40
-text = "This is info about CPTED"
+theme_override_font_sizes/font_size = 30
+text = "CPTED (Crime Prevention Through Environmental Design) is a strategy that uses the design and management of the physical environment to reduce crime and improve the feeling of safety. It focuses on things like natural surveillance, access control, territorial reinforcement, and maintenance to encourage positive use of spaces and discourage criminal behavior.
+"
+horizontal_alignment = 3
+autowrap_mode = 2
 
 [node name="What is CPTED" type="Label" parent="."]
 layout_mode = 1

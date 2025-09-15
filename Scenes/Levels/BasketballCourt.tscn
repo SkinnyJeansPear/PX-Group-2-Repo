@@ -397,7 +397,7 @@ expand_mode = 1
 script = ExtResource("22_oa67o")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
-object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
+object_info = "A drinking fountain encourages positive use of space, supports social interaction, and fosters a welcoming, cared-for environment."
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
 [node name="TextureRect18" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
