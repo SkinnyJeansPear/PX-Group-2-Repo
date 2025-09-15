@@ -49,28 +49,6 @@ func _process(_delta):
 	if dragging and drag_container:
 		drag_container.global_position = get_global_mouse_position()
 
-		var global_pos = get_global_mouse_position()
-		var outline = drag_container.get_node("Outline")
-
-		var status = "neutral"
-		for rect in good_zones:
-			if rect.has_point(global_pos):
-				status = "good"
-				break
-		if status == "neutral":
-			for rect in bad_zones:
-				if rect.has_point(global_pos):
-					status = "bad"
-					break
-
-		match status:
-			"good":
-				outline.color = Color(0, 1, 0, 0.5)
-			"bad":
-				outline.color = Color(1, 0, 0, 0.5)
-			"neutral":
-				outline.color = Color(1, 1, 0, 0.5)
-
 func slide_nav_bar(hide: bool):
 	var start_pos = nav_bar.position
 	var end_pos: Vector2
@@ -99,14 +77,6 @@ func start_drag():
 	offset = Vector2.ZERO
 	drag_container.global_position = get_global_mouse_position()
 
-	var outline = ColorRect.new()
-	outline.name = "Outline"
-	outline.color = Color(1, 1, 0, 0.5)
-	outline.size = sprite_size + Vector2(8, 8)
-	outline.position = -outline.size / 2
-	drag_container.add_child(outline)
-	outline.z_index = -1
-
 	await get_tree().process_frame
 	slide_nav_bar(true)
 
@@ -114,8 +84,6 @@ func end_drag():
 	dragging = false
 	if not drag_sprite or not drag_container:
 		return
-
-	var global_pos = get_global_mouse_position()
 
 	if is_over_navbar():
 		drag_container.queue_free()
@@ -134,7 +102,6 @@ func end_drag():
 		object_placed_sound.play()
 
 		var center = drag_sprite.global_position + (drag_sprite.size * drag_sprite.scale) / 2
-
 		var status = "neutral"
 		for rect in good_zones:
 			if rect.has_point(center):
@@ -154,7 +121,6 @@ func end_drag():
 	drag_sprite = null
 	drag_container = null
 	slide_nav_bar(false)
-
 
 func is_over_navbar() -> bool:
 	return nav_bar.get_global_rect().has_point(get_global_mouse_position())
