@@ -20,7 +20,7 @@ script = ExtResource("1_armea")
 
 [node name="menu_click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_opfnp")
-volume_db = 10.0
+volume_db = 8.0
 
 [node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -141,7 +141,7 @@ script = ExtResource("7_yhxw7")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = ExtResource("8_trj04")
-volume_db = -4.068
+volume_db = 15.0
 
 [connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/Tutorial" to="." method="_on_start_tutorial_pressed"]
 [connection signal="pressed" from="ColorRect/ColorRect/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=41 format=4 uid="uid://bka5cx8arsyqd"]
+[gd_scene load_steps=43 format=4 uid="uid://bka5cx8arsyqd"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_g64yy"]
 [ext_resource type="Texture2D" uid="uid://mpig51vaub60" path="res://Backgrounds/storefronts.png" id="2_c3ha5"]
 [ext_resource type="PackedScene" uid="uid://cxelaio27436c" path="res://Scenes/Submit.tscn" id="3_kf4qr"]
+[ext_resource type="Script" uid="uid://c6bq1puxsnmpi" path="res://Scenes/Levels/background.gd" id="3_pdi17"]
+[ext_resource type="Texture2D" uid="uid://cprvkmec1v4xv" path="res://Backgrounds/storefronts_-_new_shop.png" id="4_1e8rt"]
 [ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="4_pdi17"]
 [ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="5_1e8rt"]
 [ext_resource type="Texture2D" uid="uid://ctbfixcwfykvi" path="res://Object Design/pot_hole.png" id="6_g64yy"]
@@ -62,11 +64,13 @@ bg_color = Color(0.87451, 0.756863, 0.235294, 0)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_g64yy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_c3ha5")
 expand_mode = 1
+script = ExtResource("3_pdi17")
+normal_texture = ExtResource("2_c3ha5")
+upgraded_texture = ExtResource("4_1e8rt")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -183,7 +187,7 @@ script = ExtResource("16_k6wdk")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = ExtResource("17_kf4qr")
-volume_db = -11.966
+volume_db = 10.0
 
 [node name="TrashBar" type="Control" parent="."]
 z_index = 100
