@@ -133,7 +133,7 @@ script = ExtResource("8_tgoug")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = ExtResource("9_x038j")
-volume_db = -4.068
+volume_db = 15.0
 
 [connection signal="pressed" from="ColorRect/ColorRect/HBoxContainer/ParkingLot" to="." method="_on_parking_lot_pressed"]
 [connection signal="pressed" from="ColorRect/ColorRect/HBoxContainer/StoreFront" to="." method="_on_store_front_pressed"]

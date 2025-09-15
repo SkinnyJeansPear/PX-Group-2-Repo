@@ -179,7 +179,7 @@ script = ExtResource("16_soy8g")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = ExtResource("17_jillu")
-volume_db = -9.46
+volume_db = 15.0
 
 [node name="TrashBar" type="Control" parent="."]
 z_index = 100
