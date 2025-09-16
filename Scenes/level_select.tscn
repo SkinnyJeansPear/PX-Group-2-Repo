@@ -83,13 +83,13 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 texture_normal = ExtResource("3_lx4vd")
 
-[node name="StoreFront" type="TextureButton" parent="ColorRect/ColorRect/HBoxContainer"]
+[node name="BasketballCourt" type="TextureButton" parent="ColorRect/ColorRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 texture_normal = ExtResource("3_lx4vd")
 
-[node name="BasketballCourt" type="TextureButton" parent="ColorRect/ColorRect/HBoxContainer"]
+[node name="StoreFront" type="TextureButton" parent="ColorRect/ColorRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -136,6 +136,6 @@ stream = ExtResource("9_x038j")
 volume_db = 15.0
 
 [connection signal="pressed" from="ColorRect/ColorRect/HBoxContainer/ParkingLot" to="." method="_on_parking_lot_pressed"]
-[connection signal="pressed" from="ColorRect/ColorRect/HBoxContainer/StoreFront" to="." method="_on_store_front_pressed"]
 [connection signal="pressed" from="ColorRect/ColorRect/HBoxContainer/BasketballCourt" to="." method="_on_basketball_court_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect/HBoxContainer/StoreFront" to="." method="_on_store_front_pressed"]
 [connection signal="pressed" from="ColorRect/ColorRect/Back" to="." method="_on_back_pressed"]
