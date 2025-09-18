@@ -1,15 +1,16 @@
-[gd_scene load_steps=43 format=4 uid="uid://bka5cx8arsyqd"]
+[gd_scene load_steps=44 format=4 uid="uid://bka5cx8arsyqd"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_g64yy"]
 [ext_resource type="Texture2D" uid="uid://mpig51vaub60" path="res://Backgrounds/storefronts.png" id="2_c3ha5"]
 [ext_resource type="PackedScene" uid="uid://cxelaio27436c" path="res://Scenes/Submit.tscn" id="3_kf4qr"]
-[ext_resource type="Script" path="res://Scenes/Levels/background.gd" id="3_pdi17"]
+[ext_resource type="Script" uid="uid://c6bq1puxsnmpi" path="res://Scenes/Levels/background.gd" id="3_pdi17"]
 [ext_resource type="Texture2D" uid="uid://cprvkmec1v4xv" path="res://Backgrounds/storefronts_-_new_shop.png" id="4_1e8rt"]
 [ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="4_pdi17"]
 [ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="5_1e8rt"]
 [ext_resource type="Texture2D" uid="uid://ctbfixcwfykvi" path="res://Object Design/pot_hole.png" id="6_g64yy"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="7_tkmbx"]
 [ext_resource type="Texture2D" uid="uid://c1aiv3vpvjynx" path="res://Object Design/rundown_bench.png" id="8_c3ha5"]
+[ext_resource type="PackedScene" uid="uid://d1ceka3obe5tw" path="res://Scenes/instruction_panel.tscn" id="8_pdi17"]
 [ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="9_y3ax3"]
 [ext_resource type="Texture2D" uid="uid://c18ilshs0swwc" path="res://Object Design/rollerdoord.png" id="10_kf4qr"]
 [ext_resource type="Texture2D" uid="uid://bbbeiyc2t661l" path="res://Object Design/iron_bars_WINDOW.png" id="11_pdi17"]
@@ -87,6 +88,8 @@ theme_override_fonts/font = ExtResource("4_pdi17")
 theme_override_font_sizes/font_size = 40
 
 [node name="EndPanel" parent="UILayer" instance=ExtResource("5_1e8rt")]
+
+[node name="InstructionPanel" parent="UILayer" instance=ExtResource("8_pdi17")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
