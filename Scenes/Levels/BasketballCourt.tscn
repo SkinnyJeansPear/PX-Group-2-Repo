@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://d2fkn7g1f06qx"]
+[gd_scene load_steps=44 format=4 uid="uid://d2fkn7g1f06qx"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_2c7ai"]
 [ext_resource type="Texture2D" uid="uid://brkmiw7ichm8c" path="res://Backgrounds/basketball court.png" id="2_jillu"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bp0wsnbgohnte" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Bold.ttf" id="4_l63u7"]
 [ext_resource type="PackedScene" uid="uid://dfas4l8bwq4dy" path="res://Scenes/EndPanel.tscn" id="5_aqdkc"]
 [ext_resource type="Texture2D" uid="uid://cpq588ls8gpwa" path="res://Object Design/Derelict Car.png" id="6_d6i26"]
+[ext_resource type="PackedScene" uid="uid://d1ceka3obe5tw" path="res://Scenes/instruction_panel.tscn" id="6_l63u7"]
 [ext_resource type="Script" uid="uid://brkth37eoghxi" path="res://Scripts/garbage.gd" id="7_1qhem"]
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="8_yt6xm"]
 [ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="9_sh0uj"]
@@ -85,6 +86,8 @@ theme_override_fonts/font = ExtResource("4_l63u7")
 theme_override_font_sizes/font_size = 40
 
 [node name="EndPanel" parent="UILayer" instance=ExtResource("5_aqdkc")]
+
+[node name="InstructionPanel" parent="UILayer" instance=ExtResource("6_l63u7")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3

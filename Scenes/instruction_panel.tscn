@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ceka3obe5tw"]
+
+[ext_resource type="Script" uid="uid://dmkiyqd5wx745" path="res://Scenes/Levels/instruction_panel.gd" id="1_dsv4w"]
+
+[node name="InstructionPanel" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dsv4w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="StartGame" type="Button" parent="ColorRect"]
+layout_mode = 2
+offset_left = 909.0
+offset_top = 815.0
+offset_right = 1002.0
+offset_bottom = 846.0
+size_flags_horizontal = 4
+text = "Start game"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.0
+offset_top = -385.0
+offset_right = 338.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+text = "HOW TO PLAY
+
+Welcome to Learning CPTED!
+
+The objective of this game is to make the environment as safe as possible using Crime Prevention Through Environmental Design (CPTED) principles.
+
+Controls
+--------------------------
+
+Click and Drag objects from the bottom nav bar or ones that are already in the scene.
+
+Pressing escape will bring up the pause menu.
+
+Gameplay
+--------------------------
+
+Dragging an object to the scene will award points - depending on the object type and the position it was placed in.
+
+Not all objects will award points, think about how that object will impact the safety of that scene.
+
+Hovering over an object in the nav bar will have a short description on how it relates to CPTED principles.
+
+Most objects will drop on the location of your cursor, larger objects (such as fences) will snap to pre-defined positions. 
+
+Dragging an object will have a heatmap outline applied to it with various colours:
+
+Green - Good position + 10 points
+
+Yellow - Neutral position + 5 points
+
+Red - Bad position + 0 points
+
+Note: Heatmaps are only available in this tutorial level! You as the player will need to figure out the most optimal positions for the objects.
+
+There are also unsafe objects that are littered across the scene - clicking and dragging these objects will bring out a trashcan. Placing an unsafe object in the trash also gives points.
+
+As the environment becomes safer, the background sounds or the background itself may change, use this to track your progress.
+
+When you are finished, press the submit button in the top left to see your final score and feedback on how to improve your score.
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/StartGame" to="." method="_on_start_game_pressed"]
