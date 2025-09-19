@@ -112,32 +112,32 @@ text = "Back
 
 [node name="1" type="Label" parent="ColorRect/ColorRect"]
 layout_mode = 2
-offset_left = 277.0
-offset_top = 146.0
-offset_right = 297.0
-offset_bottom = 226.0
+offset_left = 275.0
+offset_top = 152.0
+offset_right = 295.0
+offset_bottom = 232.0
 theme_override_fonts/font = ExtResource("6_kb5mc")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "1"
 
 [node name="2" type="Label" parent="ColorRect/ColorRect"]
 layout_mode = 2
-offset_left = 452.0
-offset_top = 146.0
-offset_right = 485.0
-offset_bottom = 226.0
+offset_left = 453.0
+offset_top = 151.0
+offset_right = 486.0
+offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("6_kb5mc")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "2"
 
 [node name="3" type="Label" parent="ColorRect/ColorRect"]
 layout_mode = 2
-offset_left = 631.0
-offset_top = 146.0
-offset_right = 664.0
-offset_bottom = 226.0
+offset_left = 632.0
+offset_top = 150.0
+offset_right = 665.0
+offset_bottom = 230.0
 theme_override_fonts/font = ExtResource("6_kb5mc")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 60
 text = "3"
 
 [node name="LevelSelect" type="Label" parent="."]
