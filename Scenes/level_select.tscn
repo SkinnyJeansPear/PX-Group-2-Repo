@@ -110,6 +110,36 @@ theme_override_font_sizes/font_size = 35
 text = "Back
 "
 
+[node name="1" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 2
+offset_left = 277.0
+offset_top = 146.0
+offset_right = 297.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("6_kb5mc")
+theme_override_font_sizes/font_size = 70
+text = "1"
+
+[node name="2" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 2
+offset_left = 452.0
+offset_top = 146.0
+offset_right = 485.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("6_kb5mc")
+theme_override_font_sizes/font_size = 70
+text = "2"
+
+[node name="3" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 2
+offset_left = 631.0
+offset_top = 146.0
+offset_right = 664.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("6_kb5mc")
+theme_override_font_sizes/font_size = 70
+text = "3"
+
 [node name="LevelSelect" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
