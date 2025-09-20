@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://d2fkn7g1f06qx"]
+[gd_scene load_steps=42 format=4 uid="uid://d2fkn7g1f06qx"]
 
 [ext_resource type="Script" uid="uid://il7jjq6dqse2" path="res://Scripts/level_init_score_reset.gd" id="1_2c7ai"]
 [ext_resource type="Texture2D" uid="uid://brkmiw7ichm8c" path="res://Backgrounds/basketball court.png" id="2_jillu"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b1v6uul702t07" path="res://Object Design/Alchoholic Glass Bottle.png" id="8_yt6xm"]
 [ext_resource type="Texture2D" uid="uid://bobavicaicvs0" path="res://Object Design/Graffiti 1.png" id="9_sh0uj"]
 [ext_resource type="Texture2D" uid="uid://csf6j0slmnya3" path="res://Object Design/Graffiti 2.png" id="10_0vv7s"]
+[ext_resource type="Texture2D" uid="uid://ddk3b7ouw7h5g" path="res://Object Design/man_looking.png" id="10_jillu"]
 [ext_resource type="Texture2D" uid="uid://cl1eesneubyge" path="res://Object Design/Broken Glass Bottle.png" id="11_3okml"]
 [ext_resource type="Texture2D" uid="uid://gm10fsxw7gd6" path="res://Object Design/Trashbag.png" id="12_lcfyl"]
 [ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="13_cohjx"]
@@ -24,18 +25,15 @@
 [ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="20_wdrei"]
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="21_ksage"]
 [ext_resource type="Script" uid="uid://df4dud7inlen8" path="res://Scripts/object.gd" id="22_oa67o"]
-[ext_resource type="Texture2D" uid="uid://btubnnc058u5u" path="res://Object Design/Car Barrier.png" id="23_bd2qr"]
 [ext_resource type="Texture2D" uid="uid://c8rcefyfsrsvn" path="res://Object Design/Brick Wall.png" id="24_0hnkm"]
+[ext_resource type="Texture2D" uid="uid://6hkye8tl0qft" path="res://Object Design/playground.png" id="25_l63u7"]
 [ext_resource type="Script" uid="uid://ck8gli842jyqt" path="res://Scenes/Levels/fence.gd" id="25_non23"]
-[ext_resource type="Texture2D" uid="uid://cglkcpoildkyf" path="res://Object Design/Barrier.png" id="26_rlno0"]
 [ext_resource type="Texture2D" uid="uid://cxfcjxu0r868l" path="res://Object Design/basketball.png" id="27_2bs18"]
 [ext_resource type="Texture2D" uid="uid://2sfbo6de0ucx" path="res://Object Design/CCTV Left Facing.png" id="28_2nb5f"]
 [ext_resource type="Texture2D" uid="uid://de4jkalr1k8l" path="res://Object Design/drinking fountain.png" id="28_8ovxk"]
 [ext_resource type="Texture2D" uid="uid://cbgtw81rt66as" path="res://Object Design/CCTV Right Facing.png" id="29_ekgmw"]
 [ext_resource type="Texture2D" uid="uid://bbwkh1v67ymo1" path="res://Object Design/Fountain.png" id="30_lxvgo"]
 [ext_resource type="Texture2D" uid="uid://d0lri3ns4hoj1" path="res://Object Design/Guard Dog.png" id="31_sedw4"]
-[ext_resource type="Texture2D" uid="uid://b513bwbhaefah" path="res://Object Design/Maintenance Worker.png" id="32_bw4h7"]
-[ext_resource type="Texture2D" uid="uid://b4p3q3xharqfy" path="res://Object Design/Security Patrol.png" id="33_n8xpl"]
 [ext_resource type="Texture2D" uid="uid://8tjloi8205bu" path="res://Object Design/Netted Fence.png" id="34_eb5sb"]
 [ext_resource type="AudioStream" uid="uid://ckhpvh2spfqfa" path="res://Sounds/object placed.ogg" id="35_dys5q"]
 [ext_resource type="FontFile" uid="uid://gk2r702ierey" path="res://Fonts/Bagura Font Pack v1.5/Bagura Font Pack v1.5/Basal.ttf" id="36_jxhuj"]
@@ -115,6 +113,16 @@ offset_top = 642.0
 offset_right = 113.0
 offset_bottom = 734.0
 texture = ExtResource("8_yt6xm")
+expand_mode = 1
+script = ExtResource("7_1qhem")
+
+[node name="ManLooking" type="TextureRect" parent="CanvasLayer/DragLayer"]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 537.0
+offset_right = 949.0
+offset_bottom = 566.0
+texture = ExtResource("10_jillu")
 expand_mode = 1
 script = ExtResource("7_1qhem")
 
@@ -233,7 +241,7 @@ offset_bottom = 40.0
 [node name="ScrollContainer" type="ScrollContainer" parent="NavBarLayer/NavBar"]
 layout_mode = 0
 offset_top = 900.0
-offset_right = 1280.0
+offset_right = 663.0
 offset_bottom = 1037.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NavBarLayer/NavBar/ScrollContainer"]
@@ -266,15 +274,15 @@ max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 465, 200, 65), Rect2(1750, 465, 200, 65), Rect2(0, 650, 200, 65), Rect2(1750, 650, 200, 65)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 465), Rect2(0, 530, 1920, 120), Rect2(250, 650, 1300, 400)])
+good_zones = Array[Rect2]([Rect2(0, 575, 1920, 50)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 575), Rect2(700, 650, 1400, 500)])
 
 [node name="TextureRect4" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("18_dppq6")
 expand_mode = 2
 
-[node name="CarBarrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
+[node name="PlayGround" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -287,15 +295,15 @@ offset_right = 50.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("23_bd2qr")
+texture = ExtResource("25_l63u7")
 expand_mode = 1
 script = ExtResource("22_oa67o")
 max_count = 1
-object_scale = Vector2(1.5, 1.5)
+object_scale = Vector2(4, 3)
 object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 450, 350, 75), Rect2(0, 625, 350, 100), Rect2(250, 525, 100, 100), Rect2(1700, 450, 250, 75), Rect2(1700, 525, 100, 100), Rect2(1700, 625, 100, 100)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 250, 100), Rect2(350, 450, 1350, 1000), Rect2(0, 700, 1920, 400), Rect2(1800, 525, 300, 100)])
+good_zones = Array[Rect2]([Rect2(0, 600, 500, 300)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(600, 575, 1300, 500)])
 
 [node name="TextureRect2" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -322,8 +330,8 @@ max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
 category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 500, 200, 75), Rect2(1750, 500, 200, 75), Rect2(0, 680, 200, 75), Rect2(1750, 680, 200, 75)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(0, 565, 1920, 120), Rect2(250, 650, 1300, 400)])
+good_zones = Array[Rect2]([Rect2(0, 615, 1920, 80), Rect2(0, 980, 1920, 150)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 615), Rect2(750, 695, 1300, 285)])
 
 [node name="TextureRect16" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -351,32 +359,6 @@ object_info = "A brick wall strengthens security, clearly defines boundaries, an
 category = "neutral"
 fence_scene_path = "uid://ba3aqtqemnn7u"
 
-[node name="TextureRect17" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_dppq6")
-expand_mode = 2
-
-[node name="Barrier" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect17"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("26_rlno0")
-expand_mode = 1
-script = ExtResource("22_oa67o")
-max_count = 1
-object_scale = Vector2(2.5, 2.5)
-object_info = "A barrier restricts access, directing movement and protecting spaces, but can also block sightlines."
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
-
 [node name="TextureRect19" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("18_dppq6")
@@ -399,9 +381,9 @@ texture = ExtResource("28_8ovxk")
 expand_mode = 1
 script = ExtResource("22_oa67o")
 max_count = 1
-object_scale = Vector2(1.5, 1.5)
 object_info = "A drinking fountain encourages positive use of space, supports social interaction, and fosters a welcoming, cared-for environment."
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
+good_zones = Array[Rect2]([Rect2(750, 615, 1300, 100), Rect2(750, 995, 1300, 150)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 615), Rect2(750, 715, 1300, 280)])
 
 [node name="TextureRect18" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -427,7 +409,8 @@ script = ExtResource("22_oa67o")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A basketball encourages activity, social interaction, and a friendly environment, helping create a safer and more welcoming space."
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
+good_zones = Array[Rect2]([Rect2(750, 615, 1300, 500)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 615)])
 
 [node name="TextureRect5" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -454,6 +437,8 @@ max_count = 1
 object_scale = Vector2(2.5, 2)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
+good_zones = Array[Rect2]([Rect2(0, 525, 1920, 100)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(0, 650, 1920, 500)])
 
 [node name="TextureRect6" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -480,6 +465,8 @@ max_count = 1
 object_scale = Vector2(2, 1.5)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
 category = "safe"
+good_zones = Array[Rect2]([Rect2(0, 525, 1920, 100)])
+bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(0, 650, 1920, 500)])
 
 [node name="TextureRect7" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
@@ -532,62 +519,6 @@ max_count = 1
 object_scale = Vector2(2, 2)
 object_info = "A guard dog deters intruders, protects property, and increases the sense of security."
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
-
-[node name="TextureRect11" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_dppq6")
-expand_mode = 2
-
-[node name="Maintenance Worker" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect11"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("32_bw4h7")
-expand_mode = 1
-script = ExtResource("22_oa67o")
-max_count = 1
-object_scale = Vector2(2, 2)
-object_info = "A maintenance worker signals a cared-for space, discourages vandalism, and promotes safety."
-category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 425, 1920, 75)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 425), Rect2(0, 500, 350, 125), Rect2(1650, 500, 350, 125), Rect2(200, 850, 1400, 300)])
-
-[node name="TextureRect12" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_dppq6")
-expand_mode = 2
-
-[node name="Security Patrol" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer/TextureRect12"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("33_n8xpl")
-expand_mode = 1
-script = ExtResource("22_oa67o")
-max_count = 1
-object_scale = Vector2(1.5, 1.5)
-object_info = "A security patrol deters crime, monitors activity, and increases safety through visible presence."
-category = "safe"
-good_zones = Array[Rect2]([Rect2(0, 450, 1920, 75), Rect2(0, 650, 300, 100), Rect2(1750, 650, 300, 100)])
-bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 525, 350, 125), Rect2(1600, 525, 350, 125), Rect2(200, 850, 1400, 300)])
 
 [node name="TextureRect3" type="TextureRect" parent="NavBarLayer/NavBar/ScrollContainer/HBoxContainer"]
 layout_mode = 2
