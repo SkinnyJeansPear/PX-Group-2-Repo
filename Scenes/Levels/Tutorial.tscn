@@ -233,6 +233,7 @@ script = ExtResource("20_55wm2")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
+object_key = "lamp"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(510, 420, 140, 1000), Rect2(735, 420, 140, 1000)])
 bad_zones = Array[Rect2]([Rect2(650, 420, 85, 1000), Rect2(0, 0, 1920, 420), Rect2(1620, 0, 300, 1000)])
@@ -369,6 +370,7 @@ expand_mode = 1
 script = ExtResource("21_ev6ts")
 max_count = 1
 object_info = "A netted fence secures boundaries while maintaining visibility, supporting surveillance and a sense of safety."
+object_key = "netted_fence"
 fence_scene_path = "uid://m3pvwaq55fs3"
 good_zones = Array[Rect2]([Rect2(0, 0, 1920, 1080)])
 
