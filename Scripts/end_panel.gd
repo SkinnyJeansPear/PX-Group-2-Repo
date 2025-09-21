@@ -1,4 +1,3 @@
-
 extends Control
 class_name EndPanel
 
@@ -7,16 +6,35 @@ class_name EndPanel
 
 enum FeedbackMode { STATIC_ONLY, STATIC_PLUS_DYNAMIC }
 @export var feedback_mode: FeedbackMode = FeedbackMode.STATIC_PLUS_DYNAMIC
+
 @export var per_level_feedback: Dictionary = {
 	"Tutorial": "Tip: Remove the hazards and place the safety items sensibly.",
 	"ParkingLot": "Tip: Clear hazards and use fences/lighting/bins to protect pedestrians.",
 	"BasketballCourt": "Tip: Remove sharp debris and secure the court area with lighting/fencing.",
 	"StoreFronts": "Tip: Remove environmental hazards and place barriers/bins/lighting where appropriate."
 }
+
 @export var pass_score: int = 30
+
+# Medal images
+@export var medal_images: Dictionary = {
+	"none": preload("res://Assets/none.png"),
+	"bronze": preload("res://Assets/bronze.png"),
+	"silver": preload("res://Assets/silver.png"),
+	"gold": preload("res://Assets/gold.png")
+}
+
+# Per-level score thresholds
+@export var per_level_thresholds: Dictionary = {
+	"Tutorial": {"bronze": 30, "silver": 50, "gold": 60},
+	"ParkingLot": {"bronze": 30, "silver": 100, "gold": 140},
+	"StoreFronts": {"bronze": 30, "silver": 100, "gold": 170},
+	"BasketballCourt": {"bronze": 30, "silver": 100, "gold": 140}
+}
 
 @onready var score_label: Label = $Panel/VBox/Score
 @onready var feedback_label: Label = $Panel/VBox/Feedback
+@onready var medal_icon: TextureRect = $Panel/VBox/MedalIcon
 @onready var btn_restart: Button = $Panel/VBox/Buttons/Restart
 @onready var btn_next: Button = $Panel/VBox/Buttons/NextLevel
 @onready var btn_menu: Button = $Panel/VBox/Buttons/MainMenu
@@ -25,6 +43,7 @@ func _ready() -> void:
 	visible = false
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	btn_restart.pressed.connect(_on_restart)
 	btn_next.pressed.connect(_on_next)
 	btn_menu.pressed.connect(_on_menu)
@@ -35,18 +54,19 @@ func open_results() -> void:
 		final_score = get_node("/root/ScoreManager").score
 	score_label.text = "Final Score: %d" % final_score
 
+	# Feedback
 	var fb: String = _build_feedback(final_score)
 	if fb == "" and show_feedback_placeholder:
 		fb = "Feedback: (coming soon)"
 	feedback_label.visible = fb != ""
 	feedback_label.text = fb
 
+	# Medal
+	var medal: String = _get_medal(final_score)
+	medal_icon.texture = medal_images.get(medal, null)
+
 	visible = true
 	get_tree().paused = true
-	
-	#if has_node("/root/ScoreManager"):
-	#	get_node("/root/ScoreManager").debug_print_progress()
-		
 
 func _get_level_id() -> String:
 	var id: String = ""
@@ -60,6 +80,24 @@ func _get_level_id() -> String:
 				if base != "":
 					id = base
 	return id
+
+func _get_medal(score: int) -> String:
+	var lvl := _get_level_id()
+	var thresholds: Dictionary = per_level_thresholds.get(lvl, {})
+
+	if thresholds.is_empty():
+		# fallback default thresholds
+		thresholds = {"bronze": 10, "silver": 20, "gold": 30}
+
+	if score >= thresholds.get("gold", 0):
+		return "gold"
+	elif score >= thresholds.get("silver", 0):
+		return "silver"
+	elif score >= thresholds.get("bronze", 0):
+		return "bronze"
+	else:
+		return "none"
+
 
 func _build_feedback(final_score:int) -> String:
 	var lines: Array[String] = []
@@ -83,13 +121,12 @@ func _build_feedback(final_score:int) -> String:
 			if sm.has_method("missing_required_safe"):
 				var miss_safe: Array = sm.missing_required_safe()
 				if not miss_safe.is_empty():
-					# optional pretty names
 					var pretty: Array[String] = []
-					var friendly := {"lamp":"Lamp", "netted_fence":"Netted Fence", "trash_can":"Trash Can", "fountain":"Fountain"}
+					var friendly := {"lamp":"Lamp", "netted_fence":"Netted Fence", "trashcan":"Trash Can", "fountain":"Fountain"}
 					for k in miss_safe:
 						pretty.append(friendly.get(String(k), String(k)))
 					lines.append("Safe items not placed correctly: " + ", ".join(pretty))
-			# Unsafe stays generic as requested
+			# Unsafe stays generic
 			if sm.has_method("any_required_unsafe_left") and sm.any_required_unsafe_left():
 				lines.append("You left some unsafe items unremoved.")
 		else:

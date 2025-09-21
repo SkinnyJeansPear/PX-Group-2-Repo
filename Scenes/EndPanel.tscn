@@ -45,6 +45,13 @@ theme_override_font_sizes/font_size = 36
 text = "Final Score: 0"
 horizontal_alignment = 1
 
+[node name="MedalIcon" type="TextureRect" parent="Panel/VBox"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="MedalLabel" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+
 [node name="Feedback" type="Label" parent="Panel/VBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ecrqj")
