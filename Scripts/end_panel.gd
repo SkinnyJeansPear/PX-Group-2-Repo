@@ -19,9 +19,9 @@ enum FeedbackMode { STATIC_ONLY, STATIC_PLUS_DYNAMIC }
 # Medal images
 @export var medal_images: Dictionary = {
 	"none": preload("res://Assets/none.png"),
-	"bronze": preload("res://Assets/bronze.png"),
-	"silver": preload("res://Assets/silver.png"),
-	"gold": preload("res://Assets/gold.png")
+	"bronze": preload("res://Assets/bronze_medal.png"),
+	"silver": preload("res://Assets/silver_medal.png"),
+	"gold": preload("res://Assets/gold_medal.png")
 }
 
 # Per-level score thresholds
@@ -122,7 +122,7 @@ func _build_feedback(final_score:int) -> String:
 				var miss_safe: Array = sm.missing_required_safe()
 				if not miss_safe.is_empty():
 					var pretty: Array[String] = []
-					var friendly := {"lamp":"Lamp", "netted_fence":"Netted Fence", "trashcan":"Trash Can", "fountain":"Fountain"}
+					var friendly := {"lamp":"Lamp", "netted_fence":"Netted Fence", "trash_can":"Trash Can", "fountain":"Fountain"}
 					for k in miss_safe:
 						pretty.append(friendly.get(String(k), String(k)))
 					lines.append("Safe items not placed correctly: " + ", ".join(pretty))
