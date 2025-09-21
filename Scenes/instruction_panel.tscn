@@ -24,9 +24,9 @@ color = Color(0, 0, 0, 0.588235)
 [node name="StartGame" type="Button" parent="ColorRect"]
 layout_mode = 2
 offset_left = 909.0
-offset_top = 815.0
+offset_top = 900.0
 offset_right = 1002.0
-offset_bottom = 846.0
+offset_bottom = 931.0
 size_flags_horizontal = 4
 text = "Start game"
 
@@ -37,10 +37,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -338.0
-offset_top = -385.0
-offset_right = 338.0
-offset_bottom = 223.0
+offset_left = -580.0
+offset_top = -304.0
+offset_right = 581.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
 
