@@ -4,23 +4,12 @@ extends Node
 
 func _ready():
 	ambient_music.play()
-
+	
 	if has_node("/root/ScoreManager"):
-		ScoreManager.reset()
-
-		var lvl_name: String = ""
-		if get_tree() and get_tree().current_scene:
-			lvl_name = str(get_tree().current_scene.name)
-
-		match lvl_name:
-			"ParkingLot":
-				ScoreManager.required_unsafe_counts = { "garbage": 3 }
-				ScoreManager.required_safe_counts = { "lamp": 1, "netted_fence": 1, "trashcan": 1 }
-			"StoreFronts":
-				ScoreManager.required_unsafe_counts = { "garbage": 7 }
-				ScoreManager.required_safe_counts = { "lamp": 1, "trashcan": 1, "barrier": 1 }
-
+		ScoreManager.required_unsafe_counts = { "garbage": 6}
+		ScoreManager.required_safe_counts = { "lamp": 1, "netted_fence": 1, "trash_can": 1, "car_barrier": 1, "cctv_left": 1, "cctv_right": 1, "maintenance_worker": 1, "security_patrol": 1}
 		ScoreManager.min_points_to_count_safe = 1
+		ScoreManager.reset()
 
 func _process(_delta):
 	if not ambient_music.playing:

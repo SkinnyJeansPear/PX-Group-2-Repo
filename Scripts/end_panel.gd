@@ -24,7 +24,6 @@ enum FeedbackMode { STATIC_ONLY, STATIC_PLUS_DYNAMIC }
 func _ready() -> void:
 	visible = false
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	z_index = 10000
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	btn_restart.pressed.connect(_on_restart)
 	btn_next.pressed.connect(_on_next)
@@ -54,7 +53,6 @@ func _get_level_id() -> String:
 	if get_tree() != null and get_tree().current_scene != null:
 		var cs: Node = get_tree().current_scene
 		id = str(cs.name)
-		# Prefer the scene file’s base name, e.g., "Tutorial" from ".../Tutorial.tscn"
 		if "scene_file_path" in cs:
 			var p: String = String(cs.scene_file_path)
 			if p != "":
@@ -87,7 +85,7 @@ func _build_feedback(final_score:int) -> String:
 				if not miss_safe.is_empty():
 					# optional pretty names
 					var pretty: Array[String] = []
-					var friendly := {"lamp":"Lamp", "netted_fence":"Netted Fence", "trashcan":"Trash Can"}
+					var friendly := {"lamp":"Lamp", "netted_fence":"Netted Fence", "trash_can":"Trash Can", "fountain":"Fountain"}
 					for k in miss_safe:
 						pretty.append(friendly.get(String(k), String(k)))
 					lines.append("Safe items not placed correctly: " + ", ".join(pretty))

@@ -8,7 +8,7 @@ func _ready():
 	if has_node("/root/ScoreManager"):
 		ScoreManager.reset()
 		ScoreManager.required_unsafe_counts = { "garbage": 2 }
-		ScoreManager.required_safe_counts = { "lamp": 1, "netted_fence": 1 }
+		ScoreManager.required_safe_counts = { "lamp": 1, "netted_fence": 1, "trash_can": 1, "fountain": 1 }
 		ScoreManager.min_points_to_count_safe = 1
 
 func _process(_delta):

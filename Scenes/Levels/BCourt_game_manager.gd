@@ -6,10 +6,10 @@ func _ready():
 	ambient_music.play()
 
 	if has_node("/root/ScoreManager"):
-		ScoreManager.reset()
-		ScoreManager.required_unsafe_counts = { "garbage": 3 }
-		ScoreManager.required_safe_counts = { "lamp": 1, "netted_fence": 1, "trashcan": 1 }
+		ScoreManager.required_unsafe_counts = { "garbage": 6}
+		ScoreManager.required_safe_counts = { "lamp": 1, "netted_fence": 1, "trash_can": 1, "play_ground": 1, "drink_fountain": 1, "basket_ball": 1, "cctv_left": 1, "cctv_right": 1 }
 		ScoreManager.min_points_to_count_safe = 1
+		ScoreManager.reset()
 
 func _process(_delta):
 	if not ambient_music.playing:
