@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://bdvvkjvhoulhv" path="res://Sounds/street.ogg" id="17_kf4qr"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="17_knnir"]
 [ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="18_vm75s"]
-[ext_resource type="Script" uid="uid://dtl4r5hbdnk06" path="res://Scenes/Levels/SF_game_manager.gd" id="19_pdi17"]
+[ext_resource type="Script" path="res://Scenes/Levels/SF_game_manager.gd" id="19_pdi17"]
 [ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="19_wjuff"]
 [ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="20_60p6n"]
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="21_1bda4"]
