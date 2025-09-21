@@ -28,7 +28,7 @@ offset_top = 900.0
 offset_right = 1002.0
 offset_bottom = 931.0
 size_flags_horizontal = 4
-text = "Start game"
+text = "Start Game"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
 layout_mode = 1
@@ -51,57 +51,53 @@ size_flags_horizontal = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
-text = "HOW TO PLAY
+bbcode_enabled = true
+text = "[b][u]HOW TO PLAY[/u][/b]
 
-Welcome to Learning CPTED!
+[b]Welcome to Learning CPTED![/b]
 
-The objective of this game is to make the environment as safe as possible using Crime Prevention Through Environmental Design (CPTED) principles.
+[i]The objective of this game is to make the environment as safe as possible using
+Crime Prevention Through Environmental Design (CPTED) principles.[/i]
 
-Controls
---------------------------
 
-Click and Drag objects from the bottom nav bar or ones that are already in the scene.
+[b][u]Gameplay - Controls[/u][/b]
+Click and drag objects from the navbar, or those already in the scene.
+Pressing the Escape key will bring up the pause menu.
 
-Pressing escape will bring up the pause menu.
 
-Gameplay
---------------------------
+[b][u]Gameplay - Safe Objects[/u][/b]
+Dragging an object to the scene will award points, depending on the object type and the position it was placed in.
+Not all objects will award points, so think about how that object will impact the safety of that scene.
 
-Dragging an object to the scene will award points - depending on the object type and the position it was placed in.
+Hovering over an object in the navbar will bring up a short description on how it relates to CPTED principles.
+Most objects will drop on the location of your cursor. Larger objects (such as fences) will snap to pre-defined positions. 
 
-Not all objects will award points, think about how that object will impact the safety of that scene.
+[u]Dragging an object will have a heatmap outline applied to it with various colours:[/u]
 
-Hovering over an object in the nav bar will have a short description on how it relates to CPTED principles.
+[b]Green:[/b] Good position - 10 points
+[b]Yellow:[/b] Neutral position - 5 points
+[b]Red:[/b] Bad position - 0 points
 
-Most objects will drop on the location of your cursor, larger objects (such as fences) will snap to pre-defined positions. 
+[i][b]Note:[/b] Heatmaps are only available in this tutorial level! You, as the player, will need to figure out the most optimal positions for the objects.[/i]
 
-Dragging an object will have a heatmap outline applied to it with various colours:
 
-Green - Good position + 10 points
+[b][u]Gameplay - Unsafe Objects[/u][/b]
+There are also unsafe objects that are littered across the scene.
+Clicking and dragging these objects will bring out a trashcan.
+Placing an unsafe object in the trash also awards points.
 
-Yellow - Neutral position + 5 points
-
-Red - Bad position + 0 points
-
-Note: Heatmaps are only available in this tutorial level! You as the player will need to figure out the most optimal positions for the objects.
-
-There are also unsafe objects that are littered across the scene - clicking and dragging these objects will bring out a trashcan. Placing an unsafe object in the trash also gives points.
-
-As the environment becomes safer, the background sounds or the background itself may change, use this to track your progress.
-
+As the environment becomes safer, the background sounds, or even the background itself may change. Use this to track your progress.
 When you are finished, press the submit button in the top left to see your final score and feedback on how to improve your score.
 
-You will also be given a final rating based on the amount of points that you earned:
 
-Gold - All points
+[b][u]You will also be given a final rating based on the amount of points that you earned:[/u][/b]
 
-Silver - 100 points
+[b]Gold:[/b] Full points
+[b]Silver:[/b] 100 points
+[b]Bronze:[/b] 30 points
+[b]None:[/b] 0 points
 
-Bronze - 30 points
-
-None - 0 points
-
-Have fun!"
+[b][i]Good luck, and most importantly, have fun![/i]"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
