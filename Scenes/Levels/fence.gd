@@ -109,7 +109,7 @@ func end_drag():
 				status = "bad"
 				break
 
-	ScoreManager.on_object_placed(drag_sprite, object_key, category, center, status)
+	ScoreManager.on_object_placed(drag_sprite, object_key, category, center)
 
 	drag_container.queue_free()
 	drag_sprite = null
