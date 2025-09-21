@@ -18,10 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://c0chc8svja7jo" path="res://Scenes/pause_menu.tscn" id="13_pdk04"]
 [ext_resource type="AudioStream" uid="uid://c7vo10yhy8cv0" path="res://Sounds/menu sound.ogg" id="14_v8dnv"]
 [ext_resource type="Texture2D" uid="uid://bbsbys4jklfvc" path="res://Assests/Grid.png" id="15_q4vgj"]
-[ext_resource type="Script" uid="uid://do42uxnd18pls" path="res://Scripts/pl_game_manager.gd" id="16_k6wdk"]
 [ext_resource type="AudioStream" uid="uid://bdvvkjvhoulhv" path="res://Sounds/street.ogg" id="17_kf4qr"]
 [ext_resource type="Script" uid="uid://bhirg7xwu1jd" path="res://Scripts/trash_bar.gd" id="17_knnir"]
 [ext_resource type="Texture2D" uid="uid://bv07x5ibjjcuw" path="res://Assests/New Piskel-1.png (2).png" id="18_vm75s"]
+[ext_resource type="Script" uid="uid://dtl4r5hbdnk06" path="res://Scenes/Levels/SF_game_manager.gd" id="19_pdi17"]
 [ext_resource type="Texture2D" uid="uid://8tu1n5k1eps" path="res://Object Design/Trash Can.png" id="19_wjuff"]
 [ext_resource type="AudioStream" uid="uid://lx2y7nuhp4yn" path="res://Sounds/trashed object sound.ogg" id="20_60p6n"]
 [ext_resource type="Texture2D" uid="uid://457yyut3tl7l" path="res://Object Design/Lamp Post.png" id="21_1bda4"]
@@ -186,7 +186,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_uaog8")
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("16_k6wdk")
+script = ExtResource("19_pdi17")
 
 [node name="ambient_music" type="AudioStreamPlayer" parent="GameManager"]
 stream = ExtResource("17_kf4qr")
@@ -273,6 +273,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 2)
 object_info = "A lamp post improves visibility, supports natural surveillance, and reduces opportunities for crime at night."
+object_key = "lamp"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(400, 475, 1920, 65)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 600, 1920, 500)])
@@ -301,6 +302,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2.5, 1.5)
 object_info = "A car barrier controls access, prevents unauthorized entry, and increases safety by protecting pedestrian areas."
+object_key = "car_barrier"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(150, 425, 50, 25)])
 bad_zones = Array[Rect2]([Rect2(0, 450, 1920, 600), Rect2(0, 0, 1920, 425), Rect2(300, 425, 1920, 25)])
@@ -329,6 +331,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(0.8, 0.8)
 object_info = "A trash can supports cleanliness, defines cared-for space, and reinforces that the space is maintained."
+object_key = "trash_can"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(400, 525, 1920, 75)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 525), Rect2(0, 600, 1920, 500)])
@@ -383,6 +386,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2.5, 2)
 object_info = "CCTVs increase surveillance, deter crime, and help monitor activity, enhancing overall safety."
+object_key = "cctv_left"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(350, 200, 50, 100)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 200), Rect2(0, 400, 1920, 700), Rect2(0, 200, 350, 100), Rect2(400, 200, 1300, 100), Rect2(0, 0, 0, 0), Rect2(0, 300, 1920, 100)])
@@ -411,6 +415,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A drinking fountain encourages positive use of space, supports social interaction, and fosters a welcoming, cared-for environment."
+object_key = "drink_fountain"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(1650, 500, 300, 75)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 500), Rect2(0, 600, 1920, 500)])
@@ -491,6 +496,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2, 2)
 object_info = "A maintenance worker signals a cared-for space, discourages vandalism, and promotes safety."
+object_key = "maintenance_worker"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(400, 475, 1920, 50), Rect2(0, 915, 1920, 180)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 475), Rect2(0, 525, 1920, 700)])
@@ -519,6 +525,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 1.5)
 object_info = "A customer parking sign clearly designates space, guides movement, and promotes an orderly, welcoming environment for legitimate users."
+object_key = "parking_sign"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(1750, 250, 300, 100)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1750, 1080), Rect2(1750, 0, 300, 250), Rect2(1750, 475, 300, 1080)])
@@ -547,6 +554,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(2.5, 2.5)
 object_info = "Outdoor seating encourages people to gather, increases natural surveillance, and fosters a welcoming, lively atmosphere."
+object_key = "table_and_chairs"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(850, 425, 350, 75)])
 
@@ -574,6 +582,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(1.5, 2.5)
 object_info = "A crossing sign guides pedestrian and vehicle movement, improves safety, and creates a more orderly and welcoming environment."
+object_key = "crossing_sign"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(400, 450, 300, 50), Rect2(1600, 450, 320, 50)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 450), Rect2(0, 500, 1920, 375)])
@@ -602,6 +611,7 @@ script = ExtResource("22_d21kr")
 max_count = 1
 object_scale = Vector2(4, 3.75)
 object_info = "A crossing organises pedestrian movement, increases safety, and encourages a more people-friendly, welcoming environment."
+object_key = "crossing_lines"
 category = "safe"
 good_zones = Array[Rect2]([Rect2(475, 775, 100, 50), Rect2(1750, 775, 100, 50)])
 bad_zones = Array[Rect2]([Rect2(0, 0, 1920, 750), Rect2(0, 850, 1920, 300)])
