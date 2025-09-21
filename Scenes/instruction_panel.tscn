@@ -90,7 +90,18 @@ There are also unsafe objects that are littered across the scene - clicking and 
 As the environment becomes safer, the background sounds or the background itself may change, use this to track your progress.
 
 When you are finished, press the submit button in the top left to see your final score and feedback on how to improve your score.
-"
+
+You will also be given a final rating based on the amount of points that you earned:
+
+Gold - All points
+
+Silver - 100 points
+
+Bronze - 30 points
+
+None - 0 points
+
+Have fun!"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
